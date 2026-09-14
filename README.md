@@ -8,7 +8,8 @@ This is a Jibo Revival Group preservation project. It is not affiliated with Jib
 ## Status
 Web App is complete
 
-Android app is work in progress. Login/auth bypass works. Local robot discovery and connection are still being figured out in android app — see [Known issues](#known-issues) below.
+Android app is sort of abandoned, but a new web/-based one is being developed as we speak.
+[Known issues](#known-issues) 
 
 ## What was changed
 
