@@ -6,12 +6,12 @@ A patched build of Jibo's official Be a Maker companion app (`com.everis.jibo.ap
 This is a Jibo Revival Group preservation project. It is not affiliated with Jibo Inc. or NTT Disruption.
 
 ## Status
-Web App is complete
+Web App is complete.
 
 Android app is complete, not based off of the direct decompilation as planned, but on the "web/" Node server.
 [Known issues](#known-issues) 
 
-iOS app is being developed by immmvic
+iOS app is being developed by immvic.
 
 ## What was changed
 
