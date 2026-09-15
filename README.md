@@ -75,7 +75,7 @@ A sideloadable APK is stored in git, however it may be very out of date. Rebuild
 
 ## Credit / Disclaimer
 
-The smali patching and analysis in this repo were done in collaboration with Claude (Anthropic), Gemni (Google), and ChatGPT (OpenAI)— the person maintaining this repo did the actual decompiling, device testing, and patch application locally; Claude helped identify the relevant code paths and write the patches based on smali the maintainer provided.
+The smali patching and analysis in this repo were done in collaboration with Claude (Anthropic), Gemni (Google), and ChatGPT (OpenAI)— the person maintaining this repo did the actual decompiling, device testing, and patch application locally; the AIs helped identify the relevant code paths and write the patches based on smali the maintainer provided.
 
 This project exists to preserve hardware that owners already have, made necessary by the shutdown of Jibo Inc.'s servers.
 
