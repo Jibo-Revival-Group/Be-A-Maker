@@ -11,6 +11,8 @@ Web App is complete
 Android app is complete, not based off of the direct decompilation as planned, but on the "web/" Node server.
 [Known issues](#known-issues) 
 
+iOS app is being developed by immmvic
+
 ## What was changed
 
 The following does not apply to the new app or the new web app.
