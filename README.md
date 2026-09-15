@@ -8,10 +8,12 @@ This is a Jibo Revival Group preservation project. It is not affiliated with Jib
 ## Status
 Web App is complete
 
-Android app is sort of abandoned, but a new web/-based one is being developed as we speak.
+Android app is complete, not based off of the direct decompilation as planned, but on the "web/" Node server.
 [Known issues](#known-issues) 
 
 ## What was changed
+
+The following does not apply to the new app or the new web app.
 
 The patch targets `GettingJibosRepositoryImpl.getJibos()`, which originally always called Jibo's (now-dead) cloud sign-in SDK (`JiboRemoteControl.signIn()`). The patched version skips that call and instead immediately fires the app's own built-in "no Jibo account" success path (`onGettingJibosTransactionSuccessWithoutJibo()`), which the original app already used for users with no linked robot. This routes straight to `PairingActivity` instead of the dead login WebView.
 
@@ -35,10 +37,16 @@ Rebuild output (`build/`, `dist/`, `*.apk`) is gitignored.
 
 ## Known issues
 
+The following does not apply to the new app or the new web app.
+
+
 - Since `getJibos()` now returns an empty robot list, `PairingActivity` currently shows "We couldn't find a Jibo to connect to" — the list needs to be populated with a real `Robot(id, name, robotName)` object for pairing to proceed.
 - Whether the underlying `JiboRemoteControl.connect()` call (a closed, obfuscated class in the bundled apptoolkit SDK) can complete locally against a robot — especially one running the community JiboOS — is still unconfirmed. This may require further reverse-engineering.
 
 ## Web app (pair by IP)
+
+The following does not apply to the new Android app.
+
 
 The Android SDK cannot run in a browser. `web/` is a local companion: pairing with a typed robot IP, then the original Scratch playground talking to ROM.
 
@@ -54,6 +62,8 @@ Open `http://127.0.0.1:5173`, enter the robot IP, then CONNECT. Scratch projects
 
 ## Building the Android APK
 
+The following does not apply to the new app or the new web app.
+
 ```bash
 apktool b . -o dist/beamaker_patched.apk
 apksigner sign --ks debug.jks dist/beamaker_patched.apk
@@ -65,7 +75,7 @@ A sideloadable APK is stored in git, however it may be very out of date. Rebuild
 
 ## Credit / Disclaimer
 
-The smali patching and analysis in this repo were done in collaboration with Claude (Anthropic) — the person maintaining this repo did the actual decompiling, device testing, and patch application locally; Claude helped identify the relevant code paths and write the patches based on smali the maintainer provided.
+The smali patching and analysis in this repo were done in collaboration with Claude (Anthropic), Gemni (Google), and ChatGPT (OpenAI)— the person maintaining this repo did the actual decompiling, device testing, and patch application locally; Claude helped identify the relevant code paths and write the patches based on smali the maintainer provided.
 
 This project exists to preserve hardware that owners already have, made necessary by the shutdown of Jibo Inc.'s servers.
 
