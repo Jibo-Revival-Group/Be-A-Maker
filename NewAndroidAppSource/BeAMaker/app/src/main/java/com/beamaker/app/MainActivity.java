@@ -16,7 +16,13 @@ import android.webkit.WebChromeClient;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 import android.widget.FrameLayout;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.view.animation.Animation;
+import android.view.animation.RotateAnimation;
+import android.content.res.Configuration;
+import androidx.annotation.NonNull;
 
 import java.io.File;
 import java.io.FileOutputStream;
@@ -44,6 +50,7 @@ public class MainActivity extends Activity {
 
     private WebView webView;
     private TextView statusText;
+    private LinearLayout portraitLockView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -77,6 +84,9 @@ public class MainActivity extends Activity {
         root.addView(statusText, new FrameLayout.LayoutParams(
                 FrameLayout.LayoutParams.MATCH_PARENT, FrameLayout.LayoutParams.MATCH_PARENT));
 
+        setupPortraitLockView(root);
+        checkOrientation(getResources().getConfiguration().orientation);
+
         setContentView(root);
 
         if (!startedNodeAlready) {
@@ -93,6 +103,57 @@ public class MainActivity extends Activity {
             webView.goBack();
         } else {
             super.onBackPressed();
+        }
+    }
+
+    @Override
+    public void onConfigurationChanged(@NonNull Configuration newConfig) {
+        super.onConfigurationChanged(newConfig);
+        checkOrientation(newConfig.orientation);
+    }
+
+    private void setupPortraitLockView(FrameLayout root) {
+        portraitLockView = new LinearLayout(this);
+        portraitLockView.setOrientation(LinearLayout.VERTICAL);
+        portraitLockView.setGravity(android.view.Gravity.CENTER);
+        portraitLockView.setBackgroundColor(0xFF121212); // Dark background
+        portraitLockView.setVisibility(android.view.View.GONE);
+
+        // Icon (rotating phone)
+        ImageView icon = new ImageView(this);
+        // Use a built-in icon as a placeholder for the rotation graphic
+        icon.setImageResource(android.R.drawable.ic_menu_rotate);
+        icon.setColorFilter(0xFFFFFFFF); // White icon
+        LinearLayout.LayoutParams iconParams = new LinearLayout.LayoutParams(250, 250);
+        iconParams.bottomMargin = 60;
+        portraitLockView.addView(icon, iconParams);
+
+        // Text
+        TextView text = new TextView(this);
+        text.setText("Please rotate your device to landscape");
+        text.setTextColor(0xFFFFFFFF);
+        text.setTextSize(20);
+        text.setGravity(android.view.Gravity.CENTER);
+        portraitLockView.addView(text);
+
+        // Smooth rotation animation from portrait (0) to landscape (90)
+        RotateAnimation anim = new RotateAnimation(0, 90,
+                Animation.RELATIVE_TO_SELF, 0.5f, Animation.RELATIVE_TO_SELF, 0.5f);
+        anim.setDuration(1500);
+        anim.setRepeatCount(Animation.INFINITE);
+        anim.setRepeatMode(Animation.RESTART);
+        icon.startAnimation(anim);
+
+        root.addView(portraitLockView, new FrameLayout.LayoutParams(
+                FrameLayout.LayoutParams.MATCH_PARENT, FrameLayout.LayoutParams.MATCH_PARENT));
+    }
+
+    private void checkOrientation(int orientation) {
+        if (orientation == Configuration.ORIENTATION_PORTRAIT) {
+            portraitLockView.setVisibility(android.view.View.VISIBLE);
+            portraitLockView.bringToFront();
+        } else {
+            portraitLockView.setVisibility(android.view.View.GONE);
         }
     }
 
@@ -238,7 +299,7 @@ public class MainActivity extends Activity {
             in = assetManager.open(fromAssetPath);
             new File(toPath).createNewFile();
             out = new FileOutputStream(toPath);
-            byte[] buffer = new byte[4096];
+            byte[] buffer = new byte[16384];
             int read;
             while ((read = in.read(buffer)) != -1) {
                 out.write(buffer, 0, read);

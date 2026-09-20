@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "com.beamaker.app-mergeDebugResources-29:/values-port/values-port.xml",
+            "outputFile": "com.beamaker.app-mergeDebugResources-33:/values-port/values-port.xml",
             "map": [
                 {
-                    "source": "/Users/christian/.gradle/caches/8.13/transforms/b53fdde436f23ce080f349958593ad2a/transformed/appcompat-1.7.0/res/values-port/values-port.xml",
+                    "source": "/Users/christian/.gradle/caches/9.7.1/transforms/3af7dddab0df011d199a48ae4447515e/transformed/appcompat-1.8.0/res/values-port/values-port.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",

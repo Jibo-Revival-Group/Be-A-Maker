@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "com.beamaker.app-mergeDebugResources-29:/values-h360dp-land-v13/values-h360dp-land-v13.xml",
+            "outputFile": "com.beamaker.app-mergeDebugResources-33:/values-h360dp-land-v13/values-h360dp-land-v13.xml",
             "map": [
                 {
-                    "source": "/Users/christian/.gradle/caches/8.13/transforms/375bd453e1a715ef45c568d4b0b46521/transformed/material-1.12.0/res/values-h360dp-land-v13/values-h360dp-land-v13.xml",
+                    "source": "/Users/christian/.gradle/caches/9.7.1/transforms/a46dd8b53b9fa1eeaad0038dec7af8e2/transformed/material-1.14.0/res/values-h360dp-land-v13/values-h360dp-land-v13.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9,10",
                         "startColumns": "4,4,4,4,4,4,4,4,4",
