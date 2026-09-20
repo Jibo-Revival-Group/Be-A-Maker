@@ -1,4 +1,7 @@
-#Mon Sep 14 18:34:12 PDT 2026
-base.0=/Users/christian/Downloads/BeAMaker-android-project/BeAMaker/app/build/intermediates/dex/release/mergeDexRelease/classes.dex
+#Sun Sep 20 15:01:19 PDT 2026
+base.0=/Users/christian/Documents/GitHub/BEam-a-maker/NewAndroidAppSource/BeAMaker/app/build/intermediates/dex/release/mergeDexRelease/classes.dex
+base.1=/Users/christian/Documents/GitHub/BEam-a-maker/NewAndroidAppSource/BeAMaker/app/build/intermediates/dex/release/mergeDexRelease/classes2.dex
 path.0=classes.dex
+path.1=classes2.dex
 renamed.0=classes.dex
+renamed.1=classes2.dex

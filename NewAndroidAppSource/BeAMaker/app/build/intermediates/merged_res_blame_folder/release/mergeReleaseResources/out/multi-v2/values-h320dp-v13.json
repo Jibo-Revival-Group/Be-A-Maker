@@ -1,0 +1,19 @@
+{
+    "logs": [
+        {
+            "outputFile": "com.beamaker.app-mergeReleaseResources-33:/values-h320dp-v13/values-h320dp-v13.xml",
+            "map": [
+                {
+                    "source": "/Users/christian/.gradle/caches/9.7.1/transforms/a46dd8b53b9fa1eeaad0038dec7af8e2/transformed/material-1.14.0/res/values-h320dp-v13/values-h320dp-v13.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "66",
+                        "endOffsets": "117"
+                    }
+                }
+            ]
+        }
+    ]
+}

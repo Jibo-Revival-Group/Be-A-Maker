@@ -1,0 +1,8 @@
+com.beamaker.app-pngs-0 /Users/christian/Documents/GitHub/BEam-a-maker/NewAndroidAppSource/BeAMaker/app/build/generated/res/pngs/release
+com.beamaker.app-updated_navigation_xml-1 /Users/christian/Documents/GitHub/BEam-a-maker/NewAndroidAppSource/BeAMaker/app/build/generated/updated_navigation_xml/release
+com.beamaker.app-packageReleaseResources-2 /Users/christian/Documents/GitHub/BEam-a-maker/NewAndroidAppSource/BeAMaker/app/build/intermediates/incremental/release/packageReleaseResources/merged.dir
+com.beamaker.app-packageReleaseResources-3 /Users/christian/Documents/GitHub/BEam-a-maker/NewAndroidAppSource/BeAMaker/app/build/intermediates/incremental/release/packageReleaseResources/stripped.dir
+com.beamaker.app-release-4 /Users/christian/Documents/GitHub/BEam-a-maker/NewAndroidAppSource/BeAMaker/app/build/intermediates/merged_res/release/mergeReleaseResources
+com.beamaker.app-main-5 /Users/christian/Documents/GitHub/BEam-a-maker/NewAndroidAppSource/BeAMaker/app/src/main/res
+com.beamaker.app-release-6 /Users/christian/Documents/GitHub/BEam-a-maker/NewAndroidAppSource/BeAMaker/app/src/release/res
+gradleHome-0 /Users/christian/.gradle

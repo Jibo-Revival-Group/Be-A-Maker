@@ -1,0 +1,5 @@
+com.beamaker.app.test.app-updated_navigation_xml-0 /Users/christian/Documents/GitHub/BEam-a-maker/NewAndroidAppSource/BeAMaker/app/build/generated/updated_navigation_xml/debugAndroidTest
+com.beamaker.app.test.app-packageDebugAndroidTestResources-1 /Users/christian/Documents/GitHub/BEam-a-maker/NewAndroidAppSource/BeAMaker/app/build/intermediates/incremental/debugAndroidTest/packageDebugAndroidTestResources/merged.dir
+com.beamaker.app.test.app-packageDebugAndroidTestResources-2 /Users/christian/Documents/GitHub/BEam-a-maker/NewAndroidAppSource/BeAMaker/app/build/intermediates/incremental/debugAndroidTest/packageDebugAndroidTestResources/stripped.dir
+com.beamaker.app.test.app-debugAndroidTest-3 /Users/christian/Documents/GitHub/BEam-a-maker/NewAndroidAppSource/BeAMaker/app/build/intermediates/merged_res/debugAndroidTest/mergeDebugAndroidTestResources
+gradleHome-0 /Users/christian/.gradle

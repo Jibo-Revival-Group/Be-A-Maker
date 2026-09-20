@@ -1,26 +1,26 @@
 [
     {
-        "merged": "com.beamaker.app-release-31:/mipmap-hdpi_ic_launcher.png.flat",
-        "source": "com.beamaker.app-main-32:/mipmap-hdpi/ic_launcher.png"
+        "merged": "com.beamaker.app-release-35:/mipmap-hdpi_ic_launcher.png.flat",
+        "source": "com.beamaker.app-main-36:/mipmap-hdpi/ic_launcher.png"
     },
     {
-        "merged": "com.beamaker.app-release-31:/mipmap-mdpi_ic_launcher.png.flat",
-        "source": "com.beamaker.app-main-32:/mipmap-mdpi/ic_launcher.png"
+        "merged": "com.beamaker.app-release-35:/mipmap-xxhdpi_ic_launcher.png.flat",
+        "source": "com.beamaker.app-main-36:/mipmap-xxhdpi/ic_launcher.png"
     },
     {
-        "merged": "com.beamaker.app-release-31:/mipmap_ic_launcher.png.flat",
-        "source": "com.beamaker.app-main-32:/mipmap/ic_launcher.png"
+        "merged": "com.beamaker.app-release-35:/mipmap-xhdpi_ic_launcher.png.flat",
+        "source": "com.beamaker.app-main-36:/mipmap-xhdpi/ic_launcher.png"
     },
     {
-        "merged": "com.beamaker.app-release-31:/mipmap-xxhdpi_ic_launcher.png.flat",
-        "source": "com.beamaker.app-main-32:/mipmap-xxhdpi/ic_launcher.png"
+        "merged": "com.beamaker.app-release-35:/mipmap_ic_launcher.png.flat",
+        "source": "com.beamaker.app-main-36:/mipmap/ic_launcher.png"
     },
     {
-        "merged": "com.beamaker.app-release-31:/mipmap-xxxhdpi_ic_launcher.png.flat",
-        "source": "com.beamaker.app-main-32:/mipmap-xxxhdpi/ic_launcher.png"
+        "merged": "com.beamaker.app-release-35:/mipmap-xxxhdpi_ic_launcher.png.flat",
+        "source": "com.beamaker.app-main-36:/mipmap-xxxhdpi/ic_launcher.png"
     },
     {
-        "merged": "com.beamaker.app-release-31:/mipmap-xhdpi_ic_launcher.png.flat",
-        "source": "com.beamaker.app-main-32:/mipmap-xhdpi/ic_launcher.png"
+        "merged": "com.beamaker.app-release-35:/mipmap-mdpi_ic_launcher.png.flat",
+        "source": "com.beamaker.app-main-36:/mipmap-mdpi/ic_launcher.png"
     }
 ]

@@ -1,0 +1,3 @@
+com.beamaker.app
+mipmap ic_launcher
+string app_name

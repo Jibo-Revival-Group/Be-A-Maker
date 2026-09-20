@@ -1,0 +1,1 @@
+/Users/christian/Documents/GitHub/BEam-a-maker/NewAndroidAppSource/BeAMaker/app/build/intermediates/cxx/RelWithDebInfo/u5e1h3jj/obj/x86_64

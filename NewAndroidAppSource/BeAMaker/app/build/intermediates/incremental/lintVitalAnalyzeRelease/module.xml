@@ -1,15 +1,16 @@
 <lint-module
     format="1"
-    dir="/Users/christian/Downloads/BeAMaker-android-project/BeAMaker/app"
+    dir="/Users/christian/Documents/GitHub/BEam-a-maker/NewAndroidAppSource/BeAMaker/app"
     name=":app"
     type="APP"
     maven="Be a Maker:app:unspecified"
-    agpVersion="8.13.2"
+    agpVersion="9.2.1"
     buildFolder="build"
-    bootClassPath="/Users/christian/Library/Android/sdk/platforms/android-34/android.jar:/Users/christian/Library/Android/sdk/build-tools/35.0.0/core-lambda-stubs.jar"
-    javaSourceLevel="1.8"
-    compileTarget="android-34"
-    neverShrinking="true">
+    bootClassPath="/Users/christian/Library/Android/sdk/platforms/android-35/android.jar:/Users/christian/Library/Android/sdk/build-tools/36.0.0/core-lambda-stubs.jar"
+    javaSourceLevel="17"
+    compileTarget="android-35"
+    neverShrinking="true"
+    highlightGradualR8Api="false">
   <lintOptions
       abortOnError="true"
       absolutePaths="true"

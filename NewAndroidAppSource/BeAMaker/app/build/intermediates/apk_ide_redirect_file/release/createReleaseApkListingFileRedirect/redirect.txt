@@ -1,2 +1,2 @@
 #- File Locator -
-listingFile=../../../../../release/output-metadata.json
+listingFile=../../../../../../../../../../../Downloads/BeAMaker-android-project/BeAMaker/app/release/output-metadata.json
