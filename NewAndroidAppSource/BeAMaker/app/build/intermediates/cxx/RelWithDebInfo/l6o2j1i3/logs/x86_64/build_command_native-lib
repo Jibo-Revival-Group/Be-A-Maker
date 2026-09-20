@@ -1,0 +1,4 @@
+/Users/christian/Library/Android/sdk/cmake/3.22.1/bin/ninja \
+  -C \
+  /Users/christian/Downloads/BeAMaker-android-project/BeAMaker/app/.cxx/RelWithDebInfo/l6o2j1i3/x86_64 \
+  native-lib

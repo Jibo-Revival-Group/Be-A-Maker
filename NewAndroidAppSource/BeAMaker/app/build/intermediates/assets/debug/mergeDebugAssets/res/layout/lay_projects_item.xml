@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout n0:paddingTop="@dimen/marginMedium" n0:paddingBottom="@dimen/marginMedium" n0:layout_width="match_parent" n0:layout_height="wrap_content" n0:paddingEnd="@dimen/marginMedium"
+  xmlns:n0="http://schemas.android.com/apk/res/android">
+    <RelativeLayout n0:id="@id/rlImageItem" n0:layout_width="@dimen/wProjectItem" n0:layout_height="@dimen/hProjectItem">
+        <ImageView n0:id="@id/ivItemProject" n0:layout_width="match_parent" n0:layout_height="match_parent" n0:src="@mipmap/project_a" />
+        <ImageButton n0:id="@id/bTrash" n0:background="@color/colorTransparent" n0:layout_width="@dimen/wTrash" n0:layout_height="@dimen/hTrash" n0:src="@mipmap/delete_icon" n0:scaleType="fitXY" n0:layout_alignParentEnd="true" />
+    </RelativeLayout>
+    <LinearLayout n0:orientation="vertical" n0:layout_width="wrap_content" n0:layout_height="wrap_content" n0:layout_toRightOf="@id/rlImageItem" n0:layout_alignBottom="@id/rlImageItem" n0:layout_marginStart="@dimen/marginSmall">
+        <TextView n0:textColor="@color/colorWhite" n0:id="@id/tvProjectName" n0:layout_width="match_parent" n0:layout_height="wrap_content" n0:text="Create new" fontPath="fonts/Hanken-Book.ttf" />
+        <TextView n0:textColor="@color/colorWhite" n0:id="@id/tvDate" n0:layout_width="match_parent" n0:layout_height="wrap_content" n0:text="21/03/2018 11:19" fontPath="fonts/Hanken-Light.ttf" />
+    </LinearLayout>
+</RelativeLayout>

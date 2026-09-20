@@ -1,0 +1,4 @@
+/Users/christian/Library/Android/sdk/cmake/3.22.1/bin/ninja \
+  -C \
+  /Users/christian/Downloads/BeAMaker-android-project/BeAMaker/app/.cxx/Debug/6r6v1l5z/armeabi-v7a \
+  native-lib

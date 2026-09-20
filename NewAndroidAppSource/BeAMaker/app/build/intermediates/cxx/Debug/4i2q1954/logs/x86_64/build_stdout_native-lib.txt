@@ -1,0 +1,2 @@
+ninja: Entering directory `/Users/christian/Downloads/BeAMaker-android-project/BeAMaker/app/.cxx/Debug/4i2q1954/x86_64'
+ninja: no work to do.

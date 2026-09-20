@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout n0:orientation="vertical" n0:background="@color/colorArrow" n0:padding="@dimen/marginMedium" n0:layout_width="@dimen/hPerformancesBox" n0:layout_height="@dimen/hPerformancesBox"
+  xmlns:n0="http://schemas.android.com/apk/res/android">
+    <ImageView n0:layout_gravity="center_horizontal" n0:id="@id/ivCoolIdea" n0:layout_width="90.0dp" n0:layout_height="wrap_content" n0:src="@mipmap/dance_coolthing_illust" n0:adjustViewBounds="true" />
+    <TextView n0:textSize="@dimen/font13" n0:textColor="@color/colorWhite" n0:gravity="center" n0:layout_gravity="center_horizontal" n0:id="@id/tvTitle" n0:layout_width="90.0dp" n0:layout_height="wrap_content" n0:text="Touch Jibo’s head" n0:maxLines="2" n0:minLines="2" fontPath="fonts/Hanken-Book.ttf" />
+</LinearLayout>

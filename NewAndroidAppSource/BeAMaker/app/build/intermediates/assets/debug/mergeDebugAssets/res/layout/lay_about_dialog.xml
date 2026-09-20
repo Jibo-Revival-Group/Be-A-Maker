@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout n0:orientation="vertical" n0:id="@id/rlRoot" n0:layout_width="match_parent" n0:layout_height="match_parent" n0:layout_centerInParent="true"
+  xmlns:n0="http://schemas.android.com/apk/res/android">
+    <View n0:id="@id/vBackground" n0:background="@color/colorOverlay" n0:layout_width="match_parent" n0:layout_height="match_parent" />
+    <RelativeLayout n0:id="@id/rlNewProjectContent" n0:background="@drawable/dw_cool_idea_video_shape" n0:padding="@dimen/marginMedium" n0:focusable="true" n0:focusableInTouchMode="true" n0:layout_width="@dimen/wDialogs" n0:layout_height="@dimen/hDialogs" n0:layout_centerInParent="true">
+        <ImageButton n0:id="@id/bCloseProjectDialog" n0:background="@color/colorTransparent" n0:layout_width="wrap_content" n0:layout_height="wrap_content" n0:src="@mipmap/close_icon_orange" n0:layout_alignParentTop="true" n0:contentDescription="@null" n0:layout_alignParentEnd="true" />
+        <TextView n0:textSize="@dimen/font24" n0:textColor="@color/colorOrange" n0:gravity="center" n0:id="@id/tvTitle" n0:layout_width="match_parent" n0:layout_height="wrap_content" n0:text="@string/menu_item_about" fontPath="fonts/Hanken-Book.ttf" />
+        <TextView n0:textSize="@dimen/font16" n0:textColor="@color/colorOverlay" n0:gravity="center" n0:id="@id/tvAbout" n0:layout_width="match_parent" n0:layout_height="wrap_content" n0:text="@string/menu_item_about" n0:layout_above="@id/tvTitle" fontPath="fonts/Hanken-Light.ttf" />
+    </RelativeLayout>
+</RelativeLayout>

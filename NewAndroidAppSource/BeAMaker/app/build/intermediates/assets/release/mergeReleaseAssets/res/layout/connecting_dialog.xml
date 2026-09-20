@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout n0:layout_width="match_parent" n0:layout_height="match_parent"
+  xmlns:n0="http://schemas.android.com/apk/res/android">
+    <RelativeLayout n0:id="@id/rlConnecting" n0:layout_width="match_parent" n0:layout_height="match_parent">
+        <ImageView n0:layout_width="match_parent" n0:layout_height="match_parent" n0:scaleType="centerCrop" n0:contentDescription="@null" n1:srcCompat="@mipmap/connecting_bg"
+          xmlns:n1="http://schemas.android.com/apk/res-auto" />
+        <TextView n0:textSize="@dimen/font20" n0:textColor="@color/colorWhite" n0:layout_gravity="center_horizontal" n0:id="@id/tvTitle" n0:layout_width="wrap_content" n0:layout_height="wrap_content" n0:layout_marginTop="@dimen/marginBig" n0:text="@string/tv_connecting_jibo" n0:layout_centerHorizontal="true" fontPath="fonts/Hanken-Book.ttf" />
+        <com.airbnb.lottie.LottieAnimationView n0:id="@id/ivPairngAnim" n0:layout_width="290.0dp" n0:layout_height="290.0dp" n0:layout_marginTop="@dimen/marginMedium" n0:layout_below="@id/tvTitle" n0:layout_centerHorizontal="true" n0:contentDescription="@null" />
+    </RelativeLayout>
+    <RelativeLayout n0:id="@id/rlConnected" n0:background="@drawable/dw_connected_bg" n0:visibility="gone" n0:fitsSystemWindows="true" n0:layout_width="match_parent" n0:layout_height="match_parent">
+        <TextView n0:textSize="@dimen/font20" n0:textColor="@color/colorPink" n0:id="@id/tvConnected" n0:paddingTop="@dimen/marginBig" n0:layout_width="wrap_content" n0:layout_height="wrap_content" n0:text="@string/tvConnected" n0:layout_centerHorizontal="true" fontPath="fonts/Hanken-Book.ttf" />
+        <ImageView n0:layout_width="290.0dp" n0:layout_height="290.0dp" n0:layout_marginTop="@dimen/marginMedium" n0:src="@mipmap/connected_ilustracion" n0:layout_below="@id/tvConnected" n0:layout_centerHorizontal="true" />
+        <ImageView n0:id="@id/ivPuntitosIzq" n0:layout_width="@dimen/wPuntitos" n0:layout_height="@dimen/wPuntitos" n0:src="@drawable/dw_puntitos" />
+        <ImageView n0:id="@id/ivPuntitosDer" n0:layout_width="@dimen/wPuntitos" n0:layout_height="@dimen/wPuntitos" n0:src="@drawable/dw_puntitos" n0:layout_alignParentBottom="true" n0:rotation="180.0" n0:layout_alignParentEnd="true" />
+    </RelativeLayout>
+    <com.jlsh.bubleview.view.BubbleView n0:id="@id/bViewConecting" n0:layout_width="match_parent" n0:layout_height="match_parent" n2:bubble_height="@dimen/bubble_oval" n2:bubble_width="@dimen/bubble_oval"
+      xmlns:n2="http://schemas.android.com/apk/res-auto" />
+</RelativeLayout>

@@ -1,0 +1,2 @@
+ninja: Entering directory `/Users/christian/Downloads/BeAMaker-android-project/BeAMaker/app/.cxx/RelWithDebInfo/l6o2j1i3/arm64-v8a'
+ninja: no work to do.

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v4.widget.DrawerLayout n0:id="@id/drawer_layout" n0:fitsSystemWindows="true" n0:layout_width="match_parent" n0:layout_height="match_parent"
+  xmlns:n0="http://schemas.android.com/apk/res/android">
+    <FrameLayout n0:orientation="vertical" n0:id="@id/flContent" n0:layout_width="match_parent" n0:layout_height="match_parent">
+        <include n0:id="@id/tBarScratch" layout="@layout/lay_toolbar_scrachview" />
+        <WebView n0:id="@id/scratchWebView" n0:focusable="true" n0:focusableInTouchMode="true" n0:layout_width="match_parent" n0:layout_height="match_parent" n0:layout_marginTop="?actionBarSize" />
+        <LinearLayout n0:orientation="vertical" n0:id="@id/llContent" n0:background="@color/colorOverlay" n0:focusable="true" n0:visibility="gone" n0:clickable="true" n0:layout_width="match_parent" n0:layout_height="match_parent" />
+        <RelativeLayout n0:layout_gravity="bottom" n0:id="@id/rlPhoto" n0:background="@drawable/dw_preview_shape" n0:visibility="gone" n0:layout_width="200.0dp" n0:layout_height="150.0dp" n0:layout_marginBottom="@dimen/marginMedium" n0:scaleX="0.0" n0:scaleY="0.0" n0:layout_marginStart="@dimen/marginVeryVeryBig">
+            <ImageView n0:id="@id/ivPhoto" n0:layout_width="match_parent" n0:layout_height="match_parent" n0:layout_margin="2.0dp" n0:scaleType="centerCrop" n0:contentDescription="@null" />
+            <ImageView n0:id="@id/ivClosePhoto" n0:layout_width="20.0dp" n0:layout_height="20.0dp" n0:layout_marginTop="@dimen/marginSmallMedium" n0:src="@mipmap/close_icon_white" n0:contentDescription="@null" n0:layout_marginEnd="@dimen/marginSmallMedium" n0:layout_alignParentEnd="true" />
+        </RelativeLayout>
+        <RelativeLayout n0:layout_gravity="right|bottom" n0:orientation="vertical" n0:id="@id/rlPreview" n0:background="@drawable/dw_preview_shape" n0:visibility="gone" n0:layout_width="@dimen/sCoolIdeaPreview" n0:layout_height="@dimen/sCoolIdeaPreview" n0:layout_marginBottom="100.0dp" n0:layout_marginEnd="90.0dp">
+            <ImageView n0:id="@id/ivPreview" n0:layout_width="match_parent" n0:layout_height="match_parent" n0:layout_margin="2.0dp" n0:layout_above="@id/line" n0:contentDescription="@null" />
+            <LinearLayout n0:orientation="horizontal" n0:id="@id/line" n0:background="@color/colorWhite" n0:layout_width="match_parent" n0:layout_height="1.0dp" n0:layout_above="@id/tvCoolPreview" />
+            <TextView n0:textSize="@dimen/font16" n0:textColor="@color/colorWhite" n0:gravity="center" n0:id="@id/tvCoolPreview" n0:background="@color/colorPreviewText" n0:layout_width="match_parent" n0:layout_height="40.0dp" n0:layout_marginBottom="2.0dp" n0:text="Dance Samba" n0:layout_alignParentBottom="true" n0:layout_marginStart="2.0dp" n0:layout_marginEnd="2.0dp" fontPath="fonts/Hanken-Book.ttf" />
+            <ImageView n0:id="@id/ivClosePreview" n0:layout_width="20.0dp" n0:layout_height="20.0dp" n0:layout_margin="@dimen/marginSmallMedium" n0:src="@mipmap/close_icon_white" n0:layout_alignParentEnd="true" />
+        </RelativeLayout>
+        <RelativeLayout n0:gravity="center|bottom" n0:layout_gravity="right|bottom" n0:id="@id/rlOpenPerformances" n0:focusable="true" n0:visibility="visible" n0:clickable="true" n0:layout_width="@dimen/wButtonOpenPerformances" n0:layout_height="@dimen/hButtonOpenPerformances" n0:layout_marginBottom="@dimen/marginMedium" n0:layout_marginEnd="@dimen/marginVeryVeryBig">
+            <com.airbnb.lottie.LottieAnimationView n0:layout_gravity="center|bottom" n0:id="@id/laClose" n0:visibility="visible" n0:layout_width="match_parent" n0:layout_height="match_parent" n0:adjustViewBounds="true" n1:lottie_autoPlay="true" n1:lottie_fileName="coolIdeasLottieButton.json" n1:lottie_loop="false"
+              xmlns:n1="http://schemas.android.com/apk/res-auto" />
+            <com.airbnb.lottie.LottieAnimationView n0:layout_gravity="center|bottom" n0:id="@id/laOpen" n0:visibility="gone" n0:layout_width="match_parent" n0:layout_height="match_parent" n0:adjustViewBounds="true" n2:lottie_autoPlay="true" n2:lottie_fileName="coolIdeasLottieButton_closed.json" n2:lottie_loop="false"
+              xmlns:n2="http://schemas.android.com/apk/res-auto" />
+        </RelativeLayout>
+        <LinearLayout n0:layout_gravity="center|bottom" n0:orientation="horizontal" n0:id="@id/llPerformances" n0:background="@color/colorArrow" n0:visibility="visible" n0:layout_width="match_parent" n0:layout_height="@dimen/hPerformancesBox" n0:translationY="@dimen/hPerformancesBox">
+            <android.support.v7.widget.RecyclerView n0:id="@id/rvCoolIdeas" n0:layout_width="match_parent" n0:layout_height="match_parent" />
+        </LinearLayout>
+    </FrameLayout>
+    <RelativeLayout n0:id="@id/rlAnimSave" n0:background="@color/colorOverlay" n0:visibility="gone" n0:layout_width="match_parent" n0:layout_height="match_parent">
+        <com.airbnb.lottie.LottieAnimationView n0:id="@id/laAddProj" n0:layout_width="wrap_content" n0:layout_height="wrap_content" n0:scaleType="centerInside" n0:layout_centerInParent="true" n3:lottie_autoPlay="false" n3:lottie_fileName="ok_jibo.json" n3:lottie_loop="false"
+          xmlns:n3="http://schemas.android.com/apk/res-auto" />
+        <TextView n0:textSize="@dimen/font30" n0:textColor="@color/colorWhite" n0:gravity="center" n0:id="@id/tvAnimAddProject" n0:layout_width="match_parent" n0:layout_height="wrap_content" n0:text="@string/tvProjectAdded" n0:layout_below="@id/laAddProj" n0:layout_centerHorizontal="true" fontPath="fonts/Hanken-Book.ttf" />
+    </RelativeLayout>
+    <android.support.design.widget.NavigationView n0:layout_gravity="start" n0:id="@id/navigation" n0:fitsSystemWindows="true" n0:layout_width="wrap_content" n0:layout_height="match_parent" n4:menu="@menu/menu_navigation"
+      xmlns:n4="http://schemas.android.com/apk/res-auto">
+        <include layout="@layout/menu_content" />
+    </android.support.design.widget.NavigationView>
+</android.support.v4.widget.DrawerLayout>

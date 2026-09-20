@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout n0:id="@id/flRoot" n0:layout_width="match_parent" n0:layout_height="wrap_content" n0:layout_marginBottom="@dimen/marginBig" n0:layout_alignParentTop="true" n0:layout_centerHorizontal="true"
+  xmlns:n0="http://schemas.android.com/apk/res/android">
+    <RelativeLayout n0:orientation="vertical" n0:id="@id/rlImage" n0:layout_width="match_parent" n0:layout_height="@dimen/hProjectItem" n0:layout_alignParentTop="true">
+        <ImageView n0:id="@id/ivItemProject" n0:layout_width="@dimen/wProjectItem" n0:layout_height="@dimen/hProjectItem" n0:src="@mipmap/create_icon" n0:layout_alignParentTop="true" n0:layout_centerHorizontal="true" n0:contentDescription="@null" />
+    </RelativeLayout>
+    <LinearLayout n0:orientation="vertical" n0:id="@id/llText" n0:padding="@dimen/marginSmall" n0:layout_width="match_parent" n0:layout_height="wrap_content" n0:layout_below="@id/rlImage">
+        <TextView n0:textSize="@dimen/font20" n0:textColor="@color/colorWhite" n0:gravity="center" n0:id="@id/tvProjectName" n0:layout_width="match_parent" n0:layout_height="wrap_content" n0:text="@string/tvAddProjectItem" fontPath="fonts/Hanken-Book.ttf" />
+    </LinearLayout>
+</RelativeLayout>
