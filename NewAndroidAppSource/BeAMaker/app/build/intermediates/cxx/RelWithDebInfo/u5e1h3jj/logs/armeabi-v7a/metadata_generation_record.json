@@ -5,52 +5,7 @@
   "tag": "release|armeabi-v7a"
 },
 {
-  "message": "rebuilding JSON /Users/christian/Documents/GitHub/BEam-a-maker/NewAndroidAppSource/BeAMaker/app/.cxx/RelWithDebInfo/u5e1h3jj/armeabi-v7a/android_gradle_build.json due to:",
-  "file": "/Users/christian/Documents/GitHub/BEam-a-maker/NewAndroidAppSource/BeAMaker/app/CMakeLists.txt",
-  "tag": "release|armeabi-v7a"
-},
-{
-  "message": "- no fingerprint file, will remove stale configuration folder",
-  "file": "/Users/christian/Documents/GitHub/BEam-a-maker/NewAndroidAppSource/BeAMaker/app/CMakeLists.txt",
-  "tag": "release|armeabi-v7a"
-},
-{
-  "message": "removing stale contents from \u0027/Users/christian/Documents/GitHub/BEam-a-maker/NewAndroidAppSource/BeAMaker/app/.cxx/RelWithDebInfo/u5e1h3jj/armeabi-v7a\u0027",
-  "file": "/Users/christian/Documents/GitHub/BEam-a-maker/NewAndroidAppSource/BeAMaker/app/CMakeLists.txt",
-  "tag": "release|armeabi-v7a"
-},
-{
-  "message": "created folder \u0027/Users/christian/Documents/GitHub/BEam-a-maker/NewAndroidAppSource/BeAMaker/app/.cxx/RelWithDebInfo/u5e1h3jj/armeabi-v7a\u0027",
-  "file": "/Users/christian/Documents/GitHub/BEam-a-maker/NewAndroidAppSource/BeAMaker/app/CMakeLists.txt",
-  "tag": "release|armeabi-v7a"
-},
-{
-  "message": "executing cmake /Users/christian/Library/Android/sdk/cmake/3.22.1/bin/cmake \\\n  -H/Users/christian/Documents/GitHub/BEam-a-maker/NewAndroidAppSource/BeAMaker/app \\\n  -DCMAKE_SYSTEM_NAME\u003dAndroid \\\n  -DCMAKE_EXPORT_COMPILE_COMMANDS\u003dON \\\n  -DCMAKE_SYSTEM_VERSION\u003d24 \\\n  -DANDROID_PLATFORM\u003dandroid-24 \\\n  -DANDROID_ABI\u003darmeabi-v7a \\\n  -DCMAKE_ANDROID_ARCH_ABI\u003darmeabi-v7a \\\n  -DANDROID_NDK\u003d/Users/christian/Library/Android/sdk/ndk/27.0.12077973 \\\n  -DCMAKE_ANDROID_NDK\u003d/Users/christian/Library/Android/sdk/ndk/27.0.12077973 \\\n  -DCMAKE_TOOLCHAIN_FILE\u003d/Users/christian/Library/Android/sdk/ndk/27.0.12077973/build/cmake/android.toolchain.cmake \\\n  -DCMAKE_MAKE_PROGRAM\u003d/Users/christian/Library/Android/sdk/cmake/3.22.1/bin/ninja \\\n  -DCMAKE_LIBRARY_OUTPUT_DIRECTORY\u003d/Users/christian/Documents/GitHub/BEam-a-maker/NewAndroidAppSource/BeAMaker/app/build/intermediates/cxx/RelWithDebInfo/u5e1h3jj/obj/armeabi-v7a \\\n  -DCMAKE_RUNTIME_OUTPUT_DIRECTORY\u003d/Users/christian/Documents/GitHub/BEam-a-maker/NewAndroidAppSource/BeAMaker/app/build/intermediates/cxx/RelWithDebInfo/u5e1h3jj/obj/armeabi-v7a \\\n  -DCMAKE_BUILD_TYPE\u003dRelWithDebInfo \\\n  -B/Users/christian/Documents/GitHub/BEam-a-maker/NewAndroidAppSource/BeAMaker/app/.cxx/RelWithDebInfo/u5e1h3jj/armeabi-v7a \\\n  -GNinja \\\n  -DANDROID_STL\u003dc++_shared \\\n  \"-DCMAKE_SHARED_LINKER_FLAGS\u003d-Wl,-z,common-page-size\u003d16384 -Wl,-z,max-page-size\u003d16384\"\n",
-  "file": "/Users/christian/Documents/GitHub/BEam-a-maker/NewAndroidAppSource/BeAMaker/app/CMakeLists.txt",
-  "tag": "release|armeabi-v7a"
-},
-{
-  "message": "/Users/christian/Library/Android/sdk/cmake/3.22.1/bin/cmake \\\n  -H/Users/christian/Documents/GitHub/BEam-a-maker/NewAndroidAppSource/BeAMaker/app \\\n  -DCMAKE_SYSTEM_NAME\u003dAndroid \\\n  -DCMAKE_EXPORT_COMPILE_COMMANDS\u003dON \\\n  -DCMAKE_SYSTEM_VERSION\u003d24 \\\n  -DANDROID_PLATFORM\u003dandroid-24 \\\n  -DANDROID_ABI\u003darmeabi-v7a \\\n  -DCMAKE_ANDROID_ARCH_ABI\u003darmeabi-v7a \\\n  -DANDROID_NDK\u003d/Users/christian/Library/Android/sdk/ndk/27.0.12077973 \\\n  -DCMAKE_ANDROID_NDK\u003d/Users/christian/Library/Android/sdk/ndk/27.0.12077973 \\\n  -DCMAKE_TOOLCHAIN_FILE\u003d/Users/christian/Library/Android/sdk/ndk/27.0.12077973/build/cmake/android.toolchain.cmake \\\n  -DCMAKE_MAKE_PROGRAM\u003d/Users/christian/Library/Android/sdk/cmake/3.22.1/bin/ninja \\\n  -DCMAKE_LIBRARY_OUTPUT_DIRECTORY\u003d/Users/christian/Documents/GitHub/BEam-a-maker/NewAndroidAppSource/BeAMaker/app/build/intermediates/cxx/RelWithDebInfo/u5e1h3jj/obj/armeabi-v7a \\\n  -DCMAKE_RUNTIME_OUTPUT_DIRECTORY\u003d/Users/christian/Documents/GitHub/BEam-a-maker/NewAndroidAppSource/BeAMaker/app/build/intermediates/cxx/RelWithDebInfo/u5e1h3jj/obj/armeabi-v7a \\\n  -DCMAKE_BUILD_TYPE\u003dRelWithDebInfo \\\n  -B/Users/christian/Documents/GitHub/BEam-a-maker/NewAndroidAppSource/BeAMaker/app/.cxx/RelWithDebInfo/u5e1h3jj/armeabi-v7a \\\n  -GNinja \\\n  -DANDROID_STL\u003dc++_shared \\\n  \"-DCMAKE_SHARED_LINKER_FLAGS\u003d-Wl,-z,common-page-size\u003d16384 -Wl,-z,max-page-size\u003d16384\"\n",
-  "file": "/Users/christian/Documents/GitHub/BEam-a-maker/NewAndroidAppSource/BeAMaker/app/CMakeLists.txt",
-  "tag": "release|armeabi-v7a"
-},
-{
-  "message": "Received process result: 0",
-  "file": "/Users/christian/Documents/GitHub/BEam-a-maker/NewAndroidAppSource/BeAMaker/app/CMakeLists.txt",
-  "tag": "release|armeabi-v7a"
-},
-{
-  "message": "Exiting generation of /Users/christian/Documents/GitHub/BEam-a-maker/NewAndroidAppSource/BeAMaker/app/.cxx/RelWithDebInfo/u5e1h3jj/armeabi-v7a/compile_commands.json.bin normally",
-  "file": "/Users/christian/Documents/GitHub/BEam-a-maker/NewAndroidAppSource/BeAMaker/app/CMakeLists.txt",
-  "tag": "release|armeabi-v7a"
-},
-{
-  "message": "done executing cmake",
-  "file": "/Users/christian/Documents/GitHub/BEam-a-maker/NewAndroidAppSource/BeAMaker/app/CMakeLists.txt",
-  "tag": "release|armeabi-v7a"
-},
-{
-  "message": "hard linked /Users/christian/Documents/GitHub/BEam-a-maker/NewAndroidAppSource/BeAMaker/app/.cxx/RelWithDebInfo/u5e1h3jj/armeabi-v7a/compile_commands.json to /Users/christian/Documents/GitHub/BEam-a-maker/NewAndroidAppSource/BeAMaker/app/.cxx/tools/release/armeabi-v7a/compile_commands.json",
+  "message": "JSON \u0027/Users/christian/Documents/GitHub/BEam-a-maker/NewAndroidAppSource/BeAMaker/app/.cxx/RelWithDebInfo/u5e1h3jj/armeabi-v7a/android_gradle_build.json\u0027 was up-to-date",
   "file": "/Users/christian/Documents/GitHub/BEam-a-maker/NewAndroidAppSource/BeAMaker/app/CMakeLists.txt",
   "tag": "release|armeabi-v7a"
 },

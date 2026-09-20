@@ -22,6 +22,14 @@ import android.widget.TextView;
 import android.view.animation.Animation;
 import android.view.animation.RotateAnimation;
 import android.content.res.Configuration;
+import android.view.View;
+import android.view.WindowInsets;
+import android.view.WindowInsetsController;
+import android.os.Vibrator;
+import android.os.VibrationEffect;
+import android.widget.ProgressBar;
+import android.os.Build;
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 import androidx.annotation.NonNull;
 
 import java.io.File;
@@ -49,7 +57,9 @@ public class MainActivity extends Activity {
     private static boolean startedNodeAlready = false;
 
     private WebView webView;
+    private SwipeRefreshLayout swipeRefreshLayout;
     private TextView statusText;
+    private ProgressBar progressBar;
     private LinearLayout portraitLockView;
 
     @Override
@@ -58,6 +68,7 @@ public class MainActivity extends Activity {
 
         FrameLayout root = new FrameLayout(this);
 
+        swipeRefreshLayout = new SwipeRefreshLayout(this);
         webView = new WebView(this);
         webView.getSettings().setJavaScriptEnabled(true);
         webView.getSettings().setDomStorageEnabled(true);
@@ -73,19 +84,37 @@ public class MainActivity extends Activity {
                 return true;
             }
         });
-        root.addView(webView, new FrameLayout.LayoutParams(
+
+        swipeRefreshLayout.addView(webView, new FrameLayout.LayoutParams(
                 FrameLayout.LayoutParams.MATCH_PARENT, FrameLayout.LayoutParams.MATCH_PARENT));
-        webView.setVisibility(android.view.View.GONE);
+        swipeRefreshLayout.setOnRefreshListener(() -> {
+            webView.reload();
+            new Handler(Looper.getMainLooper()).postDelayed(() -> swipeRefreshLayout.setRefreshing(false), 1000);
+        });
+
+        root.addView(swipeRefreshLayout, new FrameLayout.LayoutParams(
+                FrameLayout.LayoutParams.MATCH_PARENT, FrameLayout.LayoutParams.MATCH_PARENT));
+        swipeRefreshLayout.setVisibility(android.view.View.GONE);
 
         statusText = new TextView(this);
         statusText.setText("Starting Be a Maker\u2026");
         statusText.setGravity(android.view.Gravity.CENTER);
         statusText.setTextSize(18);
+
+        progressBar = new ProgressBar(this, null, android.R.attr.progressBarStyleHorizontal);
+        progressBar.setIndeterminate(true);
+        FrameLayout.LayoutParams progressParams = new FrameLayout.LayoutParams(
+                FrameLayout.LayoutParams.MATCH_PARENT, 20);
+        progressParams.gravity = android.view.Gravity.CENTER;
+        progressParams.topMargin = 100;
+
         root.addView(statusText, new FrameLayout.LayoutParams(
                 FrameLayout.LayoutParams.MATCH_PARENT, FrameLayout.LayoutParams.MATCH_PARENT));
+        root.addView(progressBar, progressParams);
 
         setupPortraitLockView(root);
         checkOrientation(getResources().getConfiguration().orientation);
+        enableImmersiveMode();
 
         setContentView(root);
 
@@ -187,6 +216,43 @@ public class MainActivity extends Activity {
 
     // ---- Wait for the local server, then show the WebView -----------------------
 
+    @Override
+    public void onWindowFocusChanged(boolean hasFocus) {
+        super.onWindowFocusChanged(hasFocus);
+        if (hasFocus) {
+            enableImmersiveMode();
+        }
+    }
+
+    private void enableImmersiveMode() {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
+            final WindowInsetsController controller = getWindow().getInsetsController();
+            if (controller != null) {
+                controller.hide(WindowInsets.Type.statusBars() | WindowInsets.Type.navigationBars());
+                controller.setSystemBarsBehavior(WindowInsetsController.BEHAVIOR_SHOW_TRANSIENT_BARS_BY_SWIPE);
+            }
+        } else {
+            getWindow().getDecorView().setSystemUiVisibility(
+                    View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY
+                            | View.SYSTEM_UI_FLAG_LAYOUT_STABLE
+                            | View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION
+                            | View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
+                            | View.SYSTEM_UI_FLAG_HIDE_NAVIGATION
+                            | View.SYSTEM_UI_FLAG_FULLSCREEN);
+        }
+    }
+
+    private void triggerHapticFeedback() {
+        Vibrator v = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
+        if (v != null && v.hasVibrator()) {
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+                v.vibrate(VibrationEffect.createOneShot(50, VibrationEffect.DEFAULT_AMPLITUDE));
+            } else {
+                v.vibrate(50);
+            }
+        }
+    }
+
     private void waitForServerThenLoadWebView() {
         new Thread(() -> {
             boolean up = false;
@@ -202,12 +268,15 @@ public class MainActivity extends Activity {
             final boolean serverUp = up;
             new Handler(Looper.getMainLooper()).post(() -> {
                 if (serverUp) {
+                    triggerHapticFeedback();
                     webView.loadUrl(SERVER_URL);
-                    webView.setVisibility(android.view.View.VISIBLE);
+                    swipeRefreshLayout.setVisibility(android.view.View.VISIBLE);
                     statusText.setVisibility(android.view.View.GONE);
+                    progressBar.setVisibility(android.view.View.GONE);
                 } else {
                     statusText.setText("Could not start the local server. Check Logcat (tag: "
                             + TAG + " / BEAMAKER-NODE) for errors.");
+                    progressBar.setVisibility(android.view.View.GONE);
                 }
             });
         }).start();

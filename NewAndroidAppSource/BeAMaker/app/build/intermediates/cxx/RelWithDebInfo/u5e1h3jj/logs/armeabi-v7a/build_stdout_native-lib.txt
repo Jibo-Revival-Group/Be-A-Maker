@@ -1,3 +1,2 @@
 ninja: Entering directory `/Users/christian/Documents/GitHub/BEam-a-maker/NewAndroidAppSource/BeAMaker/app/.cxx/RelWithDebInfo/u5e1h3jj/armeabi-v7a'
-[1/2] Building CXX object CMakeFiles/native-lib.dir/src/main/cpp/native-lib.cpp.o
-[2/2] Linking CXX shared library ../../../../build/intermediates/cxx/RelWithDebInfo/u5e1h3jj/obj/armeabi-v7a/libnative-lib.so
+ninja: no work to do.

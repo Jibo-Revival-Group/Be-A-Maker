@@ -2,6 +2,15 @@
 
 All notable changes to the **Be a Maker** project will be documented in this file.
 
+## [1.2.0] - 2025-05-22
+
+### Added
+- **Pull-to-Refresh**: Integrated `SwipeRefreshLayout` allowing users to reload the interface by pulling down, which is useful for recovering from network or connection issues.
+- **Immersive Sticky Mode**: The app now utilizes the full screen by hiding system bars, providing more space for coding and creation.
+- **Haptic Feedback**: Added a subtle vibration effect when the local Node.js server starts successfully, providing physical confirmation of the app's readiness.
+- **Visual Loading Indicator**: Replaced static text with a Material Design progress bar during the initial server startup and asset copying process.
+- **Vibration Permission**: Added `android.permission.VIBRATE` to the manifest.
+
 ## [1.1.0] - 2025-05-22
 
 ### Added
