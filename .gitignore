@@ -1,5 +1,5 @@
 # apktool rebuild output
-build/
+build/reports/problems
 dist/
 *.apk
 *.idsig
