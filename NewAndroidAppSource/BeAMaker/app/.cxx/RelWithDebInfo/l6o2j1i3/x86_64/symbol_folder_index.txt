@@ -1,0 +1,1 @@
+/Users/christian/Downloads/BeAMaker-android-project/BeAMaker/app/build/intermediates/cxx/RelWithDebInfo/l6o2j1i3/obj/x86_64

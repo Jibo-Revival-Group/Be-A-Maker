@@ -1,0 +1,7 @@
+[
+{
+  "directory": "/Users/christian/Downloads/BeAMaker-android-project/BeAMaker/app/.cxx/Debug/6z184p4j/x86_64",
+  "command": "/Users/christian/Library/Android/sdk/ndk/26.1.10909125/toolchains/llvm/prebuilt/darwin-x86_64/bin/clang++ --target=x86_64-none-linux-android24 --sysroot=/Users/christian/Library/Android/sdk/ndk/26.1.10909125/toolchains/llvm/prebuilt/darwin-x86_64/sysroot -Dnative_lib_EXPORTS -I/Users/christian/Downloads/BeAMaker-android-project/BeAMaker/app/libnode/include/node -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security   -fno-limit-debug-info  -fPIC -o CMakeFiles/native-lib.dir/src/main/cpp/native-lib.cpp.o -c /Users/christian/Downloads/BeAMaker-android-project/BeAMaker/app/src/main/cpp/native-lib.cpp",
+  "file": "/Users/christian/Downloads/BeAMaker-android-project/BeAMaker/app/src/main/cpp/native-lib.cpp"
+}
+]

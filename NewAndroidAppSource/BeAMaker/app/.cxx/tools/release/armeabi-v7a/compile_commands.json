@@ -1,0 +1,7 @@
+[
+{
+  "directory": "/Users/christian/Downloads/BeAMaker-android-project/BeAMaker/app/.cxx/RelWithDebInfo/l6o2j1i3/armeabi-v7a",
+  "command": "/Users/christian/Library/Android/sdk/ndk/27.0.12077973/toolchains/llvm/prebuilt/darwin-x86_64/bin/clang++ --target=armv7-none-linux-androideabi24 --sysroot=/Users/christian/Library/Android/sdk/ndk/27.0.12077973/toolchains/llvm/prebuilt/darwin-x86_64/sysroot -Dnative_lib_EXPORTS -I/Users/christian/Downloads/BeAMaker-android-project/BeAMaker/app/libnode/include/node -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -march=armv7-a -mthumb -Wformat -Werror=format-security   -O2 -g -DNDEBUG -fPIC -o CMakeFiles/native-lib.dir/src/main/cpp/native-lib.cpp.o -c /Users/christian/Downloads/BeAMaker-android-project/BeAMaker/app/src/main/cpp/native-lib.cpp",
+  "file": "/Users/christian/Downloads/BeAMaker-android-project/BeAMaker/app/src/main/cpp/native-lib.cpp"
+}
+]

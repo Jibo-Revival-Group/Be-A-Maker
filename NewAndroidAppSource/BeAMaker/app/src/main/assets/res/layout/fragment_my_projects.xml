@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout n0:background="@drawable/dw_background_menu" n0:fitsSystemWindows="true" n0:layout_width="match_parent" n0:layout_height="match_parent"
+  xmlns:n0="http://schemas.android.com/apk/res/android">
+    <include n0:id="@id/tBarProjects" layout="@layout/lay_toolbar_my_projects" />
+    <LinearLayout n0:orientation="vertical" n0:id="@id/llTitle" n0:layout_width="match_parent" n0:layout_height="wrap_content" n0:layout_below="@id/tBarProjects" n0:paddingStart="@dimen/marginVeryBig" n0:paddingEnd="@dimen/marginVeryBig">
+        <View n0:id="@id/whiteLine" n0:background="@color/colorWhite" n0:layout_width="30.0dp" n0:layout_height="2.5dp" />
+        <TextView n0:textSize="@dimen/font18" n0:textColor="@color/colorWhite" n0:id="@id/tvTileProjects" n0:paddingBottom="@dimen/marginSmall" n0:layout_width="wrap_content" n0:layout_height="wrap_content" n0:text="@string/menu_item_projects" fontPath="fonts/Hanken-Book.ttf" />
+    </LinearLayout>
+    <android.support.v7.widget.RecyclerView n0:orientation="vertical" n0:id="@id/rvProjects" n0:layout_width="match_parent" n0:layout_height="match_parent" n0:layout_marginTop="@dimen/marginSmall" n0:layout_below="@id/llTitle" n0:paddingStart="@dimen/marginVeryBig" n0:paddingEnd="@dimen/marginVeryBig" />
+    <RelativeLayout n0:id="@id/rlAnimAdd" n0:background="@color/colorOverlay" n0:visibility="gone" n0:layout_width="match_parent" n0:layout_height="match_parent">
+        <com.airbnb.lottie.LottieAnimationView n0:id="@id/laAddProj" n0:layout_width="wrap_content" n0:layout_height="wrap_content" n0:scaleType="centerInside" n0:layout_centerInParent="true" n1:lottie_autoPlay="false" n1:lottie_fileName="ok_jibo.json" n1:lottie_loop="false"
+          xmlns:n1="http://schemas.android.com/apk/res-auto" />
+        <TextView n0:textSize="@dimen/font22" n0:textColor="@color/colorWhite" n0:gravity="center" n0:id="@id/tvAnimAddProject" n0:layout_width="match_parent" n0:layout_height="wrap_content" n0:layout_marginBottom="@dimen/marginBig" n0:text="@string/tvProjectAdded" n0:layout_alignParentBottom="true" n0:layout_centerHorizontal="true" fontPath="fonts/Hanken-Book.ttf" />
+    </RelativeLayout>
+    <RelativeLayout n0:id="@id/rlAnimDel" n0:background="@color/colorOverlay" n0:visibility="gone" n0:layout_width="match_parent" n0:layout_height="match_parent">
+        <com.airbnb.lottie.LottieAnimationView n0:id="@id/laDeleteProj" n0:layout_width="wrap_content" n0:layout_height="wrap_content" n0:scaleType="centerInside" n0:layout_centerInParent="true" n2:lottie_autoPlay="false" n2:lottie_fileName="delete_jibo.json" n2:lottie_loop="false"
+          xmlns:n2="http://schemas.android.com/apk/res-auto" />
+        <TextView n0:textSize="@dimen/font30" n0:textColor="@color/colorWhite" n0:gravity="center" n0:id="@id/tvAnimDelProject" n0:layout_width="match_parent" n0:layout_height="wrap_content" n0:layout_marginBottom="@dimen/marginBig" n0:text="@string/tvProjectDeleted" n0:layout_alignParentBottom="true" n0:layout_centerHorizontal="true" fontPath="fonts/Hanken-Book.ttf" />
+    </RelativeLayout>
+</RelativeLayout>

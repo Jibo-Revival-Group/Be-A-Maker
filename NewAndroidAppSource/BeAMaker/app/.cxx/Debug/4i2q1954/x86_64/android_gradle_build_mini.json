@@ -1,0 +1,29 @@
+{
+  "buildFiles": [
+    "/Users/christian/Downloads/BeAMaker-android-project/BeAMaker/app/CMakeLists.txt"
+  ],
+  "cleanCommandsComponents": [
+    [
+      "/Users/christian/Library/Android/sdk/cmake/3.22.1/bin/ninja",
+      "-C",
+      "/Users/christian/Downloads/BeAMaker-android-project/BeAMaker/app/.cxx/Debug/4i2q1954/x86_64",
+      "clean"
+    ]
+  ],
+  "buildTargetsCommandComponents": [
+    "/Users/christian/Library/Android/sdk/cmake/3.22.1/bin/ninja",
+    "-C",
+    "/Users/christian/Downloads/BeAMaker-android-project/BeAMaker/app/.cxx/Debug/4i2q1954/x86_64",
+    "{LIST_OF_TARGETS_TO_BUILD}"
+  ],
+  "libraries": {
+    "native-lib::@6890427a1f51a3e7e1df": {
+      "artifactName": "native-lib",
+      "abi": "x86_64",
+      "output": "/Users/christian/Downloads/BeAMaker-android-project/BeAMaker/app/build/intermediates/cxx/Debug/4i2q1954/obj/x86_64/libnative-lib.so",
+      "runtimeFiles": [
+        "/Users/christian/Downloads/BeAMaker-android-project/BeAMaker/app/libnode/bin/x86_64/libnode.so"
+      ]
+    }
+  }
+}

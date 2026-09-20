@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout n0:layout_width="match_parent" n0:layout_height="match_parent"
+  xmlns:n0="http://schemas.android.com/apk/res/android">
+    <com.everis.jibo.beamaker.utils.parallax.ParallaxImageView n0:id="@id/ivBg" n0:layout_width="match_parent" n0:layout_height="match_parent" n0:src="@mipmap/splash_bg" n0:contentDescription="@null" n1:motionTiltSensitivity="0.7"
+      xmlns:n1="http://schemas.android.com/apk/res-auto" />
+    <ImageView n0:id="@id/ivPiezas" n0:layout_width="250.0dp" n0:layout_height="wrap_content" n0:layout_marginTop="@dimen/marginVeryBig" n0:src="@mipmap/piezas" n0:contentDescription="@null" n0:layout_marginStart="@dimen/marginVeryVeryBig" />
+    <ImageView n0:id="@id/ivMain" n0:layout_width="match_parent" n0:layout_height="wrap_content" n0:layout_marginTop="@dimen/marginBig" n0:src="@mipmap/img_main" n0:layout_above="@id/tvLine" n0:layout_centerHorizontal="true" n0:contentDescription="@null" />
+    <ImageView n0:id="@id/ivJibo" n0:layout_width="250.0dp" n0:layout_height="250.0dp" n0:layout_marginBottom="@dimen/marginMedium" n0:src="@mipmap/jibo" n0:layout_above="@id/tvLine" n0:layout_centerHorizontal="true" n0:contentDescription="@null" />
+    <com.jlsh.bubleview.view.BubbleView n0:id="@id/bViewConecting" n0:layout_width="match_parent" n0:layout_height="match_parent" n2:bubble_height="@dimen/bubble_oval" n2:bubble_width="@dimen/bubble_oval"
+      xmlns:n2="http://schemas.android.com/apk/res-auto" />
+    <TextView n0:textSize="@dimen/font22" n0:textColor="@color/colorWhite" n0:gravity="center" n0:id="@id/tvLine" n0:layout_width="match_parent" n0:layout_height="wrap_content" n0:layout_margin="@dimen/marginSmallMedium" n0:text="@string/tv_tutorial_start_line1" n0:layout_above="@id/tvLine2" fontPath="fonts/Hanken-Book.ttf" />
+    <TextView n0:textSize="@dimen/font16" n0:textColor="@color/colorWhite" n0:gravity="center" n0:id="@id/tvLine2" n0:layout_width="match_parent" n0:layout_height="wrap_content" n0:layout_margin="@dimen/marginSmallMedium" n0:text="@string/tv_tutorial_start_line2" n0:layout_above="@id/llContent" fontPath="fonts/Hanken-Light.ttf" />
+    <LinearLayout n0:gravity="center" n0:orientation="horizontal" n0:id="@id/llContent" n0:layout_width="match_parent" n0:layout_height="wrap_content" n0:layout_margin="@dimen/marginSmallMedium" n0:layout_above="@id/bSign">
+        <TextView n0:textSize="@dimen/font16" n0:textColor="@color/colorWhite" n0:gravity="center" n0:id="@id/tvLine3" n0:layout_width="wrap_content" n0:layout_height="wrap_content" n0:text="@string/tv_tutorial_start_line3" fontPath="fonts/Hanken-Light.ttf" />
+        <RelativeLayout n0:layout_width="wrap_content" n0:layout_height="wrap_content" n0:layout_marginStart="@dimen/marginSmallMedium">
+            <ImageView n0:id="@id/ivLearn" n0:layout_width="200.0dp" n0:layout_height="wrap_content" n0:src="@mipmap/ico_learn_play" />
+            <TextView n0:textSize="@dimen/font16" n0:textColor="#ffffff" n0:gravity="center" n0:paddingLeft="@dimen/marginMedium" n0:layout_width="160.0dp" n0:layout_height="wrap_content" n0:text="Learn how to play" n0:layout_centerInParent="true" fontPath="fonts/Hanken-Book.ttf" />
+        </RelativeLayout>
+    </LinearLayout>
+    <Button n0:textSize="@dimen/font16" n0:textColor="@color/colorOverlay" n0:id="@id/bSign" n0:background="@drawable/dw_button_tutorial" n0:layout_width="250.0dp" n0:layout_height="wrap_content" n0:layout_marginTop="@dimen/marginMedium" n0:layout_marginBottom="@dimen/marginMedium" n0:text="@string/tv_tutorial_start_line4" n0:layout_alignParentBottom="true" n0:layout_centerHorizontal="true" fontPath="fonts/Hanken-Light.ttf" />
+</RelativeLayout>

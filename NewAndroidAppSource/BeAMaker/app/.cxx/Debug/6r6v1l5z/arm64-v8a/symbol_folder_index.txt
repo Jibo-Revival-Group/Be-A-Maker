@@ -1,0 +1,1 @@
+/Users/christian/Downloads/BeAMaker-android-project/BeAMaker/app/build/intermediates/cxx/Debug/6r6v1l5z/obj/arm64-v8a

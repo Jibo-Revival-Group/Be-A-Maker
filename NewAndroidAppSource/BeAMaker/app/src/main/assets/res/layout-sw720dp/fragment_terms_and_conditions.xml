@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout n0:layout_width="match_parent" n0:layout_height="match_parent"
+  xmlns:n0="http://schemas.android.com/apk/res/android">
+    <ImageView n0:id="@id/ivBackground" n0:layout_width="match_parent" n0:layout_height="match_parent" n0:contentDescription="@null" n1:srcCompat="@drawable/dw_terms_condition_bg"
+      xmlns:n1="http://schemas.android.com/apk/res-auto" />
+    <RelativeLayout n0:id="@id/rlRocket" n0:padding="@dimen/marginVeryBig" n0:layout_width="match_parent" n0:layout_height="match_parent" n0:layout_above="@id/rlButtons">
+        <ImageView n0:id="@id/ivRocket" n0:fitsSystemWindows="true" n0:layout_width="match_parent" n0:layout_height="match_parent" n0:src="@mipmap/intro_cohete" />
+    </RelativeLayout>
+    <com.jlsh.bubleview.view.BubbleView n0:id="@id/bView" n0:layout_width="match_parent" n0:layout_height="match_parent" n2:bubble_icon="@mipmap/ic_star"
+      xmlns:n2="http://schemas.android.com/apk/res-auto" />
+    <LinearLayout n0:orientation="vertical" n0:id="@id/rlButtons" n0:padding="@dimen/marginMedium" n0:layout_width="match_parent" n0:layout_height="wrap_content" n0:layout_alignParentBottom="true">
+        <LinearLayout n0:layout_gravity="center" n0:layout_width="wrap_content" n0:layout_height="wrap_content" n0:layout_marginBottom="10.0dp">
+            <android.support.v7.widget.SwitchCompat n0:theme="@style/SwitchCompatTheme" n0:id="@id/switchTerms" n0:layout_width="wrap_content" n0:layout_height="wrap_content" n0:checked="false" />
+            <TextView n0:textSize="@dimen/font20" n0:textColor="@color/colorWhite" n0:id="@id/tvTermsAccept" n0:layout_width="wrap_content" n0:layout_height="wrap_content" n0:text="@string/tv_terms_conditions_switch" n0:layout_marginStart="5.0dp" fontPath="fonts/Hanken-Light.ttf" />
+        </LinearLayout>
+        <Button n0:enabled="false" n0:textSize="@dimen/font20" n0:textColor="@drawable/dw_button_text_connect_selector" n0:layout_gravity="center" n0:id="@id/bTermsConnect" n0:background="@drawable/dw_button_connect_selector" n0:layout_width="wrap_content" n0:layout_height="wrap_content" n0:layout_margin="@dimen/marginMedium" n0:text="@string/tv_terms_conditions_button_connect" n0:paddingStart="@dimen/marginVeryVeryBig" n0:paddingEnd="@dimen/marginVeryVeryBig" fontPath="fonts/Hanken-Book.ttf" />
+        <TextView n0:textSize="@dimen/font20" n0:textColor="@color/colorWhite" n0:layout_gravity="center" n0:id="@id/tvTermsInfo" n0:padding="@dimen/marginMedium" n0:layout_width="wrap_content" n0:layout_height="wrap_content" n0:text="@string/tv_terms_conditions_info" fontPath="fonts/Hanken-Light.ttf" />
+    </LinearLayout>
+</RelativeLayout>

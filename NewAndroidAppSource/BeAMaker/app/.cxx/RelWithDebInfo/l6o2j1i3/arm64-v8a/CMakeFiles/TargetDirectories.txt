@@ -1,0 +1,3 @@
+/Users/christian/Downloads/BeAMaker-android-project/BeAMaker/app/.cxx/RelWithDebInfo/l6o2j1i3/arm64-v8a/CMakeFiles/native-lib.dir
+/Users/christian/Downloads/BeAMaker-android-project/BeAMaker/app/.cxx/RelWithDebInfo/l6o2j1i3/arm64-v8a/CMakeFiles/edit_cache.dir
+/Users/christian/Downloads/BeAMaker-android-project/BeAMaker/app/.cxx/RelWithDebInfo/l6o2j1i3/arm64-v8a/CMakeFiles/rebuild_cache.dir

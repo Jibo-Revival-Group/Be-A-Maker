@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout n0:orientation="vertical" n0:layout_width="match_parent" n0:layout_height="match_parent"
+  xmlns:n0="http://schemas.android.com/apk/res/android">
+    <ImageView n0:id="@id/ivBackground" n0:layout_width="match_parent" n0:layout_height="match_parent" n0:src="@mipmap/how_play_head_bg" n0:scaleType="centerCrop" n0:contentDescription="@null" />
+    <ImageView n0:id="@id/ivJibo" n0:layout_width="match_parent" n0:layout_height="match_parent" n0:src="@mipmap/how_play_head_jibo" n0:contentDescription="@null" />
+    <RelativeLayout n0:layout_width="match_parent" n0:layout_height="200.0dp">
+        <TextView n0:textSize="@dimen/font40" n0:textColor="@color/colorWhite" n0:gravity="center" n0:id="@id/tvTitle" n0:layout_width="wrap_content" n0:layout_height="wrap_content" n0:text="@string/tv_tutorial_1" n0:layout_centerInParent="true" fontPath="fonts/Hanken-Book.ttf" />
+        <ImageView n0:id="@id/ivClose" n0:layout_width="wrap_content" n0:layout_height="wrap_content" n0:layout_marginTop="@dimen/marginVeryBig" n0:src="@mipmap/close_icon_white" n0:contentDescription="@null" n0:layout_marginEnd="@dimen/marginBig" n0:layout_alignParentEnd="true" />
+    </RelativeLayout>
+</FrameLayout>

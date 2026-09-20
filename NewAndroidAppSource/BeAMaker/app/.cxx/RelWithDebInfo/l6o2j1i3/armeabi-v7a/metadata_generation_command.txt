@@ -1,0 +1,20 @@
+                        -H/Users/christian/Downloads/BeAMaker-android-project/BeAMaker/app
+-DCMAKE_SYSTEM_NAME=Android
+-DCMAKE_EXPORT_COMPILE_COMMANDS=ON
+-DCMAKE_SYSTEM_VERSION=24
+-DANDROID_PLATFORM=android-24
+-DANDROID_ABI=armeabi-v7a
+-DCMAKE_ANDROID_ARCH_ABI=armeabi-v7a
+-DANDROID_NDK=/Users/christian/Library/Android/sdk/ndk/27.0.12077973
+-DCMAKE_ANDROID_NDK=/Users/christian/Library/Android/sdk/ndk/27.0.12077973
+-DCMAKE_TOOLCHAIN_FILE=/Users/christian/Library/Android/sdk/ndk/27.0.12077973/build/cmake/android.toolchain.cmake
+-DCMAKE_MAKE_PROGRAM=/Users/christian/Library/Android/sdk/cmake/3.22.1/bin/ninja
+-DCMAKE_LIBRARY_OUTPUT_DIRECTORY=/Users/christian/Downloads/BeAMaker-android-project/BeAMaker/app/build/intermediates/cxx/RelWithDebInfo/l6o2j1i3/obj/armeabi-v7a
+-DCMAKE_RUNTIME_OUTPUT_DIRECTORY=/Users/christian/Downloads/BeAMaker-android-project/BeAMaker/app/build/intermediates/cxx/RelWithDebInfo/l6o2j1i3/obj/armeabi-v7a
+-DCMAKE_BUILD_TYPE=RelWithDebInfo
+-B/Users/christian/Downloads/BeAMaker-android-project/BeAMaker/app/.cxx/RelWithDebInfo/l6o2j1i3/armeabi-v7a
+-GNinja
+-DANDROID_STL=c++_shared
+-DCMAKE_SHARED_LINKER_FLAGS=-Wl,-z,max-page-size=16384
+                        Build command args: []
+                        Version: 2

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout n0:orientation="vertical" n0:background="@drawable/dw_background_menu" n0:fitsSystemWindows="true" n0:layout_width="match_parent" n0:layout_height="match_parent"
+  xmlns:n0="http://schemas.android.com/apk/res/android">
+    <View n0:id="@id/space" n0:layout_width="match_parent" n0:layout_height="24.0dp" />
+    <LinearLayout n0:orientation="horizontal" n0:id="@id/llButtonClose" n0:layout_width="match_parent" n0:layout_height="?actionBarSize" n0:layout_below="@id/space">
+        <ImageView n0:layout_gravity="center_vertical" n0:id="@id/iv_menu_close_button" n0:layout_width="wrap_content" n0:layout_height="wrap_content" n0:layout_marginLeft="@dimen/marginMedium" n0:src="@mipmap/close_icon_white" />
+    </LinearLayout>
+    <android.support.v7.widget.RecyclerView n0:layout_gravity="start" n0:id="@id/rvMenu" n0:layout_width="match_parent" n0:layout_height="match_parent" n0:divider="@android:color/transparent" n0:dividerHeight="0.0dp" n0:choiceMode="singleChoice" n0:layout_above="@id/tvSignOut" n0:layout_below="@id/llButtonClose" />
+    <TextView n0:textSize="@dimen/font16" n0:textColor="@color/colorWhite" n0:id="@id/tvSignOut" n0:focusable="true" n0:clickable="true" n0:layout_width="wrap_content" n0:layout_height="wrap_content" n0:text="@string/menu_button_sing_out" n0:layout_above="@id/bDisconectJibo" n0:layout_centerHorizontal="true" />
+    <Button n0:textColor="@color/colorWhite" n0:id="@id/bDisconectJibo" n0:background="@drawable/dw_toolbar_button_edit_enabled" n0:layout_width="280.0dp" n0:layout_height="wrap_content" n0:layout_margin="@dimen/marginMediumSmall" n0:text="@string/menu_button_disconnect" n0:layout_alignParentBottom="true" n0:layout_centerHorizontal="true" fontPath="fonts/Hanken-Book.ttf" />
+</RelativeLayout>

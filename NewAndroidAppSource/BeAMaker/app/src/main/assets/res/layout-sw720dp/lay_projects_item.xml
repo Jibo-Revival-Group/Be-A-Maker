@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout n0:gravity="center" n0:layout_gravity="center" n0:id="@id/flRoot" n0:layout_width="match_parent" n0:layout_height="wrap_content" n0:layout_marginBottom="@dimen/marginBig"
+  xmlns:n0="http://schemas.android.com/apk/res/android">
+    <RelativeLayout n0:orientation="vertical" n0:id="@id/rlImage" n0:layout_width="@dimen/wProjectItem" n0:layout_height="@dimen/hProjectItem" n0:layout_alignParentTop="true" n0:layout_centerHorizontal="true">
+        <ImageView n0:id="@id/ivItemProject" n0:layout_width="match_parent" n0:layout_height="match_parent" n0:src="@mipmap/project_a" n0:layout_alignParentTop="true" n0:contentDescription="@null" />
+        <ImageButton n0:id="@id/bTrash" n0:background="@color/colorTransparent" n0:layout_width="@dimen/wTrash" n0:layout_height="@dimen/hTrash" n0:src="@mipmap/delete_icon" n0:scaleType="fitXY" n0:contentDescription="@null" n0:layout_alignParentEnd="true" />
+    </RelativeLayout>
+    <LinearLayout n0:orientation="vertical" n0:id="@id/llText" n0:padding="@dimen/marginSmall" n0:layout_width="match_parent" n0:layout_height="wrap_content" n0:layout_below="@id/rlImage">
+        <TextView n0:textSize="@dimen/font20" n0:textColor="@color/colorWhite" n0:gravity="center" n0:id="@id/tvProjectName" n0:layout_width="match_parent" n0:layout_height="wrap_content" n0:text="@string/tvAddProjectItem" fontPath="fonts/Hanken-Book.ttf" />
+        <TextView n0:textSize="@dimen/font20" n0:textColor="@color/colorWhite" n0:gravity="center" n0:id="@id/tvDate" n0:layout_width="match_parent" n0:layout_height="wrap_content" n0:text="21/03/2018 11:19" fontPath="fonts/Hanken-Light.ttf" />
+    </LinearLayout>
+</RelativeLayout>

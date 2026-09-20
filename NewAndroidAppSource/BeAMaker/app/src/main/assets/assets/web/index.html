@@ -1,0 +1,39 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Scratch VM Playground</title>
+    <link rel="stylesheet" href="./playground/playground.css">
+    <link rel="stylesheet" href="./playground/zenburn.css">
+    <script
+        src="https://code.jquery.com/jquery-3.2.1.js"
+        integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="
+        crossorigin="anonymous">
+    </script>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+</head>
+<body>
+
+    <div id="projectButtons">
+        <img id="greenflag" src="./playground/media/green-flag.svg" width="30px" margin="4px"/>
+        <img id="stopall" src="./playground/media/icons/control_stop.svg" width="30px" margin="4px"/>
+        <span id="debug"></span>
+    </div>
+
+    <div id="blocks"></div>
+    <!-- Media lists -->
+    <script src="./playground/media-lists.js"></script>
+    <!-- Storage module -->
+    <script src="./playground/scratch-storage.js"></script>
+    <!-- FPS counter, Syntax highlighter, Blocks, Renderer -->
+    <script src="./playground/vendor.js"></script>
+    <!-- VM Worker -->
+    <script src="./playground/scratch-vm.js"></script>
+    <!-- Playground -->
+    <script src="./playground/playground.js"></script>
+
+    
+</body>
+</html>

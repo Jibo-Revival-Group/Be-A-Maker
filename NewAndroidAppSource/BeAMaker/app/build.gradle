@@ -1,0 +1,69 @@
+apply plugin: 'com.android.application'
+
+android {
+    namespace 'com.beamaker.app'
+    compileSdk 34
+    buildToolsVersion "34.0.0"
+
+    defaultConfig {
+        applicationId "com.beamaker.app"
+        minSdkVersion 24
+        targetSdkVersion 34
+        versionCode 1
+        versionName "1.0"
+
+        // The prebuilt libnode.so was built with the c++_shared STL.
+        externalNativeBuild {
+            cmake {
+                cppFlags ""
+                arguments "-DANDROID_STL=c++_shared", "-DCMAKE_SHARED_LINKER_FLAGS=-Wl,-z,max-page-size=16384"
+            }
+        }
+
+        // Match whichever ABIs you copied into app/libnode/bin/.
+        ndk {
+            abiFilters "armeabi-v7a", "arm64-v8a", "x86_64"
+        }
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+        }
+    }
+
+    externalNativeBuild {
+        cmake {
+            path "CMakeLists.txt"
+        }
+    }
+
+    // Package the prebuilt libnode.so files that you copied into app/libnode/bin/<ABI>/.
+    sourceSets {
+        main {
+            jniLibs.srcDirs = ['libnode/bin/']
+        }
+    }
+
+    // The nodejs-project folder under assets can be large (npm modules);
+    // don't let AAPT try to compress files it doesn't need to.
+    androidResources {
+        noCompress += ['node']
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    packaging {
+        jniLibs {
+            useLegacyPackaging = false
+        }
+    }
+
+    dependencies {
+        implementation 'androidx.appcompat:appcompat:1.7.0'
+        implementation 'com.google.android.material:material:1.12.0'
+    }
+}
