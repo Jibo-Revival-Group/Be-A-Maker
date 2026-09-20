@@ -1,0 +1,40 @@
+{
+  "buildFiles": [
+    "/Users/christian/Documents/GitHub/BEam-a-maker/NewAndroidAppSource/BeAMaker/app/CMakeLists.txt"
+  ],
+  "cleanCommandsComponents": [
+    [
+      "/Users/christian/Library/Android/sdk/cmake/3.22.1/bin/ninja",
+      "-C",
+      "/Users/christian/Documents/GitHub/BEam-a-maker/NewAndroidAppSource/BeAMaker/app/.cxx/Debug/2o13322e/arm64-v8a",
+      "clean"
+    ]
+  ],
+  "buildTargetsCommandComponents": [
+    "/Users/christian/Library/Android/sdk/cmake/3.22.1/bin/ninja",
+    "-C",
+    "/Users/christian/Documents/GitHub/BEam-a-maker/NewAndroidAppSource/BeAMaker/app/.cxx/Debug/2o13322e/arm64-v8a",
+    "{LIST_OF_TARGETS_TO_BUILD}"
+  ],
+  "libraries": {
+    "native-lib::@6890427a1f51a3e7e1df": {
+      "toolchain": "toolchain",
+      "abi": "arm64-v8a",
+      "artifactName": "native-lib",
+      "output": "/Users/christian/Documents/GitHub/BEam-a-maker/NewAndroidAppSource/BeAMaker/app/build/intermediates/cxx/Debug/2o13322e/obj/arm64-v8a/libnative-lib.so",
+      "runtimeFiles": [
+        "/Users/christian/Documents/GitHub/BEam-a-maker/NewAndroidAppSource/BeAMaker/app/libnode/bin/arm64-v8a/libnode.so"
+      ]
+    }
+  },
+  "toolchains": {
+    "toolchain": {
+      "cCompilerExecutable": "/Users/christian/Library/Android/sdk/ndk/28.2.13676358/toolchains/llvm/prebuilt/darwin-x86_64/bin/clang.lld",
+      "cppCompilerExecutable": "/Users/christian/Library/Android/sdk/ndk/28.2.13676358/toolchains/llvm/prebuilt/darwin-x86_64/bin/clang++.lld"
+    }
+  },
+  "cFileExtensions": [],
+  "cppFileExtensions": [
+    "cpp"
+  ]
+}

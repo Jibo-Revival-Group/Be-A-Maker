@@ -1,4 +1,4 @@
-# Install script for directory: /Users/christian/Downloads/BeAMaker-android-project/BeAMaker/app
+# Install script for directory: /Users/christian/Documents/GitHub/BEam-a-maker/NewAndroidAppSource/BeAMaker/app
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -50,5 +50,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/Users/christian/Downloads/BeAMaker-android-project/BeAMaker/app/.cxx/Debug/4i2q1954/arm64-v8a/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/Users/christian/Documents/GitHub/BEam-a-maker/NewAndroidAppSource/BeAMaker/app/.cxx/Debug/4i2q1954/arm64-v8a/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

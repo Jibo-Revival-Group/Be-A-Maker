@@ -1,0 +1,1 @@
+/Users/christian/Documents/GitHub/BEam-a-maker/NewAndroidAppSource/BeAMaker/app/build/intermediates/cxx/Debug/2o13322e/obj/arm64-v8a

@@ -39,7 +39,7 @@ include CMakeFiles/rules.ninja
 #############################################
 # Logical path to working directory; prefix for absolute paths.
 
-cmake_ninja_workdir = /Users/christian/Downloads/BeAMaker-android-project/BeAMaker/app/.cxx/Debug/4i2q1954/arm64-v8a/
+cmake_ninja_workdir = /Users/christian/Documents/GitHub/BEam-a-maker/NewAndroidAppSource/BeAMaker/app/.cxx/Debug/4i2q1954/arm64-v8a/
 # =============================================================================
 # Object build statements for SHARED_LIBRARY target native-lib
 
@@ -49,11 +49,11 @@ cmake_ninja_workdir = /Users/christian/Downloads/BeAMaker-android-project/BeAMak
 
 build cmake_object_order_depends_target_native-lib: phony || CMakeFiles/native-lib.dir
 
-build CMakeFiles/native-lib.dir/src/main/cpp/native-lib.cpp.o: CXX_COMPILER__native-lib_Debug /Users/christian/Downloads/BeAMaker-android-project/BeAMaker/app/src/main/cpp/native-lib.cpp || cmake_object_order_depends_target_native-lib
+build CMakeFiles/native-lib.dir/src/main/cpp/native-lib.cpp.o: CXX_COMPILER__native-lib_Debug /Users/christian/Documents/GitHub/BEam-a-maker/NewAndroidAppSource/BeAMaker/app/src/main/cpp/native-lib.cpp || cmake_object_order_depends_target_native-lib
   DEFINES = -Dnative_lib_EXPORTS
   DEP_FILE = CMakeFiles/native-lib.dir/src/main/cpp/native-lib.cpp.o.d
   FLAGS = -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security   -fno-limit-debug-info  -fPIC
-  INCLUDES = -I/Users/christian/Downloads/BeAMaker-android-project/BeAMaker/app/libnode/include/node
+  INCLUDES = -I/Users/christian/Documents/GitHub/BEam-a-maker/NewAndroidAppSource/BeAMaker/app/libnode/include/node
   OBJECT_DIR = CMakeFiles/native-lib.dir
   OBJECT_FILE_DIR = CMakeFiles/native-lib.dir/src/main/cpp
   TARGET_COMPILE_PDB = CMakeFiles/native-lib.dir/
@@ -85,7 +85,7 @@ build ../../../../build/intermediates/cxx/Debug/4i2q1954/obj/arm64-v8a/libnative
 # Utility command for edit_cache
 
 build CMakeFiles/edit_cache.util: CUSTOM_COMMAND
-  COMMAND = cd /Users/christian/Downloads/BeAMaker-android-project/BeAMaker/app/.cxx/Debug/4i2q1954/arm64-v8a && /Users/christian/Library/Android/sdk/cmake/3.22.1/bin/ccmake -S/Users/christian/Downloads/BeAMaker-android-project/BeAMaker/app -B/Users/christian/Downloads/BeAMaker-android-project/BeAMaker/app/.cxx/Debug/4i2q1954/arm64-v8a
+  COMMAND = cd /Users/christian/Documents/GitHub/BEam-a-maker/NewAndroidAppSource/BeAMaker/app/.cxx/Debug/4i2q1954/arm64-v8a && /Users/christian/Library/Android/sdk/cmake/3.22.1/bin/ccmake -S/Users/christian/Documents/GitHub/BEam-a-maker/NewAndroidAppSource/BeAMaker/app -B/Users/christian/Documents/GitHub/BEam-a-maker/NewAndroidAppSource/BeAMaker/app/.cxx/Debug/4i2q1954/arm64-v8a
   DESC = Running CMake cache editor...
   pool = console
   restat = 1
@@ -97,7 +97,7 @@ build edit_cache: phony CMakeFiles/edit_cache.util
 # Utility command for rebuild_cache
 
 build CMakeFiles/rebuild_cache.util: CUSTOM_COMMAND
-  COMMAND = cd /Users/christian/Downloads/BeAMaker-android-project/BeAMaker/app/.cxx/Debug/4i2q1954/arm64-v8a && /Users/christian/Library/Android/sdk/cmake/3.22.1/bin/cmake --regenerate-during-build -S/Users/christian/Downloads/BeAMaker-android-project/BeAMaker/app -B/Users/christian/Downloads/BeAMaker-android-project/BeAMaker/app/.cxx/Debug/4i2q1954/arm64-v8a
+  COMMAND = cd /Users/christian/Documents/GitHub/BEam-a-maker/NewAndroidAppSource/BeAMaker/app/.cxx/Debug/4i2q1954/arm64-v8a && /Users/christian/Library/Android/sdk/cmake/3.22.1/bin/cmake --regenerate-during-build -S/Users/christian/Documents/GitHub/BEam-a-maker/NewAndroidAppSource/BeAMaker/app -B/Users/christian/Documents/GitHub/BEam-a-maker/NewAndroidAppSource/BeAMaker/app/.cxx/Debug/4i2q1954/arm64-v8a
   DESC = Running CMake to regenerate build system...
   pool = console
   restat = 1
@@ -117,7 +117,7 @@ build native-lib: phony ../../../../build/intermediates/cxx/Debug/4i2q1954/obj/a
 # =============================================================================
 
 #############################################
-# Folder: /Users/christian/Downloads/BeAMaker-android-project/BeAMaker/app/.cxx/Debug/4i2q1954/arm64-v8a
+# Folder: /Users/christian/Documents/GitHub/BEam-a-maker/NewAndroidAppSource/BeAMaker/app/.cxx/Debug/4i2q1954/arm64-v8a
 
 build all: phony ../../../../build/intermediates/cxx/Debug/4i2q1954/obj/arm64-v8a/libnative-lib.so
 
