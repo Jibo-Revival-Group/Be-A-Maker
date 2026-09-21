@@ -1,26 +1,34 @@
 [
     {
-        "merged": "com.beamaker.app-release-35:/mipmap-hdpi_ic_launcher.png.flat",
-        "source": "com.beamaker.app-main-36:/mipmap-hdpi/ic_launcher.png"
+        "merged": "com.beamaker.app-release-37:/xml_shortcuts.xml.flat",
+        "source": "com.beamaker.app-main-38:/xml/shortcuts.xml"
     },
     {
-        "merged": "com.beamaker.app-release-35:/mipmap-xxhdpi_ic_launcher.png.flat",
-        "source": "com.beamaker.app-main-36:/mipmap-xxhdpi/ic_launcher.png"
+        "merged": "com.beamaker.app-release-37:/mipmap-xxhdpi_ic_launcher.png.flat",
+        "source": "com.beamaker.app-main-38:/mipmap-xxhdpi/ic_launcher.png"
     },
     {
-        "merged": "com.beamaker.app-release-35:/mipmap-xhdpi_ic_launcher.png.flat",
-        "source": "com.beamaker.app-main-36:/mipmap-xhdpi/ic_launcher.png"
+        "merged": "com.beamaker.app-release-37:/xml_file_paths.xml.flat",
+        "source": "com.beamaker.app-main-38:/xml/file_paths.xml"
     },
     {
-        "merged": "com.beamaker.app-release-35:/mipmap_ic_launcher.png.flat",
-        "source": "com.beamaker.app-main-36:/mipmap/ic_launcher.png"
+        "merged": "com.beamaker.app-release-37:/mipmap_ic_launcher.png.flat",
+        "source": "com.beamaker.app-main-38:/mipmap/ic_launcher.png"
     },
     {
-        "merged": "com.beamaker.app-release-35:/mipmap-xxxhdpi_ic_launcher.png.flat",
-        "source": "com.beamaker.app-main-36:/mipmap-xxxhdpi/ic_launcher.png"
+        "merged": "com.beamaker.app-release-37:/mipmap-xxxhdpi_ic_launcher.png.flat",
+        "source": "com.beamaker.app-main-38:/mipmap-xxxhdpi/ic_launcher.png"
     },
     {
-        "merged": "com.beamaker.app-release-35:/mipmap-mdpi_ic_launcher.png.flat",
-        "source": "com.beamaker.app-main-36:/mipmap-mdpi/ic_launcher.png"
+        "merged": "com.beamaker.app-release-37:/mipmap-xhdpi_ic_launcher.png.flat",
+        "source": "com.beamaker.app-main-38:/mipmap-xhdpi/ic_launcher.png"
+    },
+    {
+        "merged": "com.beamaker.app-release-37:/mipmap-mdpi_ic_launcher.png.flat",
+        "source": "com.beamaker.app-main-38:/mipmap-mdpi/ic_launcher.png"
+    },
+    {
+        "merged": "com.beamaker.app-release-37:/mipmap-hdpi_ic_launcher.png.flat",
+        "source": "com.beamaker.app-main-38:/mipmap-hdpi/ic_launcher.png"
     }
 ]

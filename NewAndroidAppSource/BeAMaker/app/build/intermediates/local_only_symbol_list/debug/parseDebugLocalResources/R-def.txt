@@ -3,7 +3,6 @@ local
 mipmap ic_launcher
 string app_name
 string exit_msg
-string no_wifi
 string rotate_msg
 string server_error
 string shortcut_long

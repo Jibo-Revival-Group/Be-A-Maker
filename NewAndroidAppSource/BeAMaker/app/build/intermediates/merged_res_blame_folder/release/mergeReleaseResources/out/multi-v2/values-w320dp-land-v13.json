@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "com.beamaker.app-mergeReleaseResources-33:/values-w320dp-land-v13/values-w320dp-land-v13.xml",
+            "outputFile": "com.beamaker.app-mergeReleaseResources-35:/values-w320dp-land-v13/values-w320dp-land-v13.xml",
             "map": [
                 {
                     "source": "/Users/christian/.gradle/caches/9.7.1/transforms/a46dd8b53b9fa1eeaad0038dec7af8e2/transformed/material-1.14.0/res/values-w320dp-land-v13/values-w320dp-land-v13.xml",

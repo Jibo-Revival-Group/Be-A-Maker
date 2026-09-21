@@ -234,7 +234,7 @@ public class MainActivity extends Activity {
     private void showAboutDialog() {
         new AlertDialog.Builder(this)
                 .setTitle("About Be a Maker")
-                .setMessage("Version: " + getVersionName() + "\nRunning Node.js Environment\n\n© 2025 Be a Maker Team")
+                .setMessage("Version: " + getVersionName() + "\nRunning Node.js Environment")
                 .setPositiveButton("OK", null)
                 .show();
     }

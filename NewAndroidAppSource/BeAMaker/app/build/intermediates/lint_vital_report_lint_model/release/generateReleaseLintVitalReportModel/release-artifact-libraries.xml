@@ -39,6 +39,19 @@
       externalAnnotations="annotations.zip"
       proguardRules="proguard.txt"/>
   <library
+      name="androidx.core:core-splashscreen:1.2.0@aar"
+      jars="/Users/christian/.gradle/caches/9.7.1/transforms/e75f81e4791f2cf43edeee9d83cdffc2/transformed/core-splashscreen-1.2.0/jars/classes.jar"
+      resolved="androidx.core:core-splashscreen:1.2.0"
+      folder="/Users/christian/.gradle/caches/9.7.1/transforms/e75f81e4791f2cf43edeee9d83cdffc2/transformed/core-splashscreen-1.2.0"
+      manifest="AndroidManifest.xml"
+      resFolder="res"
+      assetsFolder="assets"
+      lintJar="lint.jar"
+      publicResources="public.txt"
+      symbolFile="R.txt"
+      externalAnnotations="annotations.zip"
+      proguardRules="proguard.txt"/>
+  <library
       name="androidx.viewpager2:viewpager2:1.0.0@aar"
       jars="/Users/christian/.gradle/caches/9.7.1/transforms/3806360f6dd53b0ce42960a6d983fc79/transformed/viewpager2-1.0.0/jars/classes.jar"
       resolved="androidx.viewpager2:viewpager2:1.0.0"
@@ -69,6 +82,19 @@
       jars="/Users/christian/.gradle/caches/9.7.1/transforms/12bdc4fd9165466d97cb4e475ca8aff6/transformed/activity-1.8.0/jars/classes.jar"
       resolved="androidx.activity:activity:1.8.0"
       folder="/Users/christian/.gradle/caches/9.7.1/transforms/12bdc4fd9165466d97cb4e475ca8aff6/transformed/activity-1.8.0"
+      manifest="AndroidManifest.xml"
+      resFolder="res"
+      assetsFolder="assets"
+      lintJar="lint.jar"
+      publicResources="public.txt"
+      symbolFile="R.txt"
+      externalAnnotations="annotations.zip"
+      proguardRules="proguard.txt"/>
+  <library
+      name="androidx.swiperefreshlayout:swiperefreshlayout:1.1.0@aar"
+      jars="/Users/christian/.gradle/caches/9.7.1/transforms/0ec7e44b792d07da57cac579f211afa8/transformed/swiperefreshlayout-1.1.0/jars/classes.jar"
+      resolved="androidx.swiperefreshlayout:swiperefreshlayout:1.1.0"
+      folder="/Users/christian/.gradle/caches/9.7.1/transforms/0ec7e44b792d07da57cac579f211afa8/transformed/swiperefreshlayout-1.1.0"
       manifest="AndroidManifest.xml"
       resFolder="res"
       assetsFolder="assets"
@@ -343,6 +369,19 @@
       externalAnnotations="annotations.zip"
       proguardRules="proguard.txt"/>
   <library
+      name="androidx.interpolator:interpolator:1.0.0@aar"
+      jars="/Users/christian/.gradle/caches/9.7.1/transforms/f7e207c777ce56369c178a807a523331/transformed/interpolator-1.0.0/jars/classes.jar"
+      resolved="androidx.interpolator:interpolator:1.0.0"
+      folder="/Users/christian/.gradle/caches/9.7.1/transforms/f7e207c777ce56369c178a807a523331/transformed/interpolator-1.0.0"
+      manifest="AndroidManifest.xml"
+      resFolder="res"
+      assetsFolder="assets"
+      lintJar="lint.jar"
+      publicResources="public.txt"
+      symbolFile="R.txt"
+      externalAnnotations="annotations.zip"
+      proguardRules="proguard.txt"/>
+  <library
       name="androidx.versionedparcelable:versionedparcelable:1.1.1@aar"
       jars="/Users/christian/.gradle/caches/9.7.1/transforms/518c49346bec33d88ff31fae1663150f/transformed/versionedparcelable-1.1.1/jars/classes.jar"
       resolved="androidx.versionedparcelable:versionedparcelable:1.1.1"
@@ -360,19 +399,6 @@
       jars="/Users/christian/.gradle/caches/modules-2/files-2.1/androidx.collection/collection/1.1.0/1f27220b47669781457de0d600849a5de0e89909/collection-1.1.0.jar"
       resolved="androidx.collection:collection:1.1.0"
       provided="true"/>
-  <library
-      name="androidx.interpolator:interpolator:1.0.0@aar"
-      jars="/Users/christian/.gradle/caches/9.7.1/transforms/f7e207c777ce56369c178a807a523331/transformed/interpolator-1.0.0/jars/classes.jar"
-      resolved="androidx.interpolator:interpolator:1.0.0"
-      folder="/Users/christian/.gradle/caches/9.7.1/transforms/f7e207c777ce56369c178a807a523331/transformed/interpolator-1.0.0"
-      manifest="AndroidManifest.xml"
-      resFolder="res"
-      assetsFolder="assets"
-      lintJar="lint.jar"
-      publicResources="public.txt"
-      symbolFile="R.txt"
-      externalAnnotations="annotations.zip"
-      proguardRules="proguard.txt"/>
   <library
       name="androidx.arch.core:core-runtime:2.1.0@aar"
       jars="/Users/christian/.gradle/caches/9.7.1/transforms/df65eee88414ba5ac39a0740f67cb5a4/transformed/core-runtime-2.1.0/jars/classes.jar"

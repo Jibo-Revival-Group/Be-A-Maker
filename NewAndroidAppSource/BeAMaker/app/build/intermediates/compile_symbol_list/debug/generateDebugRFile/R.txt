@@ -1,7 +1,6 @@
 int mipmap ic_launcher 0x0
 int string app_name 0x0
 int string exit_msg 0x0
-int string no_wifi 0x0
 int string rotate_msg 0x0
 int string server_error 0x0
 int string shortcut_long 0x0

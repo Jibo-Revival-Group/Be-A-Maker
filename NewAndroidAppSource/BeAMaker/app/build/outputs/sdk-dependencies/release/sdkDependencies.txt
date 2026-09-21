@@ -737,6 +737,30 @@ library {
   repo_index {
   }
 }
+library {
+  maven_library {
+    groupId: "androidx.swiperefreshlayout"
+    artifactId: "swiperefreshlayout"
+    version: "1.1.0"
+  }
+  digests {
+    sha256: ",\347\220l\321\336\240Z\354\201\227]\262-T8#Y\300Z!\262Rz\330H\274`\366\262r\223"
+  }
+  repo_index {
+  }
+}
+library {
+  maven_library {
+    groupId: "androidx.core"
+    artifactId: "core-splashscreen"
+    version: "1.2.0"
+  }
+  digests {
+    sha256: "Z\316\206\\N\267\340\362Ciy\r,v\355\332\375\r\273\036\276\243(\217U\301\215\226\005\352\016\340"
+  }
+  repo_index {
+  }
+}
 library_dependencies {
   library_dep_index: 1
   library_dep_index: 2
@@ -1183,11 +1207,26 @@ library_dependencies {
   library_dep_index: 32
   library_dep_index: 0
 }
+library_dependencies {
+  library_index: 62
+  library_dep_index: 7
+  library_dep_index: 11
+  library_dep_index: 16
+}
+library_dependencies {
+  library_index: 63
+  library_dep_index: 7
+  library_dep_index: 37
+  library_dep_index: 0
+  library_dep_index: 0
+}
 module_dependencies {
   module_name: "base"
   dependency_index: 0
   dependency_index: 5
   dependency_index: 49
+  dependency_index: 62
+  dependency_index: 63
 }
 repositories {
   maven_repo {

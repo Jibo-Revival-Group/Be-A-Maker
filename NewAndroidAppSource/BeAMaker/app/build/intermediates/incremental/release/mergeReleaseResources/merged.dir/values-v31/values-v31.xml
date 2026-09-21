@@ -213,6 +213,10 @@
     <item format="float" name="m3_control_ripple_color_selector_default_alpha" type="dimen">0.2</item>
     <item format="float" name="m3_control_ripple_color_selector_hovered_alpha" type="dimen">0.1</item>
     <item format="float" name="m3_control_ripple_color_selector_pressed_alpha" type="dimen">0.12</item>
+    <style name="Base.Theme.SplashScreen" parent="android:Theme.DeviceDefault.DayNight">
+        <item name="android:enforceNavigationBarContrast">true</item>
+        <item name="isLightTheme">?android:attr/isLightTheme</item>
+    </style>
     <style name="Theme.Material3.DynamicColors.Dark" parent="Theme.Material3.Dark">
     <item name="isMaterial3DynamicColorApplied">true</item>
 
@@ -473,6 +477,18 @@
     <item name="android:textColorHighlightInverse">@color/m3_dynamic_dark_highlighted_text</item>
     <item name="android:textColorAlertDialogListItem">@color/m3_dynamic_default_color_primary_text</item>
   </style>
+    <style name="Theme.SplashScreen" parent="Base.Theme.SplashScreen.DayNight">
+        <item name="android:windowSplashScreenAnimatedIcon">?windowSplashScreenAnimatedIcon</item>
+        <item name="android:windowSplashScreenBackground">?windowSplashScreenBackground</item>
+        <item name="android:windowSplashScreenAnimationDuration">
+            ?windowSplashScreenAnimationDuration
+        </item>
+    </style>
+    <style name="Theme.SplashScreen.IconBackground" parent="Theme.SplashScreen">
+        <item name="android:windowSplashScreenIconBackgroundColor">
+            ?windowSplashScreenIconBackgroundColor
+        </item>
+    </style>
     <style name="ThemeOverlay.Material3.DynamicColors.Dark" parent="">
     <item name="isMaterial3DynamicColorApplied">true</item>
 

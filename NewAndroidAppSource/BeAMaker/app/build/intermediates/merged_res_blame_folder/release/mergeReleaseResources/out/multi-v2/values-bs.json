@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "com.beamaker.app-mergeReleaseResources-33:/values-bs/values-bs.xml",
+            "outputFile": "com.beamaker.app-mergeReleaseResources-35:/values-bs/values-bs.xml",
             "map": [
                 {
                     "source": "/Users/christian/.gradle/caches/9.7.1/transforms/3af7dddab0df011d199a48ae4447515e/transformed/appcompat-1.8.0/res/values-bs/values-bs.xml",

@@ -6,6 +6,7 @@ All notable changes to the **Be a Maker** project will be documented in this fil
 
 ### Removed
 - **Wi-Fi Connectivity Banner**: Removed the red notification banner that displayed when the device was not connected to Wi-Fi, to streamline the UI.
+- **Copyright Text**: Removed the copyright notice from the "About" dialog.
 
 ## [1.3.0] - 2025-05-22
 
@@ -35,8 +36,8 @@ All notable changes to the **Be a Maker** project will be documented in this fil
         - Cleaned up unused imports and improved code efficiency.
     19. **Sticky Immersive Mode**: Improved the fullscreen experience with transient system bars.
     20. **Haptic Confirmation**: Added a tactile "thump" when the Node.js server starts successfully.
-    20. **Dynamic Loading Progress**: Replaced static status with a Material horizontal progress bar.
-    21. **OTA Auto-Updater**: Automatically checks for new versions on GitHub.
+    21. **Dynamic Loading Progress**: Replaced static status with a Material horizontal progress bar.
+    22. **OTA Auto-Updater**: Automatically checks for new versions on GitHub.
         - Fetches the latest release from the `Jibo-Revival-Group` repository.
         - Compares local `versionName` with the GitHub `tag_name` to avoid unnecessary downloads.
         - Handles APK downloading in the background.
