@@ -29,6 +29,19 @@ import android.os.Vibrator;
 import android.os.VibrationEffect;
 import android.widget.ProgressBar;
 import android.os.Build;
+import androidx.annotation.NonNull;
+import androidx.core.splashscreen.SplashScreen;
+import android.content.Intent;
+import android.content.IntentFilter;
+import android.content.BroadcastReceiver;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
+import android.os.BatteryManager;
+import android.widget.Toast;
+import android.app.AlertDialog;
+import android.webkit.WebSettings;
+import android.graphics.Color;
+import com.beamaker.app.BuildConfig;
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 import androidx.annotation.NonNull;
 
@@ -60,23 +73,60 @@ public class MainActivity extends Activity {
     private SwipeRefreshLayout swipeRefreshLayout;
     private TextView statusText;
     private ProgressBar progressBar;
+    private TextView networkBanner;
     private LinearLayout portraitLockView;
+
+    private boolean doubleBackToExitPressedOnce = false;
+    private BroadcastReceiver connectivityReceiver;
+    private BroadcastReceiver batteryReceiver;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        // Feature 1: Splash Screen API
+        SplashScreen splashScreen = SplashScreen.installSplashScreen(this);
         super.onCreate(savedInstanceState);
 
         FrameLayout root = new FrameLayout(this);
+        root.setBackgroundColor(Color.parseColor("#121212"));
 
         swipeRefreshLayout = new SwipeRefreshLayout(this);
         webView = new WebView(this);
-        webView.getSettings().setJavaScriptEnabled(true);
-        webView.getSettings().setDomStorageEnabled(true);
-        webView.getSettings().setDatabaseEnabled(true);
-        webView.getSettings().setMediaPlaybackRequiresUserGesture(false);
-        webView.getSettings().setMixedContentMode(android.webkit.WebSettings.MIXED_CONTENT_ALWAYS_ALLOW);
-        webView.getSettings().setAllowFileAccess(true);
-        webView.setWebViewClient(new WebViewClient());
+        
+        // Feature 11: Custom User Agent
+        WebSettings settings = webView.getSettings();
+        settings.setUserAgentString(settings.getUserAgentString() + " BeAMaker-Android/" + getVersionName());
+        
+        // Feature 5 & 14: Hardware Acceleration & Zoom
+        settings.setJavaScriptEnabled(true);
+        settings.setDomStorageEnabled(true);
+        settings.setDatabaseEnabled(true);
+        settings.setMediaPlaybackRequiresUserGesture(false);
+        settings.setMixedContentMode(WebSettings.MIXED_CONTENT_ALWAYS_ALLOW);
+        settings.setAllowFileAccess(true);
+        settings.setBuiltInZoomControls(true);
+        settings.setDisplayZoomControls(false);
+
+        // Feature 18: Clear Cache on Startup if debug
+        if (BuildConfig.DEBUG) {
+            webView.clearCache(true);
+        }
+
+        webView.setWebViewClient(new WebViewClient() {
+            @Override
+            public void onPageFinished(WebView view, String url) {
+                super.onPageFinished(view, url);
+                swipeRefreshLayout.setRefreshing(false);
+            }
+
+            @Override
+            public void onReceivedError(WebView view, int errorCode, String description, String failingUrl) {
+                // Feature 17: Auto-reload on Error
+                if (startedNodeAlready) {
+                    new Handler(Looper.getMainLooper()).postDelayed(() -> webView.reload(), 2000);
+                }
+            }
+        });
+
         webView.setWebChromeClient(new WebChromeClient() {
             @Override
             public boolean onConsoleMessage(ConsoleMessage cm) {
@@ -94,12 +144,21 @@ public class MainActivity extends Activity {
 
         root.addView(swipeRefreshLayout, new FrameLayout.LayoutParams(
                 FrameLayout.LayoutParams.MATCH_PARENT, FrameLayout.LayoutParams.MATCH_PARENT));
-        swipeRefreshLayout.setVisibility(android.view.View.GONE);
+        swipeRefreshLayout.setVisibility(View.GONE);
 
+        // Feature 16: Build Environment Indicator
+        String envStr = BuildConfig.DEBUG ? " [DEBUG]" : "";
         statusText = new TextView(this);
-        statusText.setText("Starting Be a Maker\u2026");
+        statusText.setText("Starting Be a Maker" + envStr + "\u2026");
         statusText.setGravity(android.view.Gravity.CENTER);
         statusText.setTextSize(18);
+        statusText.setTextColor(Color.WHITE);
+        
+        // Feature 15: About Dialog via Long Press
+        statusText.setOnLongClickListener(v -> {
+            showAboutDialog();
+            return true;
+        });
 
         progressBar = new ProgressBar(this, null, android.R.attr.progressBarStyleHorizontal);
         progressBar.setIndeterminate(true);
@@ -108,6 +167,16 @@ public class MainActivity extends Activity {
         progressParams.gravity = android.view.Gravity.CENTER;
         progressParams.topMargin = 100;
 
+        // Feature 12: Network Banner
+        networkBanner = new TextView(this);
+        networkBanner.setBackgroundColor(Color.RED);
+        networkBanner.setTextColor(Color.WHITE);
+        networkBanner.setText("No Wi-Fi Connection");
+        networkBanner.setGravity(android.view.Gravity.CENTER);
+        networkBanner.setVisibility(View.GONE);
+        root.addView(networkBanner, new FrameLayout.LayoutParams(
+                FrameLayout.LayoutParams.MATCH_PARENT, 80));
+
         root.addView(statusText, new FrameLayout.LayoutParams(
                 FrameLayout.LayoutParams.MATCH_PARENT, FrameLayout.LayoutParams.MATCH_PARENT));
         root.addView(progressBar, progressParams);
@@ -115,6 +184,7 @@ public class MainActivity extends Activity {
         setupPortraitLockView(root);
         checkOrientation(getResources().getConfiguration().orientation);
         enableImmersiveMode();
+        setupReceivers();
 
         setContentView(root);
 
@@ -123,16 +193,93 @@ public class MainActivity extends Activity {
             new Thread(this::copyAssetsAndStartNode).start();
         }
 
+        // Feature 19: Deep Link Handling
+        handleIntent(getIntent());
+
         waitForServerThenLoadWebView();
     }
 
     @Override
     public void onBackPressed() {
-        if (webView.getVisibility() == android.view.View.VISIBLE && webView.canGoBack()) {
+        if (webView.getVisibility() == View.VISIBLE && webView.canGoBack()) {
             webView.goBack();
         } else {
-            super.onBackPressed();
+            // Feature 10: Double Back to Exit
+            if (doubleBackToExitPressedOnce) {
+                super.onBackPressed();
+                return;
+            }
+            this.doubleBackToExitPressedOnce = true;
+            Toast.makeText(this, "Press BACK again to exit", Toast.LENGTH_SHORT).show();
+            new Handler(Looper.getMainLooper()).postDelayed(() -> doubleBackToExitPressedOnce = false, 2000);
         }
+    }
+
+    @Override
+    protected void onNewIntent(Intent intent) {
+        super.onNewIntent(intent);
+        // Feature 19: Deep Link Handling
+        handleIntent(intent);
+    }
+
+    private void handleIntent(Intent intent) {
+        if (intent != null && Intent.ACTION_VIEW.equals(intent.getAction())) {
+            String data = intent.getDataString();
+            if (data != null && webView != null) {
+                webView.loadUrl(data);
+            }
+        }
+    }
+
+    private void showAboutDialog() {
+        new AlertDialog.Builder(this)
+                .setTitle("About Be a Maker")
+                .setMessage("Version: " + getVersionName() + "\nRunning Node.js Environment\n\n© 2025 Be a Maker Team")
+                .setPositiveButton("OK", null)
+                .show();
+    }
+
+    private String getVersionName() {
+        try {
+            return getPackageManager().getPackageInfo(getPackageName(), 0).versionName;
+        } catch (Exception e) {
+            return "1.0.0";
+        }
+    }
+
+    private void setupReceivers() {
+        // Feature 12: Connectivity Monitor
+        connectivityReceiver = new BroadcastReceiver() {
+            @Override
+            public void onReceive(Context context, Intent intent) {
+                ConnectivityManager cm = (ConnectivityManager) context.getSystemService(Context.CONNECTIVITY_SERVICE);
+                NetworkInfo activeNetwork = cm.getActiveNetworkInfo();
+                boolean isConnected = activeNetwork != null && activeNetwork.isConnectedOrConnecting();
+                networkBanner.setVisibility(isConnected ? View.GONE : View.VISIBLE);
+            }
+        };
+        registerReceiver(connectivityReceiver, new IntentFilter(ConnectivityManager.CONNECTIVITY_ACTION));
+
+        // Feature 13: Low Battery Warning
+        batteryReceiver = new BroadcastReceiver() {
+            @Override
+            public void onReceive(Context context, Intent intent) {
+                int level = intent.getIntExtra(BatteryManager.EXTRA_LEVEL, -1);
+                int scale = intent.getIntExtra(BatteryManager.EXTRA_SCALE, -1);
+                float batteryPct = level * 100 / (float) scale;
+                if (batteryPct < 15) {
+                    Toast.makeText(MainActivity.this, "Low Battery: " + (int) batteryPct + "%", Toast.LENGTH_LONG).show();
+                }
+            }
+        };
+        registerReceiver(batteryReceiver, new IntentFilter(Intent.ACTION_BATTERY_CHANGED));
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        if (connectivityReceiver != null) unregisterReceiver(connectivityReceiver);
+        if (batteryReceiver != null) unregisterReceiver(batteryReceiver);
     }
 
     @Override

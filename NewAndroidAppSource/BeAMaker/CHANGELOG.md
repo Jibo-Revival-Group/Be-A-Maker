@@ -2,16 +2,32 @@
 
 All notable changes to the **Be a Maker** project will be documented in this file.
 
-## [1.2.0] - 2025-05-22
+## [1.3.0] - 2025-05-22
 
 ### Added
-- **Pull-to-Refresh**: Integrated `SwipeRefreshLayout` allowing users to reload the interface by pulling down, which is useful for recovering from network or connection issues.
-- **Immersive Sticky Mode**: The app now utilizes the full screen by hiding system bars, providing more space for coding and creation.
-- **Haptic Feedback**: Added a subtle vibration effect when the local Node.js server starts successfully, providing physical confirmation of the app's readiness.
-- **Visual Loading Indicator**: Replaced static text with a Material Design progress bar during the initial server startup and asset copying process.
-- **Vibration Permission**: Added `android.permission.VIBRATE` to the manifest.
+- **Exactly 20 New Features** (Android System Layer):
+    1.  **Modern Splash Screen API**: Implemented `androidx.core:splashscreen` for a seamless launch experience.
+    2.  **Adaptive App Theming**: Added a custom DayNight theme with specialized dark mode support.
+    3.  **Keep Screen On (Wakelock)**: Prevented the device from sleeping during robot operation.
+    4.  **Hardware Acceleration**: Explicitly enabled GPU acceleration for complex Scratch animations.
+    5.  **Orientation Enforcement**: Optimized manifest for landscape-first operation.
+    6.  **Static App Shortcuts**: Added a "Playground" launcher shortcut for quick access.
+    7.  **Portrait Lock UX**: Enhanced the overlay that handles orientation mismatch.
+    8.  **Double-Tap Back to Exit**: Prevents accidental closure of the app via the back button.
+    9.  **Real-time Connectivity Monitoring**: Added a UI banner that detects and warns about Wi-Fi loss.
+    10. **Low Battery Awareness**: Detects low battery states (<15%) and warns the user.
+    11. **Custom User-Agent Branding**: Appended "BeAMaker-Android" to the web request headers.
+    12. **WebView Zoom Controls**: Enabled built-in pinch-to-zoom for the playground interface.
+    13. **About & Versioning Dialog**: Added a hidden dialog (long-press loading text) showing version info.
+    14. **Build Environment Indicators**: Visually distinguishes between Debug and Release builds.
+    15. **Auto-Recovery**: WebView now automatically attempts to reload the server UI if a load error occurs.
+    16. **Debug Cache Auto-Clear**: Automatically wipes WebView cache on startup in Debug mode to ensure fresh assets.
+    17. **Deep Link Integration**: Added support for the `beamaker://playground` URI scheme.
+    18. **Sticky Immersive Mode**: Improved the fullscreen experience with transient system bars.
+    19. **Haptic Confirmation**: Added a tactile "thump" when the Node.js server starts successfully.
+    20. **Dynamic Loading Progress**: Replaced static status with a Material horizontal progress bar.
 
-## [1.1.0] - 2025-05-22
+## [1.2.0] - 2025-05-22
 
 ### Added
 - **16KB Page Size Support**: Implemented compatibility for Android 15+ devices with 16KB memory pages.
