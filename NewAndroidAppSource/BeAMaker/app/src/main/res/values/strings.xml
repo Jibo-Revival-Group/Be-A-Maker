@@ -3,7 +3,6 @@
     <string name="app_name">Be a Maker</string>
     <string name="starting_msg">Starting Be a Maker…</string>
     <string name="starting_msg_debug">Starting Be a Maker [DEBUG]…</string>
-    <string name="no_wifi">No Wi-Fi Connection</string>
     <string name="rotate_msg">Please rotate your device to landscape</string>
     <string name="exit_msg">Press BACK again to exit</string>
     <string name="server_error">Could not start the local server. Check Logcat for errors.</string>

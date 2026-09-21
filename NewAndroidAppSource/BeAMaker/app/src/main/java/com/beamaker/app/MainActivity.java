@@ -33,19 +33,24 @@ import androidx.core.splashscreen.SplashScreen;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.content.BroadcastReceiver;
-import android.net.ConnectivityManager;
-import android.net.NetworkInfo;
+import android.net.Uri;
 import android.os.BatteryManager;
 import android.widget.Toast;
 import android.app.AlertDialog;
 import android.webkit.WebSettings;
 import android.graphics.Color;
+import androidx.core.content.FileProvider;
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
+import org.json.JSONArray;
+import org.json.JSONObject;
 
+import java.io.BufferedInputStream;
+import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
+import java.io.InputStreamReader;
 import java.io.OutputStream;
 import java.net.HttpURLConnection;
 import java.net.URL;
@@ -70,11 +75,9 @@ public class MainActivity extends Activity {
     private SwipeRefreshLayout swipeRefreshLayout;
     private TextView statusText;
     private ProgressBar progressBar;
-    private TextView networkBanner;
     private LinearLayout portraitLockView;
 
     private boolean doubleBackToExitPressedOnce = false;
-    private BroadcastReceiver connectivityReceiver;
     private BroadcastReceiver batteryReceiver;
 
     @Override
@@ -172,16 +175,6 @@ public class MainActivity extends Activity {
         progressParams.gravity = android.view.Gravity.CENTER;
         progressParams.topMargin = 100;
 
-        // Feature 12: Network Banner
-        networkBanner = new TextView(this);
-        networkBanner.setBackgroundColor(Color.RED);
-        networkBanner.setTextColor(Color.WHITE);
-        networkBanner.setText(R.string.no_wifi);
-        networkBanner.setGravity(android.view.Gravity.CENTER);
-        networkBanner.setVisibility(View.GONE);
-        root.addView(networkBanner, new FrameLayout.LayoutParams(
-                FrameLayout.LayoutParams.MATCH_PARENT, 80));
-
         root.addView(statusText, new FrameLayout.LayoutParams(
                 FrameLayout.LayoutParams.MATCH_PARENT, FrameLayout.LayoutParams.MATCH_PARENT));
         root.addView(progressBar, progressParams);
@@ -200,6 +193,8 @@ public class MainActivity extends Activity {
 
         // Feature 19: Deep Link Handling
         handleIntent(getIntent());
+
+        new Thread(this::checkForUpdates).start();
 
         waitForServerThenLoadWebView();
     }
@@ -253,18 +248,6 @@ public class MainActivity extends Activity {
     }
 
     private void setupReceivers() {
-        // Feature 12: Connectivity Monitor
-        connectivityReceiver = new BroadcastReceiver() {
-            @Override
-            public void onReceive(Context context, Intent intent) {
-                ConnectivityManager cm = (ConnectivityManager) context.getSystemService(Context.CONNECTIVITY_SERVICE);
-                NetworkInfo activeNetwork = cm.getActiveNetworkInfo();
-                boolean isConnected = activeNetwork != null && activeNetwork.isConnectedOrConnecting();
-                networkBanner.setVisibility(isConnected ? View.GONE : View.VISIBLE);
-            }
-        };
-        registerReceiver(connectivityReceiver, new IntentFilter(ConnectivityManager.CONNECTIVITY_ACTION));
-
         // Feature 13: Low Battery Warning
         batteryReceiver = new BroadcastReceiver() {
             @Override
@@ -283,8 +266,120 @@ public class MainActivity extends Activity {
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        if (connectivityReceiver != null) unregisterReceiver(connectivityReceiver);
         if (batteryReceiver != null) unregisterReceiver(batteryReceiver);
+    }
+
+    // ---- Auto-Update Logic -----------------------------------------------------
+
+    private void checkForUpdates() {
+        try {
+            URL url = new URL("https://api.github.com/repos/Jibo-Revival-Group/Be-A-Maker/releases/latest");
+            HttpURLConnection conn = (HttpURLConnection) url.openConnection();
+            conn.setRequestProperty("User-Agent", "BeAMaker-Android-Updater");
+            conn.setConnectTimeout(5000);
+            
+            if (conn.getResponseCode() == 200) {
+                BufferedReader reader = new BufferedReader(new InputStreamReader(conn.getInputStream()));
+                StringBuilder sb = new StringBuilder();
+                String line;
+                while ((line = reader.readLine()) != null) sb.append(line);
+                reader.close();
+
+                JSONObject release = new JSONObject(sb.toString());
+                String latestVersion = release.getString("tag_name").replace("v", "");
+                String currentVersion = getVersionName();
+
+                if (isNewerVersion(currentVersion, latestVersion)) {
+                    JSONArray assets = release.getJSONArray("assets");
+                    String downloadUrl = null;
+                    for (int i = 0; i < assets.length(); i++) {
+                        JSONObject asset = assets.getJSONObject(i);
+                        if (asset.getString("name").endsWith(".apk")) {
+                            downloadUrl = asset.getString("browser_download_url");
+                            break;
+                        }
+                    }
+                    
+                    if (downloadUrl != null) {
+                        final String finalUrl = downloadUrl;
+                        final String versionLabel = latestVersion;
+                        new Handler(Looper.getMainLooper()).post(() -> showUpdateDialog(finalUrl, versionLabel));
+                    }
+                }
+            }
+        } catch (Exception e) {
+            Log.e(TAG, "Update check failed", e);
+        }
+    }
+
+    private boolean isNewerVersion(String current, String latest) {
+        try {
+            String[] currParts = current.split("\\.");
+            String[] lateParts = latest.split("\\.");
+            int length = Math.max(currParts.length, lateParts.length);
+            for (int i = 0; i < length; i++) {
+                int curr = i < currParts.length ? Integer.parseInt(currParts[i]) : 0;
+                int late = i < lateParts.length ? Integer.parseInt(lateParts[i]) : 0;
+                if (late > curr) return true;
+                if (curr > late) return false;
+            }
+        } catch (Exception e) {
+            return !current.equals(latest);
+        }
+        return false;
+    }
+
+    private void showUpdateDialog(String downloadUrl, String newVersion) {
+        new AlertDialog.Builder(this)
+                .setTitle("Update Available")
+                .setMessage("A new version (" + newVersion + ") of Be a Maker is available. Would you like to download and install it?")
+                .setPositiveButton("Update", (dialog, which) -> startApkDownload(downloadUrl))
+                .setNegativeButton("Later", null)
+                .show();
+    }
+
+    private void startApkDownload(String downloadUrl) {
+        Toast.makeText(this, "Downloading update...", Toast.LENGTH_LONG).show();
+        new Thread(() -> {
+            try {
+                URL url = new URL(downloadUrl);
+                HttpURLConnection conn = (HttpURLConnection) url.openConnection();
+                conn.connect();
+
+                File apkFile = new File(getExternalCacheDir(), "update.apk");
+                InputStream input = new BufferedInputStream(url.openStream());
+                OutputStream output = new FileOutputStream(apkFile);
+
+                byte[] data = new byte[16384];
+                int count;
+                while ((count = input.read(data)) != -1) {
+                    output.write(data, 0, count);
+                }
+                output.flush();
+                output.close();
+                input.close();
+
+                new Handler(Looper.getMainLooper()).post(() -> installApk(apkFile));
+            } catch (Exception e) {
+                Log.e(TAG, "Download failed", e);
+                new Handler(Looper.getMainLooper()).post(() -> 
+                    Toast.makeText(MainActivity.this, "Update download failed.", Toast.LENGTH_SHORT).show());
+            }
+        }).start();
+    }
+
+    private void installApk(File apkFile) {
+        try {
+            Intent intent = new Intent(Intent.ACTION_VIEW);
+            Uri apkUri = FileProvider.getUriForFile(this, getPackageName() + ".fileprovider", apkFile);
+            intent.setDataAndType(apkUri, "application/vnd.android.package-archive");
+            intent.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);
+            intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+            startActivity(intent);
+        } catch (Exception e) {
+            Log.e(TAG, "Installation failed", e);
+            Toast.makeText(this, "Could not start installer.", Toast.LENGTH_SHORT).show();
+        }
     }
 
     @Override

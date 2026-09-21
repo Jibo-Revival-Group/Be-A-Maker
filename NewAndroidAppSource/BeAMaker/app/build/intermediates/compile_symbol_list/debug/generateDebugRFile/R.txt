@@ -10,4 +10,5 @@ int string starting_msg 0x0
 int string starting_msg_debug 0x0
 int style Theme_App_Starting 0x0
 int style Theme_BeAMaker 0x0
+int xml file_paths 0x0
 int xml shortcuts 0x0

@@ -1,9 +1,9 @@
 -- Merging decision tree log ---
 manifest
-ADDED from /Users/christian/Documents/GitHub/BEam-a-maker/NewAndroidAppSource/BeAMaker/app/src/main/AndroidManifest.xml:1:1-39:12
-INJECTED from /Users/christian/Documents/GitHub/BEam-a-maker/NewAndroidAppSource/BeAMaker/app/src/main/AndroidManifest.xml:1:1-39:12
-INJECTED from /Users/christian/Documents/GitHub/BEam-a-maker/NewAndroidAppSource/BeAMaker/app/src/main/AndroidManifest.xml:1:1-39:12
-INJECTED from /Users/christian/Documents/GitHub/BEam-a-maker/NewAndroidAppSource/BeAMaker/app/src/main/AndroidManifest.xml:1:1-39:12
+ADDED from /Users/christian/Documents/GitHub/BEam-a-maker/NewAndroidAppSource/BeAMaker/app/src/main/AndroidManifest.xml:1:1-51:12
+INJECTED from /Users/christian/Documents/GitHub/BEam-a-maker/NewAndroidAppSource/BeAMaker/app/src/main/AndroidManifest.xml:1:1-51:12
+INJECTED from /Users/christian/Documents/GitHub/BEam-a-maker/NewAndroidAppSource/BeAMaker/app/src/main/AndroidManifest.xml:1:1-51:12
+INJECTED from /Users/christian/Documents/GitHub/BEam-a-maker/NewAndroidAppSource/BeAMaker/app/src/main/AndroidManifest.xml:1:1-51:12
 MERGED from [com.google.android.material:material:1.14.0] /Users/christian/.gradle/caches/9.7.1/transforms/a46dd8b53b9fa1eeaad0038dec7af8e2/transformed/material-1.14.0/AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.core:core-splashscreen:1.2.0] /Users/christian/.gradle/caches/9.7.1/transforms/e75f81e4791f2cf43edeee9d83cdffc2/transformed/core-splashscreen-1.2.0/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.appcompat:appcompat-resources:1.8.0] /Users/christian/.gradle/caches/9.7.1/transforms/1b4ffe5aee14a78a051623e458bd0c49/transformed/appcompat-resources-1.8.0/AndroidManifest.xml:2:1-7:12
@@ -69,8 +69,16 @@ uses-permission#android.permission.VIBRATE
 ADDED from /Users/christian/Documents/GitHub/BEam-a-maker/NewAndroidAppSource/BeAMaker/app/src/main/AndroidManifest.xml:6:5-66
 	android:name
 		ADDED from /Users/christian/Documents/GitHub/BEam-a-maker/NewAndroidAppSource/BeAMaker/app/src/main/AndroidManifest.xml:6:22-63
+uses-permission#android.permission.REQUEST_INSTALL_PACKAGES
+ADDED from /Users/christian/Documents/GitHub/BEam-a-maker/NewAndroidAppSource/BeAMaker/app/src/main/AndroidManifest.xml:7:5-83
+	android:name
+		ADDED from /Users/christian/Documents/GitHub/BEam-a-maker/NewAndroidAppSource/BeAMaker/app/src/main/AndroidManifest.xml:7:22-80
+uses-permission#android.permission.POST_NOTIFICATIONS
+ADDED from /Users/christian/Documents/GitHub/BEam-a-maker/NewAndroidAppSource/BeAMaker/app/src/main/AndroidManifest.xml:8:5-77
+	android:name
+		ADDED from /Users/christian/Documents/GitHub/BEam-a-maker/NewAndroidAppSource/BeAMaker/app/src/main/AndroidManifest.xml:8:22-74
 application
-ADDED from /Users/christian/Documents/GitHub/BEam-a-maker/NewAndroidAppSource/BeAMaker/app/src/main/AndroidManifest.xml:8:5-38:19
+ADDED from /Users/christian/Documents/GitHub/BEam-a-maker/NewAndroidAppSource/BeAMaker/app/src/main/AndroidManifest.xml:10:5-50:19
 MERGED from [com.google.android.material:material:1.14.0] /Users/christian/.gradle/caches/9.7.1/transforms/a46dd8b53b9fa1eeaad0038dec7af8e2/transformed/material-1.14.0/AndroidManifest.xml:22:5-20
 MERGED from [com.google.android.material:material:1.14.0] /Users/christian/.gradle/caches/9.7.1/transforms/a46dd8b53b9fa1eeaad0038dec7af8e2/transformed/material-1.14.0/AndroidManifest.xml:22:5-20
 MERGED from [androidx.constraintlayout:constraintlayout:2.2.1] /Users/christian/.gradle/caches/9.7.1/transforms/31d89823945b2f769c03d5618adebe13/transformed/constraintlayout-2.2.1/AndroidManifest.xml:7:5-20
@@ -88,67 +96,83 @@ MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] /Users/chri
 MERGED from [androidx.startup:startup-runtime:1.1.1] /Users/christian/.gradle/caches/9.7.1/transforms/6fc38ea7efbbc3cf57bdd0d923fa8a37/transformed/startup-runtime-1.1.1/AndroidManifest.xml:25:5-31:19
 MERGED from [androidx.startup:startup-runtime:1.1.1] /Users/christian/.gradle/caches/9.7.1/transforms/6fc38ea7efbbc3cf57bdd0d923fa8a37/transformed/startup-runtime-1.1.1/AndroidManifest.xml:25:5-31:19
 	android:extractNativeLibs
-		ADDED from /Users/christian/Documents/GitHub/BEam-a-maker/NewAndroidAppSource/BeAMaker/app/src/main/AndroidManifest.xml:14:9-41
+		ADDED from /Users/christian/Documents/GitHub/BEam-a-maker/NewAndroidAppSource/BeAMaker/app/src/main/AndroidManifest.xml:16:9-41
 	android:appComponentFactory
 		ADDED from [androidx.core:core:1.16.0] /Users/christian/.gradle/caches/9.7.1/transforms/504878af347aea368e4c2bbcec44beda/transformed/core-1.16.0/AndroidManifest.xml:28:18-86
 	android:label
-		ADDED from /Users/christian/Documents/GitHub/BEam-a-maker/NewAndroidAppSource/BeAMaker/app/src/main/AndroidManifest.xml:10:9-41
+		ADDED from /Users/christian/Documents/GitHub/BEam-a-maker/NewAndroidAppSource/BeAMaker/app/src/main/AndroidManifest.xml:12:9-41
 	android:hardwareAccelerated
-		ADDED from /Users/christian/Documents/GitHub/BEam-a-maker/NewAndroidAppSource/BeAMaker/app/src/main/AndroidManifest.xml:15:9-43
+		ADDED from /Users/christian/Documents/GitHub/BEam-a-maker/NewAndroidAppSource/BeAMaker/app/src/main/AndroidManifest.xml:17:9-43
 	android:icon
-		ADDED from /Users/christian/Documents/GitHub/BEam-a-maker/NewAndroidAppSource/BeAMaker/app/src/main/AndroidManifest.xml:11:9-43
+		ADDED from /Users/christian/Documents/GitHub/BEam-a-maker/NewAndroidAppSource/BeAMaker/app/src/main/AndroidManifest.xml:13:9-43
 	android:allowBackup
-		ADDED from /Users/christian/Documents/GitHub/BEam-a-maker/NewAndroidAppSource/BeAMaker/app/src/main/AndroidManifest.xml:9:9-35
+		ADDED from /Users/christian/Documents/GitHub/BEam-a-maker/NewAndroidAppSource/BeAMaker/app/src/main/AndroidManifest.xml:11:9-35
 	android:theme
-		ADDED from /Users/christian/Documents/GitHub/BEam-a-maker/NewAndroidAppSource/BeAMaker/app/src/main/AndroidManifest.xml:12:9-50
+		ADDED from /Users/christian/Documents/GitHub/BEam-a-maker/NewAndroidAppSource/BeAMaker/app/src/main/AndroidManifest.xml:14:9-50
 	android:usesCleartextTraffic
-		ADDED from /Users/christian/Documents/GitHub/BEam-a-maker/NewAndroidAppSource/BeAMaker/app/src/main/AndroidManifest.xml:13:9-44
-activity#com.beamaker.app.MainActivity
-ADDED from /Users/christian/Documents/GitHub/BEam-a-maker/NewAndroidAppSource/BeAMaker/app/src/main/AndroidManifest.xml:17:9-37:20
-	android:screenOrientation
-		ADDED from /Users/christian/Documents/GitHub/BEam-a-maker/NewAndroidAppSource/BeAMaker/app/src/main/AndroidManifest.xml:20:13-54
+		ADDED from /Users/christian/Documents/GitHub/BEam-a-maker/NewAndroidAppSource/BeAMaker/app/src/main/AndroidManifest.xml:15:9-44
+provider#androidx.core.content.FileProvider
+ADDED from /Users/christian/Documents/GitHub/BEam-a-maker/NewAndroidAppSource/BeAMaker/app/src/main/AndroidManifest.xml:19:9-27:20
+	android:grantUriPermissions
+		ADDED from /Users/christian/Documents/GitHub/BEam-a-maker/NewAndroidAppSource/BeAMaker/app/src/main/AndroidManifest.xml:23:13-47
+	android:authorities
+		ADDED from /Users/christian/Documents/GitHub/BEam-a-maker/NewAndroidAppSource/BeAMaker/app/src/main/AndroidManifest.xml:21:13-64
 	android:exported
-		ADDED from /Users/christian/Documents/GitHub/BEam-a-maker/NewAndroidAppSource/BeAMaker/app/src/main/AndroidManifest.xml:19:13-36
-	android:configChanges
-		ADDED from /Users/christian/Documents/GitHub/BEam-a-maker/NewAndroidAppSource/BeAMaker/app/src/main/AndroidManifest.xml:21:13-106
+		ADDED from /Users/christian/Documents/GitHub/BEam-a-maker/NewAndroidAppSource/BeAMaker/app/src/main/AndroidManifest.xml:22:13-37
 	android:name
-		ADDED from /Users/christian/Documents/GitHub/BEam-a-maker/NewAndroidAppSource/BeAMaker/app/src/main/AndroidManifest.xml:18:13-41
-intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
-ADDED from /Users/christian/Documents/GitHub/BEam-a-maker/NewAndroidAppSource/BeAMaker/app/src/main/AndroidManifest.xml:22:13-25:29
-action#android.intent.action.MAIN
-ADDED from /Users/christian/Documents/GitHub/BEam-a-maker/NewAndroidAppSource/BeAMaker/app/src/main/AndroidManifest.xml:23:17-69
-	android:name
-		ADDED from /Users/christian/Documents/GitHub/BEam-a-maker/NewAndroidAppSource/BeAMaker/app/src/main/AndroidManifest.xml:23:25-66
-category#android.intent.category.LAUNCHER
-ADDED from /Users/christian/Documents/GitHub/BEam-a-maker/NewAndroidAppSource/BeAMaker/app/src/main/AndroidManifest.xml:24:17-77
-	android:name
-		ADDED from /Users/christian/Documents/GitHub/BEam-a-maker/NewAndroidAppSource/BeAMaker/app/src/main/AndroidManifest.xml:24:27-74
-intent-filter#action:name:android.intent.action.VIEW+category:name:android.intent.category.BROWSABLE+category:name:android.intent.category.DEFAULT+data:host:playground+data:scheme:beamaker
-ADDED from /Users/christian/Documents/GitHub/BEam-a-maker/NewAndroidAppSource/BeAMaker/app/src/main/AndroidManifest.xml:28:13-33:29
-action#android.intent.action.VIEW
-ADDED from /Users/christian/Documents/GitHub/BEam-a-maker/NewAndroidAppSource/BeAMaker/app/src/main/AndroidManifest.xml:29:17-69
-	android:name
-		ADDED from /Users/christian/Documents/GitHub/BEam-a-maker/NewAndroidAppSource/BeAMaker/app/src/main/AndroidManifest.xml:29:25-66
-category#android.intent.category.DEFAULT
-ADDED from /Users/christian/Documents/GitHub/BEam-a-maker/NewAndroidAppSource/BeAMaker/app/src/main/AndroidManifest.xml:30:17-76
-	android:name
-		ADDED from /Users/christian/Documents/GitHub/BEam-a-maker/NewAndroidAppSource/BeAMaker/app/src/main/AndroidManifest.xml:30:27-73
-category#android.intent.category.BROWSABLE
-ADDED from /Users/christian/Documents/GitHub/BEam-a-maker/NewAndroidAppSource/BeAMaker/app/src/main/AndroidManifest.xml:31:17-78
-	android:name
-		ADDED from /Users/christian/Documents/GitHub/BEam-a-maker/NewAndroidAppSource/BeAMaker/app/src/main/AndroidManifest.xml:31:27-75
-data
-ADDED from /Users/christian/Documents/GitHub/BEam-a-maker/NewAndroidAppSource/BeAMaker/app/src/main/AndroidManifest.xml:32:17-77
-	android:host
-		ADDED from /Users/christian/Documents/GitHub/BEam-a-maker/NewAndroidAppSource/BeAMaker/app/src/main/AndroidManifest.xml:32:49-74
-	android:scheme
-		ADDED from /Users/christian/Documents/GitHub/BEam-a-maker/NewAndroidAppSource/BeAMaker/app/src/main/AndroidManifest.xml:32:23-48
-meta-data#android.app.shortcuts
-ADDED from /Users/christian/Documents/GitHub/BEam-a-maker/NewAndroidAppSource/BeAMaker/app/src/main/AndroidManifest.xml:35:13-36:53
+		ADDED from /Users/christian/Documents/GitHub/BEam-a-maker/NewAndroidAppSource/BeAMaker/app/src/main/AndroidManifest.xml:20:13-62
+meta-data#android.support.FILE_PROVIDER_PATHS
+ADDED from /Users/christian/Documents/GitHub/BEam-a-maker/NewAndroidAppSource/BeAMaker/app/src/main/AndroidManifest.xml:24:13-26:54
 	android:resource
-		ADDED from /Users/christian/Documents/GitHub/BEam-a-maker/NewAndroidAppSource/BeAMaker/app/src/main/AndroidManifest.xml:36:17-50
+		ADDED from /Users/christian/Documents/GitHub/BEam-a-maker/NewAndroidAppSource/BeAMaker/app/src/main/AndroidManifest.xml:26:17-51
 	android:name
-		ADDED from /Users/christian/Documents/GitHub/BEam-a-maker/NewAndroidAppSource/BeAMaker/app/src/main/AndroidManifest.xml:35:24-60
+		ADDED from /Users/christian/Documents/GitHub/BEam-a-maker/NewAndroidAppSource/BeAMaker/app/src/main/AndroidManifest.xml:25:17-67
+activity#com.beamaker.app.MainActivity
+ADDED from /Users/christian/Documents/GitHub/BEam-a-maker/NewAndroidAppSource/BeAMaker/app/src/main/AndroidManifest.xml:29:9-49:20
+	android:screenOrientation
+		ADDED from /Users/christian/Documents/GitHub/BEam-a-maker/NewAndroidAppSource/BeAMaker/app/src/main/AndroidManifest.xml:32:13-54
+	android:exported
+		ADDED from /Users/christian/Documents/GitHub/BEam-a-maker/NewAndroidAppSource/BeAMaker/app/src/main/AndroidManifest.xml:31:13-36
+	android:configChanges
+		ADDED from /Users/christian/Documents/GitHub/BEam-a-maker/NewAndroidAppSource/BeAMaker/app/src/main/AndroidManifest.xml:33:13-106
+	android:name
+		ADDED from /Users/christian/Documents/GitHub/BEam-a-maker/NewAndroidAppSource/BeAMaker/app/src/main/AndroidManifest.xml:30:13-41
+intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
+ADDED from /Users/christian/Documents/GitHub/BEam-a-maker/NewAndroidAppSource/BeAMaker/app/src/main/AndroidManifest.xml:34:13-37:29
+action#android.intent.action.MAIN
+ADDED from /Users/christian/Documents/GitHub/BEam-a-maker/NewAndroidAppSource/BeAMaker/app/src/main/AndroidManifest.xml:35:17-69
+	android:name
+		ADDED from /Users/christian/Documents/GitHub/BEam-a-maker/NewAndroidAppSource/BeAMaker/app/src/main/AndroidManifest.xml:35:25-66
+category#android.intent.category.LAUNCHER
+ADDED from /Users/christian/Documents/GitHub/BEam-a-maker/NewAndroidAppSource/BeAMaker/app/src/main/AndroidManifest.xml:36:17-77
+	android:name
+		ADDED from /Users/christian/Documents/GitHub/BEam-a-maker/NewAndroidAppSource/BeAMaker/app/src/main/AndroidManifest.xml:36:27-74
+intent-filter#action:name:android.intent.action.VIEW+category:name:android.intent.category.BROWSABLE+category:name:android.intent.category.DEFAULT+data:host:playground+data:scheme:beamaker
+ADDED from /Users/christian/Documents/GitHub/BEam-a-maker/NewAndroidAppSource/BeAMaker/app/src/main/AndroidManifest.xml:40:13-45:29
+action#android.intent.action.VIEW
+ADDED from /Users/christian/Documents/GitHub/BEam-a-maker/NewAndroidAppSource/BeAMaker/app/src/main/AndroidManifest.xml:41:17-69
+	android:name
+		ADDED from /Users/christian/Documents/GitHub/BEam-a-maker/NewAndroidAppSource/BeAMaker/app/src/main/AndroidManifest.xml:41:25-66
+category#android.intent.category.DEFAULT
+ADDED from /Users/christian/Documents/GitHub/BEam-a-maker/NewAndroidAppSource/BeAMaker/app/src/main/AndroidManifest.xml:42:17-76
+	android:name
+		ADDED from /Users/christian/Documents/GitHub/BEam-a-maker/NewAndroidAppSource/BeAMaker/app/src/main/AndroidManifest.xml:42:27-73
+category#android.intent.category.BROWSABLE
+ADDED from /Users/christian/Documents/GitHub/BEam-a-maker/NewAndroidAppSource/BeAMaker/app/src/main/AndroidManifest.xml:43:17-78
+	android:name
+		ADDED from /Users/christian/Documents/GitHub/BEam-a-maker/NewAndroidAppSource/BeAMaker/app/src/main/AndroidManifest.xml:43:27-75
+data
+ADDED from /Users/christian/Documents/GitHub/BEam-a-maker/NewAndroidAppSource/BeAMaker/app/src/main/AndroidManifest.xml:44:17-77
+	android:host
+		ADDED from /Users/christian/Documents/GitHub/BEam-a-maker/NewAndroidAppSource/BeAMaker/app/src/main/AndroidManifest.xml:44:49-74
+	android:scheme
+		ADDED from /Users/christian/Documents/GitHub/BEam-a-maker/NewAndroidAppSource/BeAMaker/app/src/main/AndroidManifest.xml:44:23-48
+meta-data#android.app.shortcuts
+ADDED from /Users/christian/Documents/GitHub/BEam-a-maker/NewAndroidAppSource/BeAMaker/app/src/main/AndroidManifest.xml:47:13-48:53
+	android:resource
+		ADDED from /Users/christian/Documents/GitHub/BEam-a-maker/NewAndroidAppSource/BeAMaker/app/src/main/AndroidManifest.xml:48:17-50
+	android:name
+		ADDED from /Users/christian/Documents/GitHub/BEam-a-maker/NewAndroidAppSource/BeAMaker/app/src/main/AndroidManifest.xml:47:24-60
 uses-sdk
 INJECTED from /Users/christian/Documents/GitHub/BEam-a-maker/NewAndroidAppSource/BeAMaker/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from /Users/christian/Documents/GitHub/BEam-a-maker/NewAndroidAppSource/BeAMaker/app/src/main/AndroidManifest.xml

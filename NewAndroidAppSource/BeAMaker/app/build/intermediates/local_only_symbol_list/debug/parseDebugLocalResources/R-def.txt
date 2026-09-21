@@ -12,4 +12,5 @@ string starting_msg
 string starting_msg_debug
 style Theme.App.Starting
 style Theme.BeAMaker
+xml file_paths
 xml shortcuts
