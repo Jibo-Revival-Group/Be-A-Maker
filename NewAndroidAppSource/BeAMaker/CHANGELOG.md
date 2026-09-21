@@ -23,8 +23,13 @@ All notable changes to the **Be a Maker** project will be documented in this fil
     15. **Auto-Recovery**: WebView now automatically attempts to reload the server UI if a load error occurs.
     16. **Debug Cache Auto-Clear**: Automatically wipes WebView cache on startup in Debug mode to ensure fresh assets.
     17. **Deep Link Integration**: Added support for the `beamaker://playground` URI scheme.
-    18. **Sticky Immersive Mode**: Improved the fullscreen experience with transient system bars.
-    19. **Haptic Confirmation**: Added a tactile "thump" when the Node.js server starts successfully.
+    18. **Improved Stability**: Fixed all compiler errors, lint warnings, and resource linking issues.
+        - Resolved `BuildConfig` resolution issues using reflection for robust library builds.
+        - Externalized all hardcoded UI strings to `strings.xml`.
+        - Fixed shortcut resource linking and API compatibility warnings.
+        - Cleaned up unused imports and improved code efficiency.
+    19. **Sticky Immersive Mode**: Improved the fullscreen experience with transient system bars.
+    20. **Haptic Confirmation**: Added a tactile "thump" when the Node.js server starts successfully.
     20. **Dynamic Loading Progress**: Replaced static status with a Material horizontal progress bar.
 
 ## [1.2.0] - 2025-05-22

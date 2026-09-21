@@ -36,7 +36,7 @@
 20-->[androidx.core:core:1.16.0] /Users/christian/.gradle/caches/9.7.1/transforms/504878af347aea368e4c2bbcec44beda/transformed/core-1.16.0/AndroidManifest.xml:26:22-94
 21
 22    <application
-22-->/Users/christian/Documents/GitHub/BEam-a-maker/NewAndroidAppSource/BeAMaker/app/src/main/AndroidManifest.xml:8:5-25:19
+22-->/Users/christian/Documents/GitHub/BEam-a-maker/NewAndroidAppSource/BeAMaker/app/src/main/AndroidManifest.xml:8:5-38:19
 23        android:allowBackup="true"
 23-->/Users/christian/Documents/GitHub/BEam-a-maker/NewAndroidAppSource/BeAMaker/app/src/main/AndroidManifest.xml:9:9-35
 24        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
@@ -44,100 +44,132 @@
 25        android:debuggable="true"
 26        android:extractNativeLibs="true"
 26-->/Users/christian/Documents/GitHub/BEam-a-maker/NewAndroidAppSource/BeAMaker/app/src/main/AndroidManifest.xml:14:9-41
-27        android:icon="@mipmap/ic_launcher"
-27-->/Users/christian/Documents/GitHub/BEam-a-maker/NewAndroidAppSource/BeAMaker/app/src/main/AndroidManifest.xml:11:9-43
-28        android:label="@string/app_name"
-28-->/Users/christian/Documents/GitHub/BEam-a-maker/NewAndroidAppSource/BeAMaker/app/src/main/AndroidManifest.xml:10:9-41
-29        android:testOnly="true"
-30        android:theme="@android:style/Theme.Material.Light.NoActionBar"
-30-->/Users/christian/Documents/GitHub/BEam-a-maker/NewAndroidAppSource/BeAMaker/app/src/main/AndroidManifest.xml:12:9-72
+27        android:hardwareAccelerated="true"
+27-->/Users/christian/Documents/GitHub/BEam-a-maker/NewAndroidAppSource/BeAMaker/app/src/main/AndroidManifest.xml:15:9-43
+28        android:icon="@mipmap/ic_launcher"
+28-->/Users/christian/Documents/GitHub/BEam-a-maker/NewAndroidAppSource/BeAMaker/app/src/main/AndroidManifest.xml:11:9-43
+29        android:label="@string/app_name"
+29-->/Users/christian/Documents/GitHub/BEam-a-maker/NewAndroidAppSource/BeAMaker/app/src/main/AndroidManifest.xml:10:9-41
+30        android:theme="@style/Theme.App.Starting"
+30-->/Users/christian/Documents/GitHub/BEam-a-maker/NewAndroidAppSource/BeAMaker/app/src/main/AndroidManifest.xml:12:9-50
 31        android:usesCleartextTraffic="true" >
 31-->/Users/christian/Documents/GitHub/BEam-a-maker/NewAndroidAppSource/BeAMaker/app/src/main/AndroidManifest.xml:13:9-44
 32        <activity
-32-->/Users/christian/Documents/GitHub/BEam-a-maker/NewAndroidAppSource/BeAMaker/app/src/main/AndroidManifest.xml:16:9-24:20
+32-->/Users/christian/Documents/GitHub/BEam-a-maker/NewAndroidAppSource/BeAMaker/app/src/main/AndroidManifest.xml:17:9-37:20
 33            android:name="com.beamaker.app.MainActivity"
-33-->/Users/christian/Documents/GitHub/BEam-a-maker/NewAndroidAppSource/BeAMaker/app/src/main/AndroidManifest.xml:17:13-41
-34            android:configChanges="orientation|screenSize|keyboardHidden"
-34-->/Users/christian/Documents/GitHub/BEam-a-maker/NewAndroidAppSource/BeAMaker/app/src/main/AndroidManifest.xml:19:13-74
-35            android:exported="true" >
-35-->/Users/christian/Documents/GitHub/BEam-a-maker/NewAndroidAppSource/BeAMaker/app/src/main/AndroidManifest.xml:18:13-36
-36            <intent-filter>
-36-->/Users/christian/Documents/GitHub/BEam-a-maker/NewAndroidAppSource/BeAMaker/app/src/main/AndroidManifest.xml:20:13-23:29
-37                <action android:name="android.intent.action.MAIN" />
-37-->/Users/christian/Documents/GitHub/BEam-a-maker/NewAndroidAppSource/BeAMaker/app/src/main/AndroidManifest.xml:21:17-69
-37-->/Users/christian/Documents/GitHub/BEam-a-maker/NewAndroidAppSource/BeAMaker/app/src/main/AndroidManifest.xml:21:25-66
-38
-39                <category android:name="android.intent.category.LAUNCHER" />
-39-->/Users/christian/Documents/GitHub/BEam-a-maker/NewAndroidAppSource/BeAMaker/app/src/main/AndroidManifest.xml:22:17-77
-39-->/Users/christian/Documents/GitHub/BEam-a-maker/NewAndroidAppSource/BeAMaker/app/src/main/AndroidManifest.xml:22:27-74
-40            </intent-filter>
-41        </activity>
+33-->/Users/christian/Documents/GitHub/BEam-a-maker/NewAndroidAppSource/BeAMaker/app/src/main/AndroidManifest.xml:18:13-41
+34            android:configChanges="orientation|screenSize|keyboardHidden|smallestScreenSize|screenLayout"
+34-->/Users/christian/Documents/GitHub/BEam-a-maker/NewAndroidAppSource/BeAMaker/app/src/main/AndroidManifest.xml:21:13-106
+35            android:exported="true"
+35-->/Users/christian/Documents/GitHub/BEam-a-maker/NewAndroidAppSource/BeAMaker/app/src/main/AndroidManifest.xml:19:13-36
+36            android:screenOrientation="userLandscape" >
+36-->/Users/christian/Documents/GitHub/BEam-a-maker/NewAndroidAppSource/BeAMaker/app/src/main/AndroidManifest.xml:20:13-54
+37            <intent-filter>
+37-->/Users/christian/Documents/GitHub/BEam-a-maker/NewAndroidAppSource/BeAMaker/app/src/main/AndroidManifest.xml:22:13-25:29
+38                <action android:name="android.intent.action.MAIN" />
+38-->/Users/christian/Documents/GitHub/BEam-a-maker/NewAndroidAppSource/BeAMaker/app/src/main/AndroidManifest.xml:23:17-69
+38-->/Users/christian/Documents/GitHub/BEam-a-maker/NewAndroidAppSource/BeAMaker/app/src/main/AndroidManifest.xml:23:25-66
+39
+40                <category android:name="android.intent.category.LAUNCHER" />
+40-->/Users/christian/Documents/GitHub/BEam-a-maker/NewAndroidAppSource/BeAMaker/app/src/main/AndroidManifest.xml:24:17-77
+40-->/Users/christian/Documents/GitHub/BEam-a-maker/NewAndroidAppSource/BeAMaker/app/src/main/AndroidManifest.xml:24:27-74
+41            </intent-filter>
 42
-43        <provider
-43-->[androidx.emoji2:emoji2:1.3.0] /Users/christian/.gradle/caches/9.7.1/transforms/3260e146e2b87c4399c1198bbf31583d/transformed/emoji2-1.3.0/AndroidManifest.xml:24:9-32:20
-44            android:name="androidx.startup.InitializationProvider"
-44-->[androidx.emoji2:emoji2:1.3.0] /Users/christian/.gradle/caches/9.7.1/transforms/3260e146e2b87c4399c1198bbf31583d/transformed/emoji2-1.3.0/AndroidManifest.xml:25:13-67
-45            android:authorities="com.beamaker.app.androidx-startup"
-45-->[androidx.emoji2:emoji2:1.3.0] /Users/christian/.gradle/caches/9.7.1/transforms/3260e146e2b87c4399c1198bbf31583d/transformed/emoji2-1.3.0/AndroidManifest.xml:26:13-68
-46            android:exported="false" >
-46-->[androidx.emoji2:emoji2:1.3.0] /Users/christian/.gradle/caches/9.7.1/transforms/3260e146e2b87c4399c1198bbf31583d/transformed/emoji2-1.3.0/AndroidManifest.xml:27:13-37
-47            <meta-data
-47-->[androidx.emoji2:emoji2:1.3.0] /Users/christian/.gradle/caches/9.7.1/transforms/3260e146e2b87c4399c1198bbf31583d/transformed/emoji2-1.3.0/AndroidManifest.xml:29:13-31:52
-48                android:name="androidx.emoji2.text.EmojiCompatInitializer"
-48-->[androidx.emoji2:emoji2:1.3.0] /Users/christian/.gradle/caches/9.7.1/transforms/3260e146e2b87c4399c1198bbf31583d/transformed/emoji2-1.3.0/AndroidManifest.xml:30:17-75
-49                android:value="androidx.startup" />
-49-->[androidx.emoji2:emoji2:1.3.0] /Users/christian/.gradle/caches/9.7.1/transforms/3260e146e2b87c4399c1198bbf31583d/transformed/emoji2-1.3.0/AndroidManifest.xml:31:17-49
-50            <meta-data
-50-->[androidx.lifecycle:lifecycle-process:2.6.2] /Users/christian/.gradle/caches/9.7.1/transforms/a133979223417fa239a925d2175f16b6/transformed/lifecycle-process-2.6.2/AndroidManifest.xml:29:13-31:52
-51                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
-51-->[androidx.lifecycle:lifecycle-process:2.6.2] /Users/christian/.gradle/caches/9.7.1/transforms/a133979223417fa239a925d2175f16b6/transformed/lifecycle-process-2.6.2/AndroidManifest.xml:30:17-78
-52                android:value="androidx.startup" />
-52-->[androidx.lifecycle:lifecycle-process:2.6.2] /Users/christian/.gradle/caches/9.7.1/transforms/a133979223417fa239a925d2175f16b6/transformed/lifecycle-process-2.6.2/AndroidManifest.xml:31:17-49
-53            <meta-data
-53-->[androidx.profileinstaller:profileinstaller:1.4.0] /Users/christian/.gradle/caches/9.7.1/transforms/e9b94ec360d98860d0ad2ded423f9e93/transformed/profileinstaller-1.4.0/AndroidManifest.xml:29:13-31:52
-54                android:name="androidx.profileinstaller.ProfileInstallerInitializer"
-54-->[androidx.profileinstaller:profileinstaller:1.4.0] /Users/christian/.gradle/caches/9.7.1/transforms/e9b94ec360d98860d0ad2ded423f9e93/transformed/profileinstaller-1.4.0/AndroidManifest.xml:30:17-85
-55                android:value="androidx.startup" />
-55-->[androidx.profileinstaller:profileinstaller:1.4.0] /Users/christian/.gradle/caches/9.7.1/transforms/e9b94ec360d98860d0ad2ded423f9e93/transformed/profileinstaller-1.4.0/AndroidManifest.xml:31:17-49
-56        </provider>
-57
-58        <receiver
-58-->[androidx.profileinstaller:profileinstaller:1.4.0] /Users/christian/.gradle/caches/9.7.1/transforms/e9b94ec360d98860d0ad2ded423f9e93/transformed/profileinstaller-1.4.0/AndroidManifest.xml:34:9-52:20
-59            android:name="androidx.profileinstaller.ProfileInstallReceiver"
-59-->[androidx.profileinstaller:profileinstaller:1.4.0] /Users/christian/.gradle/caches/9.7.1/transforms/e9b94ec360d98860d0ad2ded423f9e93/transformed/profileinstaller-1.4.0/AndroidManifest.xml:35:13-76
-60            android:directBootAware="false"
-60-->[androidx.profileinstaller:profileinstaller:1.4.0] /Users/christian/.gradle/caches/9.7.1/transforms/e9b94ec360d98860d0ad2ded423f9e93/transformed/profileinstaller-1.4.0/AndroidManifest.xml:36:13-44
-61            android:enabled="true"
-61-->[androidx.profileinstaller:profileinstaller:1.4.0] /Users/christian/.gradle/caches/9.7.1/transforms/e9b94ec360d98860d0ad2ded423f9e93/transformed/profileinstaller-1.4.0/AndroidManifest.xml:37:13-35
-62            android:exported="true"
-62-->[androidx.profileinstaller:profileinstaller:1.4.0] /Users/christian/.gradle/caches/9.7.1/transforms/e9b94ec360d98860d0ad2ded423f9e93/transformed/profileinstaller-1.4.0/AndroidManifest.xml:38:13-36
-63            android:permission="android.permission.DUMP" >
-63-->[androidx.profileinstaller:profileinstaller:1.4.0] /Users/christian/.gradle/caches/9.7.1/transforms/e9b94ec360d98860d0ad2ded423f9e93/transformed/profileinstaller-1.4.0/AndroidManifest.xml:39:13-57
-64            <intent-filter>
-64-->[androidx.profileinstaller:profileinstaller:1.4.0] /Users/christian/.gradle/caches/9.7.1/transforms/e9b94ec360d98860d0ad2ded423f9e93/transformed/profileinstaller-1.4.0/AndroidManifest.xml:40:13-42:29
-65                <action android:name="androidx.profileinstaller.action.INSTALL_PROFILE" />
-65-->[androidx.profileinstaller:profileinstaller:1.4.0] /Users/christian/.gradle/caches/9.7.1/transforms/e9b94ec360d98860d0ad2ded423f9e93/transformed/profileinstaller-1.4.0/AndroidManifest.xml:41:17-91
-65-->[androidx.profileinstaller:profileinstaller:1.4.0] /Users/christian/.gradle/caches/9.7.1/transforms/e9b94ec360d98860d0ad2ded423f9e93/transformed/profileinstaller-1.4.0/AndroidManifest.xml:41:25-88
-66            </intent-filter>
-67            <intent-filter>
-67-->[androidx.profileinstaller:profileinstaller:1.4.0] /Users/christian/.gradle/caches/9.7.1/transforms/e9b94ec360d98860d0ad2ded423f9e93/transformed/profileinstaller-1.4.0/AndroidManifest.xml:43:13-45:29
-68                <action android:name="androidx.profileinstaller.action.SKIP_FILE" />
-68-->[androidx.profileinstaller:profileinstaller:1.4.0] /Users/christian/.gradle/caches/9.7.1/transforms/e9b94ec360d98860d0ad2ded423f9e93/transformed/profileinstaller-1.4.0/AndroidManifest.xml:44:17-85
-68-->[androidx.profileinstaller:profileinstaller:1.4.0] /Users/christian/.gradle/caches/9.7.1/transforms/e9b94ec360d98860d0ad2ded423f9e93/transformed/profileinstaller-1.4.0/AndroidManifest.xml:44:25-82
-69            </intent-filter>
-70            <intent-filter>
-70-->[androidx.profileinstaller:profileinstaller:1.4.0] /Users/christian/.gradle/caches/9.7.1/transforms/e9b94ec360d98860d0ad2ded423f9e93/transformed/profileinstaller-1.4.0/AndroidManifest.xml:46:13-48:29
-71                <action android:name="androidx.profileinstaller.action.SAVE_PROFILE" />
-71-->[androidx.profileinstaller:profileinstaller:1.4.0] /Users/christian/.gradle/caches/9.7.1/transforms/e9b94ec360d98860d0ad2ded423f9e93/transformed/profileinstaller-1.4.0/AndroidManifest.xml:47:17-88
-71-->[androidx.profileinstaller:profileinstaller:1.4.0] /Users/christian/.gradle/caches/9.7.1/transforms/e9b94ec360d98860d0ad2ded423f9e93/transformed/profileinstaller-1.4.0/AndroidManifest.xml:47:25-85
-72            </intent-filter>
-73            <intent-filter>
-73-->[androidx.profileinstaller:profileinstaller:1.4.0] /Users/christian/.gradle/caches/9.7.1/transforms/e9b94ec360d98860d0ad2ded423f9e93/transformed/profileinstaller-1.4.0/AndroidManifest.xml:49:13-51:29
-74                <action android:name="androidx.profileinstaller.action.BENCHMARK_OPERATION" />
-74-->[androidx.profileinstaller:profileinstaller:1.4.0] /Users/christian/.gradle/caches/9.7.1/transforms/e9b94ec360d98860d0ad2ded423f9e93/transformed/profileinstaller-1.4.0/AndroidManifest.xml:50:17-95
-74-->[androidx.profileinstaller:profileinstaller:1.4.0] /Users/christian/.gradle/caches/9.7.1/transforms/e9b94ec360d98860d0ad2ded423f9e93/transformed/profileinstaller-1.4.0/AndroidManifest.xml:50:25-92
-75            </intent-filter>
-76        </receiver>
-77    </application>
-78
-79</manifest>
+43            <!-- Feature 19: Deep Link Support -->
+44            <intent-filter>
+44-->/Users/christian/Documents/GitHub/BEam-a-maker/NewAndroidAppSource/BeAMaker/app/src/main/AndroidManifest.xml:28:13-33:29
+45                <action android:name="android.intent.action.VIEW" />
+45-->/Users/christian/Documents/GitHub/BEam-a-maker/NewAndroidAppSource/BeAMaker/app/src/main/AndroidManifest.xml:29:17-69
+45-->/Users/christian/Documents/GitHub/BEam-a-maker/NewAndroidAppSource/BeAMaker/app/src/main/AndroidManifest.xml:29:25-66
+46
+47                <category android:name="android.intent.category.DEFAULT" />
+47-->/Users/christian/Documents/GitHub/BEam-a-maker/NewAndroidAppSource/BeAMaker/app/src/main/AndroidManifest.xml:30:17-76
+47-->/Users/christian/Documents/GitHub/BEam-a-maker/NewAndroidAppSource/BeAMaker/app/src/main/AndroidManifest.xml:30:27-73
+48                <category android:name="android.intent.category.BROWSABLE" />
+48-->/Users/christian/Documents/GitHub/BEam-a-maker/NewAndroidAppSource/BeAMaker/app/src/main/AndroidManifest.xml:31:17-78
+48-->/Users/christian/Documents/GitHub/BEam-a-maker/NewAndroidAppSource/BeAMaker/app/src/main/AndroidManifest.xml:31:27-75
+49
+50                <data
+50-->/Users/christian/Documents/GitHub/BEam-a-maker/NewAndroidAppSource/BeAMaker/app/src/main/AndroidManifest.xml:32:17-77
+51                    android:host="playground"
+51-->/Users/christian/Documents/GitHub/BEam-a-maker/NewAndroidAppSource/BeAMaker/app/src/main/AndroidManifest.xml:32:49-74
+52                    android:scheme="beamaker" />
+52-->/Users/christian/Documents/GitHub/BEam-a-maker/NewAndroidAppSource/BeAMaker/app/src/main/AndroidManifest.xml:32:23-48
+53            </intent-filter>
+54
+55            <meta-data
+55-->/Users/christian/Documents/GitHub/BEam-a-maker/NewAndroidAppSource/BeAMaker/app/src/main/AndroidManifest.xml:35:13-36:53
+56                android:name="android.app.shortcuts"
+56-->/Users/christian/Documents/GitHub/BEam-a-maker/NewAndroidAppSource/BeAMaker/app/src/main/AndroidManifest.xml:35:24-60
+57                android:resource="@xml/shortcuts" />
+57-->/Users/christian/Documents/GitHub/BEam-a-maker/NewAndroidAppSource/BeAMaker/app/src/main/AndroidManifest.xml:36:17-50
+58        </activity>
+59
+60        <provider
+60-->[androidx.emoji2:emoji2:1.3.0] /Users/christian/.gradle/caches/9.7.1/transforms/3260e146e2b87c4399c1198bbf31583d/transformed/emoji2-1.3.0/AndroidManifest.xml:24:9-32:20
+61            android:name="androidx.startup.InitializationProvider"
+61-->[androidx.emoji2:emoji2:1.3.0] /Users/christian/.gradle/caches/9.7.1/transforms/3260e146e2b87c4399c1198bbf31583d/transformed/emoji2-1.3.0/AndroidManifest.xml:25:13-67
+62            android:authorities="com.beamaker.app.androidx-startup"
+62-->[androidx.emoji2:emoji2:1.3.0] /Users/christian/.gradle/caches/9.7.1/transforms/3260e146e2b87c4399c1198bbf31583d/transformed/emoji2-1.3.0/AndroidManifest.xml:26:13-68
+63            android:exported="false" >
+63-->[androidx.emoji2:emoji2:1.3.0] /Users/christian/.gradle/caches/9.7.1/transforms/3260e146e2b87c4399c1198bbf31583d/transformed/emoji2-1.3.0/AndroidManifest.xml:27:13-37
+64            <meta-data
+64-->[androidx.emoji2:emoji2:1.3.0] /Users/christian/.gradle/caches/9.7.1/transforms/3260e146e2b87c4399c1198bbf31583d/transformed/emoji2-1.3.0/AndroidManifest.xml:29:13-31:52
+65                android:name="androidx.emoji2.text.EmojiCompatInitializer"
+65-->[androidx.emoji2:emoji2:1.3.0] /Users/christian/.gradle/caches/9.7.1/transforms/3260e146e2b87c4399c1198bbf31583d/transformed/emoji2-1.3.0/AndroidManifest.xml:30:17-75
+66                android:value="androidx.startup" />
+66-->[androidx.emoji2:emoji2:1.3.0] /Users/christian/.gradle/caches/9.7.1/transforms/3260e146e2b87c4399c1198bbf31583d/transformed/emoji2-1.3.0/AndroidManifest.xml:31:17-49
+67            <meta-data
+67-->[androidx.lifecycle:lifecycle-process:2.6.2] /Users/christian/.gradle/caches/9.7.1/transforms/a133979223417fa239a925d2175f16b6/transformed/lifecycle-process-2.6.2/AndroidManifest.xml:29:13-31:52
+68                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
+68-->[androidx.lifecycle:lifecycle-process:2.6.2] /Users/christian/.gradle/caches/9.7.1/transforms/a133979223417fa239a925d2175f16b6/transformed/lifecycle-process-2.6.2/AndroidManifest.xml:30:17-78
+69                android:value="androidx.startup" />
+69-->[androidx.lifecycle:lifecycle-process:2.6.2] /Users/christian/.gradle/caches/9.7.1/transforms/a133979223417fa239a925d2175f16b6/transformed/lifecycle-process-2.6.2/AndroidManifest.xml:31:17-49
+70            <meta-data
+70-->[androidx.profileinstaller:profileinstaller:1.4.0] /Users/christian/.gradle/caches/9.7.1/transforms/e9b94ec360d98860d0ad2ded423f9e93/transformed/profileinstaller-1.4.0/AndroidManifest.xml:29:13-31:52
+71                android:name="androidx.profileinstaller.ProfileInstallerInitializer"
+71-->[androidx.profileinstaller:profileinstaller:1.4.0] /Users/christian/.gradle/caches/9.7.1/transforms/e9b94ec360d98860d0ad2ded423f9e93/transformed/profileinstaller-1.4.0/AndroidManifest.xml:30:17-85
+72                android:value="androidx.startup" />
+72-->[androidx.profileinstaller:profileinstaller:1.4.0] /Users/christian/.gradle/caches/9.7.1/transforms/e9b94ec360d98860d0ad2ded423f9e93/transformed/profileinstaller-1.4.0/AndroidManifest.xml:31:17-49
+73        </provider>
+74
+75        <receiver
+75-->[androidx.profileinstaller:profileinstaller:1.4.0] /Users/christian/.gradle/caches/9.7.1/transforms/e9b94ec360d98860d0ad2ded423f9e93/transformed/profileinstaller-1.4.0/AndroidManifest.xml:34:9-52:20
+76            android:name="androidx.profileinstaller.ProfileInstallReceiver"
+76-->[androidx.profileinstaller:profileinstaller:1.4.0] /Users/christian/.gradle/caches/9.7.1/transforms/e9b94ec360d98860d0ad2ded423f9e93/transformed/profileinstaller-1.4.0/AndroidManifest.xml:35:13-76
+77            android:directBootAware="false"
+77-->[androidx.profileinstaller:profileinstaller:1.4.0] /Users/christian/.gradle/caches/9.7.1/transforms/e9b94ec360d98860d0ad2ded423f9e93/transformed/profileinstaller-1.4.0/AndroidManifest.xml:36:13-44
+78            android:enabled="true"
+78-->[androidx.profileinstaller:profileinstaller:1.4.0] /Users/christian/.gradle/caches/9.7.1/transforms/e9b94ec360d98860d0ad2ded423f9e93/transformed/profileinstaller-1.4.0/AndroidManifest.xml:37:13-35
+79            android:exported="true"
+79-->[androidx.profileinstaller:profileinstaller:1.4.0] /Users/christian/.gradle/caches/9.7.1/transforms/e9b94ec360d98860d0ad2ded423f9e93/transformed/profileinstaller-1.4.0/AndroidManifest.xml:38:13-36
+80            android:permission="android.permission.DUMP" >
+80-->[androidx.profileinstaller:profileinstaller:1.4.0] /Users/christian/.gradle/caches/9.7.1/transforms/e9b94ec360d98860d0ad2ded423f9e93/transformed/profileinstaller-1.4.0/AndroidManifest.xml:39:13-57
+81            <intent-filter>
+81-->[androidx.profileinstaller:profileinstaller:1.4.0] /Users/christian/.gradle/caches/9.7.1/transforms/e9b94ec360d98860d0ad2ded423f9e93/transformed/profileinstaller-1.4.0/AndroidManifest.xml:40:13-42:29
+82                <action android:name="androidx.profileinstaller.action.INSTALL_PROFILE" />
+82-->[androidx.profileinstaller:profileinstaller:1.4.0] /Users/christian/.gradle/caches/9.7.1/transforms/e9b94ec360d98860d0ad2ded423f9e93/transformed/profileinstaller-1.4.0/AndroidManifest.xml:41:17-91
+82-->[androidx.profileinstaller:profileinstaller:1.4.0] /Users/christian/.gradle/caches/9.7.1/transforms/e9b94ec360d98860d0ad2ded423f9e93/transformed/profileinstaller-1.4.0/AndroidManifest.xml:41:25-88
+83            </intent-filter>
+84            <intent-filter>
+84-->[androidx.profileinstaller:profileinstaller:1.4.0] /Users/christian/.gradle/caches/9.7.1/transforms/e9b94ec360d98860d0ad2ded423f9e93/transformed/profileinstaller-1.4.0/AndroidManifest.xml:43:13-45:29
+85                <action android:name="androidx.profileinstaller.action.SKIP_FILE" />
+85-->[androidx.profileinstaller:profileinstaller:1.4.0] /Users/christian/.gradle/caches/9.7.1/transforms/e9b94ec360d98860d0ad2ded423f9e93/transformed/profileinstaller-1.4.0/AndroidManifest.xml:44:17-85
+85-->[androidx.profileinstaller:profileinstaller:1.4.0] /Users/christian/.gradle/caches/9.7.1/transforms/e9b94ec360d98860d0ad2ded423f9e93/transformed/profileinstaller-1.4.0/AndroidManifest.xml:44:25-82
+86            </intent-filter>
+87            <intent-filter>
+87-->[androidx.profileinstaller:profileinstaller:1.4.0] /Users/christian/.gradle/caches/9.7.1/transforms/e9b94ec360d98860d0ad2ded423f9e93/transformed/profileinstaller-1.4.0/AndroidManifest.xml:46:13-48:29
+88                <action android:name="androidx.profileinstaller.action.SAVE_PROFILE" />
+88-->[androidx.profileinstaller:profileinstaller:1.4.0] /Users/christian/.gradle/caches/9.7.1/transforms/e9b94ec360d98860d0ad2ded423f9e93/transformed/profileinstaller-1.4.0/AndroidManifest.xml:47:17-88
+88-->[androidx.profileinstaller:profileinstaller:1.4.0] /Users/christian/.gradle/caches/9.7.1/transforms/e9b94ec360d98860d0ad2ded423f9e93/transformed/profileinstaller-1.4.0/AndroidManifest.xml:47:25-85
+89            </intent-filter>
+90            <intent-filter>
+90-->[androidx.profileinstaller:profileinstaller:1.4.0] /Users/christian/.gradle/caches/9.7.1/transforms/e9b94ec360d98860d0ad2ded423f9e93/transformed/profileinstaller-1.4.0/AndroidManifest.xml:49:13-51:29
+91                <action android:name="androidx.profileinstaller.action.BENCHMARK_OPERATION" />
+91-->[androidx.profileinstaller:profileinstaller:1.4.0] /Users/christian/.gradle/caches/9.7.1/transforms/e9b94ec360d98860d0ad2ded423f9e93/transformed/profileinstaller-1.4.0/AndroidManifest.xml:50:17-95
+91-->[androidx.profileinstaller:profileinstaller:1.4.0] /Users/christian/.gradle/caches/9.7.1/transforms/e9b94ec360d98860d0ad2ded423f9e93/transformed/profileinstaller-1.4.0/AndroidManifest.xml:50:25-92
+92            </intent-filter>
+93        </receiver>
+94    </application>
+95
+96</manifest>

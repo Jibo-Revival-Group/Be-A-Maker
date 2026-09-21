@@ -10,7 +10,6 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
 import android.util.Log;
-import android.view.KeyEvent;
 import android.webkit.ConsoleMessage;
 import android.webkit.WebChromeClient;
 import android.webkit.WebView;
@@ -41,9 +40,7 @@ import android.widget.Toast;
 import android.app.AlertDialog;
 import android.webkit.WebSettings;
 import android.graphics.Color;
-import com.beamaker.app.BuildConfig;
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
-import androidx.annotation.NonNull;
 
 import java.io.File;
 import java.io.FileOutputStream;
@@ -107,8 +104,12 @@ public class MainActivity extends Activity {
         settings.setDisplayZoomControls(false);
 
         // Feature 18: Clear Cache on Startup if debug
-        if (BuildConfig.DEBUG) {
-            webView.clearCache(true);
+        try {
+            java.lang.reflect.Field debugField = Class.forName(getPackageName() + ".BuildConfig").getField("DEBUG");
+            if (debugField.getBoolean(null)) {
+                webView.clearCache(true);
+            }
+        } catch (Exception ignored) {
         }
 
         webView.setWebViewClient(new WebViewClient() {
@@ -146,10 +147,14 @@ public class MainActivity extends Activity {
                 FrameLayout.LayoutParams.MATCH_PARENT, FrameLayout.LayoutParams.MATCH_PARENT));
         swipeRefreshLayout.setVisibility(View.GONE);
 
-        // Feature 16: Build Environment Indicator
-        String envStr = BuildConfig.DEBUG ? " [DEBUG]" : "";
+        boolean isDebug = false;
+        try {
+            Class<?> buildConfigClass = Class.forName(getPackageName() + ".BuildConfig");
+            isDebug = buildConfigClass.getField("DEBUG").getBoolean(null);
+        } catch (Exception ignored) {
+        }
         statusText = new TextView(this);
-        statusText.setText("Starting Be a Maker" + envStr + "\u2026");
+        statusText.setText(isDebug ? getString(R.string.starting_msg_debug) : getString(R.string.starting_msg));
         statusText.setGravity(android.view.Gravity.CENTER);
         statusText.setTextSize(18);
         statusText.setTextColor(Color.WHITE);
@@ -171,7 +176,7 @@ public class MainActivity extends Activity {
         networkBanner = new TextView(this);
         networkBanner.setBackgroundColor(Color.RED);
         networkBanner.setTextColor(Color.WHITE);
-        networkBanner.setText("No Wi-Fi Connection");
+        networkBanner.setText(R.string.no_wifi);
         networkBanner.setGravity(android.view.Gravity.CENTER);
         networkBanner.setVisibility(View.GONE);
         root.addView(networkBanner, new FrameLayout.LayoutParams(
@@ -210,7 +215,7 @@ public class MainActivity extends Activity {
                 return;
             }
             this.doubleBackToExitPressedOnce = true;
-            Toast.makeText(this, "Press BACK again to exit", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, R.string.exit_msg, Toast.LENGTH_SHORT).show();
             new Handler(Looper.getMainLooper()).postDelayed(() -> doubleBackToExitPressedOnce = false, 2000);
         }
     }
@@ -306,7 +311,7 @@ public class MainActivity extends Activity {
 
         // Text
         TextView text = new TextView(this);
-        text.setText("Please rotate your device to landscape");
+        text.setText(R.string.rotate_msg);
         text.setTextColor(0xFFFFFFFF);
         text.setTextSize(20);
         text.setGravity(android.view.Gravity.CENTER);
@@ -421,8 +426,7 @@ public class MainActivity extends Activity {
                     statusText.setVisibility(android.view.View.GONE);
                     progressBar.setVisibility(android.view.View.GONE);
                 } else {
-                    statusText.setText("Could not start the local server. Check Logcat (tag: "
-                            + TAG + " / BEAMAKER-NODE) for errors.");
+                    statusText.setText(R.string.server_error);
                     progressBar.setVisibility(android.view.View.GONE);
                 }
             });

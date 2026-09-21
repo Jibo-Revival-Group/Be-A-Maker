@@ -1,26 +1,34 @@
 [
     {
-        "merged": "com.beamaker.app-debug-36:/mipmap-xhdpi_ic_launcher.png.flat",
-        "source": "com.beamaker.app-main-38:/mipmap-xhdpi/ic_launcher.png"
+        "merged": "/Users/christian/.gradle/daemon/9.7.1/com.beamaker.app-debug-37:/mipmap-xxhdpi_ic_launcher.png.flat",
+        "source": "/Users/christian/.gradle/daemon/9.7.1/com.beamaker.app-main-39:/mipmap-xxhdpi/ic_launcher.png"
     },
     {
-        "merged": "com.beamaker.app-debug-36:/mipmap-xxxhdpi_ic_launcher.png.flat",
-        "source": "com.beamaker.app-main-38:/mipmap-xxxhdpi/ic_launcher.png"
+        "merged": "com.beamaker.app-debug-37:/xml_shortcuts.xml.flat",
+        "source": "com.beamaker.app-main-39:/xml/shortcuts.xml"
     },
     {
-        "merged": "com.beamaker.app-debug-36:/mipmap-xxhdpi_ic_launcher.png.flat",
-        "source": "com.beamaker.app-main-38:/mipmap-xxhdpi/ic_launcher.png"
+        "merged": "/Users/christian/.gradle/daemon/9.7.1/com.beamaker.app-debug-37:/mipmap-hdpi_ic_launcher.png.flat",
+        "source": "/Users/christian/.gradle/daemon/9.7.1/com.beamaker.app-main-39:/mipmap-hdpi/ic_launcher.png"
     },
     {
-        "merged": "com.beamaker.app-debug-36:/mipmap-mdpi_ic_launcher.png.flat",
-        "source": "com.beamaker.app-main-38:/mipmap-mdpi/ic_launcher.png"
+        "merged": "/Users/christian/.gradle/daemon/9.7.1/com.beamaker.app-debug-37:/mipmap-xhdpi_ic_launcher.png.flat",
+        "source": "/Users/christian/.gradle/daemon/9.7.1/com.beamaker.app-main-39:/mipmap-xhdpi/ic_launcher.png"
     },
     {
-        "merged": "com.beamaker.app-debug-36:/mipmap_ic_launcher.png.flat",
-        "source": "com.beamaker.app-main-38:/mipmap/ic_launcher.png"
+        "merged": "/Users/christian/.gradle/daemon/9.7.1/com.beamaker.app-debug-37:/mipmap_ic_launcher.png.flat",
+        "source": "/Users/christian/.gradle/daemon/9.7.1/com.beamaker.app-main-39:/mipmap/ic_launcher.png"
     },
     {
-        "merged": "com.beamaker.app-debug-36:/mipmap-hdpi_ic_launcher.png.flat",
-        "source": "com.beamaker.app-main-38:/mipmap-hdpi/ic_launcher.png"
+        "merged": "/Users/christian/.gradle/daemon/9.7.1/com.beamaker.app-debug-37:/mipmap-mdpi_ic_launcher.png.flat",
+        "source": "/Users/christian/.gradle/daemon/9.7.1/com.beamaker.app-main-39:/mipmap-mdpi/ic_launcher.png"
+    },
+    {
+        "merged": "/Users/christian/.gradle/daemon/9.7.1/com.beamaker.app-debug-37:/mipmap-xxxhdpi_ic_launcher.png.flat",
+        "source": "/Users/christian/.gradle/daemon/9.7.1/com.beamaker.app-main-39:/mipmap-xxxhdpi/ic_launcher.png"
+    },
+    {
+        "merged": "/Users/christian/.gradle/daemon/9.7.1/com.beamaker.app-debug-37:/xml_shortcuts.xml.flat",
+        "source": "/Users/christian/.gradle/daemon/9.7.1/com.beamaker.app-main-39:/xml/shortcuts.xml"
     }
 ]

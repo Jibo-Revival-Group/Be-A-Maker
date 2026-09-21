@@ -1,8 +1,27 @@
 {
     "logs": [
         {
-            "outputFile": "com.beamaker.app-mergeDebugResources-34:/values-v33/values-v33.xml",
+            "outputFile": "com.beamaker.app-mergeDebugResources-35:/values-v33/values-v33.xml",
             "map": [
+                {
+                    "source": "/Users/christian/.gradle/caches/9.7.1/transforms/e75f81e4791f2cf43edeee9d83cdffc2/transformed/core-splashscreen-1.2.0/res/values-v33/values-v33.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endLines": "5",
+                        "endColumns": "12",
+                        "endOffsets": "284"
+                    },
+                    "to": {
+                        "startLines": "6",
+                        "startColumns": "4",
+                        "startOffsets": "470",
+                        "endLines": "9",
+                        "endColumns": "12",
+                        "endOffsets": "699"
+                    }
+                },
                 {
                     "source": "/Users/christian/.gradle/caches/9.7.1/transforms/a46dd8b53b9fa1eeaad0038dec7af8e2/transformed/material-1.14.0/res/values-v33/values-v33.xml",
                     "from": {

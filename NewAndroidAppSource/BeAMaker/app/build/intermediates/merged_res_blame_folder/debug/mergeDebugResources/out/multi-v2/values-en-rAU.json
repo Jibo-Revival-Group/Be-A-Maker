@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "com.beamaker.app-mergeDebugResources-34:/values-en-rAU/values-en-rAU.xml",
+            "outputFile": "com.beamaker.app-mergeDebugResources-35:/values-en-rAU/values-en-rAU.xml",
             "map": [
                 {
                     "source": "/Users/christian/.gradle/caches/9.7.1/transforms/504878af347aea368e4c2bbcec44beda/transformed/core-1.16.0/res/values-en-rAU/values-en-rAU.xml",

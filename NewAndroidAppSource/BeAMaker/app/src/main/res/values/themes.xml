@@ -12,6 +12,5 @@
         <item name="colorPrimaryVariant">#1976D2</item>
         <item name="colorOnPrimary">#FFFFFF</item>
         <item name="android:windowBackground">#121212</item>
-        <item name="android:windowKeepScreenOn">true</item> <!-- Feature 3: Keep Screen On -->
     </style>
 </resources>

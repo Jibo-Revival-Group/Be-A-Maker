@@ -1,3 +1,14 @@
 com.beamaker.app
 mipmap ic_launcher
 string app_name
+string exit_msg
+string no_wifi
+string rotate_msg
+string server_error
+string shortcut_long
+string shortcut_short
+string starting_msg
+string starting_msg_debug
+style Theme_App_Starting
+style Theme_BeAMaker
+xml shortcuts

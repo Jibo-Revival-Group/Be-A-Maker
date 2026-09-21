@@ -2,3 +2,14 @@ R_DEF: Internal format may change without notice
 local
 mipmap ic_launcher
 string app_name
+string exit_msg
+string no_wifi
+string rotate_msg
+string server_error
+string shortcut_long
+string shortcut_short
+string starting_msg
+string starting_msg_debug
+style Theme.App.Starting
+style Theme.BeAMaker
+xml shortcuts
