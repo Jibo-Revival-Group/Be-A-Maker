@@ -1,0 +1,12 @@
+# Exclude generated and binary Android artifacts that break Codacy analysis
+# The repository contains decompiled and build-generated files that are not valid UTF-8 source
+# and should not be scanned by static analysis tools.
+exclude_paths:
+  - "original/**"
+  - "**/build/**"
+  - "**/.gradle/**"
+  - "**/node_modules/**"
+  - "**/smali/**"
+  - "**/*.apk"
+  - "**/*.aab"
+  - "**/*.jar"
