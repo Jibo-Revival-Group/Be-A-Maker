@@ -1,6 +1,8 @@
 com.beamaker.app
 mipmap ic_launcher
 string app_name
+string btn_visit_github
+string btn_visit_us
 string exit_msg
 string rotate_msg
 string server_error

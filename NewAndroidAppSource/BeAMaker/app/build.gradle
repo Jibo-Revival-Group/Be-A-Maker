@@ -10,8 +10,8 @@ android {
         applicationId "com.beamaker.app"
         minSdkVersion 24
         targetSdkVersion 35
-        versionCode 1
-        versionName "1.0"
+        versionCode project.hasProperty('versionCode') ? project.property('versionCode').toInteger() : 1
+        versionName project.hasProperty('versionName') ? project.property('versionName').toString() : "1.0"
 
         // The prebuilt libnode.so was built with the c++_shared STL.
         externalNativeBuild {
@@ -27,8 +27,18 @@ android {
         }
     }
 
+    signingConfigs {
+        debug {
+            // Configured by Android Studio default debug keystore
+        }
+    }
+
     buildTypes {
+        debug {
+            signingConfig signingConfigs.debug
+        }
         release {
+            signingConfig signingConfigs.debug
             minifyEnabled false
         }
     }

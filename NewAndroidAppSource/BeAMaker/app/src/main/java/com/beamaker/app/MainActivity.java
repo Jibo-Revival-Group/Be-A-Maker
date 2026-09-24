@@ -37,6 +37,7 @@ import android.content.IntentFilter;
 import android.content.BroadcastReceiver;
 import android.net.Uri;
 import android.os.BatteryManager;
+import android.provider.Settings;
 import android.widget.Toast;
 import android.app.AlertDialog;
 import android.webkit.WebSettings;
@@ -388,6 +389,20 @@ public class MainActivity extends Activity {
                 .show();
     }
 
+    private boolean isPendingInstall = false;
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        if (isPendingInstall) {
+            isPendingInstall = false;
+            File apkFile = new File(getExternalCacheDir(), "update.apk");
+            if (apkFile.exists()) {
+                installApk(apkFile);
+            }
+        }
+    }
+
     private void startApkDownload(String downloadUrl) {
         Toast.makeText(this, "Downloading update...", Toast.LENGTH_LONG).show();
         new Thread(() -> {
@@ -397,6 +412,9 @@ public class MainActivity extends Activity {
                 conn.connect();
 
                 File apkFile = new File(getExternalCacheDir(), "update.apk");
+                if (apkFile.exists()) {
+                    apkFile.delete();
+                }
                 InputStream input = new BufferedInputStream(url.openStream());
                 OutputStream output = new FileOutputStream(apkFile);
 
@@ -419,16 +437,44 @@ public class MainActivity extends Activity {
     }
 
     private void installApk(File apkFile) {
+        if (!apkFile.exists()) {
+            Toast.makeText(this, "Update file not found.", Toast.LENGTH_SHORT).show();
+            return;
+        }
+
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            if (!getPackageManager().canRequestPackageInstalls()) {
+                isPendingInstall = true;
+                new AlertDialog.Builder(this)
+                        .setTitle("Permission Required")
+                        .setMessage("To install updates, please allow Be a Maker to install unknown apps in system settings.")
+                        .setPositiveButton("Settings", (dialog, which) -> {
+                            try {
+                                Intent intent = new Intent(Settings.ACTION_MANAGE_UNKNOWN_APP_SOURCES)
+                                        .setData(Uri.parse("package:" + getPackageName()));
+                                startActivity(intent);
+                            } catch (Exception e) {
+                                Log.e(TAG, "Could not open unknown app settings", e);
+                            }
+                        })
+                        .setNegativeButton("Cancel", (dialog, which) -> isPendingInstall = false)
+                        .show();
+                return;
+            }
+        }
+
         try {
             Intent intent = new Intent(Intent.ACTION_VIEW);
             Uri apkUri = FileProvider.getUriForFile(this, getPackageName() + ".fileprovider", apkFile);
             intent.setDataAndType(apkUri, "application/vnd.android.package-archive");
             intent.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);
             intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+            intent.putExtra(Intent.EXTRA_NOT_UNKNOWN_SOURCE, true);
             startActivity(intent);
         } catch (Exception e) {
             Log.e(TAG, "Installation failed", e);
-            Toast.makeText(this, "Could not start installer.", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "Could not start installer: " + e.getMessage(), Toast.LENGTH_SHORT).show();
         }
     }
 

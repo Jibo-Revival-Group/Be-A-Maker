@@ -1,5 +1,7 @@
 int mipmap ic_launcher 0x0
 int string app_name 0x0
+int string btn_visit_github 0x0
+int string btn_visit_us 0x0
 int string exit_msg 0x0
 int string rotate_msg 0x0
 int string server_error 0x0
