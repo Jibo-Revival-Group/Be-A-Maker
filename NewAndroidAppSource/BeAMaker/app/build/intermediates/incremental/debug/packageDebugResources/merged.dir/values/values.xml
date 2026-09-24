@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">Be a Maker</string>
+    <string name="btn_visit_github">Visit Us On Github!</string>
+    <string name="btn_visit_us">Visit Us!</string>
     <string name="exit_msg">Press BACK again to exit</string>
     <string name="rotate_msg">Please rotate your device to landscape</string>
     <string name="server_error">Could not start the local server. Check Logcat for errors.</string>

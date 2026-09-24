@@ -12,8 +12,10 @@ import android.os.Looper;
 import android.util.Log;
 import android.webkit.ConsoleMessage;
 import android.webkit.WebChromeClient;
+import android.webkit.WebResourceRequest;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
+import android.widget.Button;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -76,6 +78,7 @@ public class MainActivity extends Activity {
     private TextView statusText;
     private ProgressBar progressBar;
     private LinearLayout portraitLockView;
+    private LinearLayout startupLayout;
 
     private boolean doubleBackToExitPressedOnce = false;
     private BroadcastReceiver batteryReceiver;
@@ -117,6 +120,21 @@ public class MainActivity extends Activity {
 
         webView.setWebViewClient(new WebViewClient() {
             @Override
+            public boolean shouldOverrideUrlLoading(WebView view, WebResourceRequest request) {
+                String url = request.getUrl().toString();
+                if (url.startsWith("http://127.0.0.1:" + SERVER_PORT) || url.startsWith("file://")) {
+                    return false;
+                }
+                try {
+                    Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(url));
+                    startActivity(intent);
+                    return true;
+                } catch (Exception e) {
+                    return false;
+                }
+            }
+
+            @Override
             public void onPageFinished(WebView view, String url) {
                 super.onPageFinished(view, url);
                 swipeRefreshLayout.setRefreshing(false);
@@ -156,6 +174,11 @@ public class MainActivity extends Activity {
             isDebug = buildConfigClass.getField("DEBUG").getBoolean(null);
         } catch (Exception ignored) {
         }
+
+        startupLayout = new LinearLayout(this);
+        startupLayout.setOrientation(LinearLayout.VERTICAL);
+        startupLayout.setGravity(android.view.Gravity.CENTER);
+
         statusText = new TextView(this);
         statusText.setText(isDebug ? getString(R.string.starting_msg_debug) : getString(R.string.starting_msg));
         statusText.setGravity(android.view.Gravity.CENTER);
@@ -170,14 +193,41 @@ public class MainActivity extends Activity {
 
         progressBar = new ProgressBar(this, null, android.R.attr.progressBarStyleHorizontal);
         progressBar.setIndeterminate(true);
-        FrameLayout.LayoutParams progressParams = new FrameLayout.LayoutParams(
+        LinearLayout.LayoutParams progressParams = new LinearLayout.LayoutParams(
                 FrameLayout.LayoutParams.MATCH_PARENT, 20);
-        progressParams.gravity = android.view.Gravity.CENTER;
-        progressParams.topMargin = 100;
+        progressParams.setMargins(60, 30, 60, 30);
 
-        root.addView(statusText, new FrameLayout.LayoutParams(
+        LinearLayout buttonsLayout = new LinearLayout(this);
+        buttonsLayout.setOrientation(LinearLayout.HORIZONTAL);
+        buttonsLayout.setGravity(android.view.Gravity.CENTER);
+
+        Button visitUsBtn = new Button(this);
+        visitUsBtn.setText(R.string.btn_visit_us);
+        visitUsBtn.setOnClickListener(v -> {
+            Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://jiborevival.com"));
+            startActivity(intent);
+        });
+
+        Button visitGithubBtn = new Button(this);
+        visitGithubBtn.setText(R.string.btn_visit_github);
+        visitGithubBtn.setOnClickListener(v -> {
+            Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://github.com/Jibo-Revival-Group"));
+            startActivity(intent);
+        });
+
+        LinearLayout.LayoutParams btnParams = new LinearLayout.LayoutParams(
+                LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT);
+        btnParams.setMargins(16, 16, 16, 16);
+
+        buttonsLayout.addView(visitUsBtn, btnParams);
+        buttonsLayout.addView(visitGithubBtn, btnParams);
+
+        startupLayout.addView(statusText);
+        startupLayout.addView(progressBar, progressParams);
+        startupLayout.addView(buttonsLayout);
+
+        root.addView(startupLayout, new FrameLayout.LayoutParams(
                 FrameLayout.LayoutParams.MATCH_PARENT, FrameLayout.LayoutParams.MATCH_PARENT));
-        root.addView(progressBar, progressParams);
 
         setupPortraitLockView(root);
         checkOrientation(getResources().getConfiguration().orientation);
@@ -518,6 +568,9 @@ public class MainActivity extends Activity {
                     triggerHapticFeedback();
                     webView.loadUrl(SERVER_URL);
                     swipeRefreshLayout.setVisibility(android.view.View.VISIBLE);
+                    if (startupLayout != null) {
+                        startupLayout.setVisibility(android.view.View.GONE);
+                    }
                     statusText.setVisibility(android.view.View.GONE);
                     progressBar.setVisibility(android.view.View.GONE);
                 } else {

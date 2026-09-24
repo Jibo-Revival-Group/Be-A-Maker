@@ -8,4 +8,6 @@
     <string name="server_error">Could not start the local server. Check Logcat for errors.</string>
     <string name="shortcut_short">Playground</string>
     <string name="shortcut_long">Open Scratch Playground</string>
+    <string name="btn_visit_us">Visit Us!</string>
+    <string name="btn_visit_github">Visit Us On Github!</string>
 </resources>

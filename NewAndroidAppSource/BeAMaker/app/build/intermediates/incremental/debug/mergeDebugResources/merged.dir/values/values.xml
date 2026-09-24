@@ -2582,6 +2582,8 @@
     <string description="Accessibility label describing the state when the bottom sheet is collapsed [CHAR LIMIT=NONE]" name="bottomsheet_state_collapsed">Collapsed</string>
     <string description="Accessibility label describing the state when the bottom sheet is expanded [CHAR LIMIT=NONE]" name="bottomsheet_state_expanded">Expanded</string>
     <string description="Accessibility label describing the state when the bottom sheet is half expanded to its full height [CHAR LIMIT=NONE]" name="bottomsheet_state_half_expanded">Half expanded</string>
+    <string name="btn_visit_github">Visit Us On Github!</string>
+    <string name="btn_visit_us">Visit Us!</string>
     <string name="call_notification_answer_action">Answer</string>
     <string name="call_notification_answer_video_action">Video</string>
     <string name="call_notification_decline_action">Decline</string>
