@@ -1,6 +1,5 @@
-# Exclude generated and binary Android artifacts that break Codacy analysis
-# The repository contains decompiled and build-generated files that are not valid UTF-8 source
-# and should not be scanned by static analysis tools.
+# Exclude generated artifacts and files with invalid UTF-8 that make Codacy's
+# SARIF formatter fail while reading source lines.
 exclude_paths:
   - "original/**"
   - "**/build/**"
@@ -10,3 +9,9 @@ exclude_paths:
   - "**/*.apk"
   - "**/*.aab"
   - "**/*.jar"
+  - "docs/patch-notes.md"
+  - "**/values-el/strings.xml"
+  - "**/values-en-rXC/strings.xml"
+  - "**/values-kn/strings.xml"
+  - "**/values-my/strings.xml"
+  - "**/values-ne/strings.xml"
