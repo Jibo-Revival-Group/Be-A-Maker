@@ -5,6 +5,8 @@ A patched build of Jibo's official Be a Maker companion app (`com.everis.jibo.ap
 
 This is a Jibo Revival Group preservation project. It is not affiliated with Jibo Inc. or NTT Disruption.
 
+#MOBILE APP USERS: tablets are recommended for best experience.
+
 ## Status
 Web App is complete.
 
