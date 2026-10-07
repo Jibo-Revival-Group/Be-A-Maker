@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Be a Maker Web — Pair</title>
+  <link rel="stylesheet" href="/bam.css">
+  <link rel="stylesheet" href="/pairing.css">
+</head>
+<body>
+  <div id="pairing" class="pairing">
+    <div class="pairing-bg" aria-hidden="true"></div>
+    <div id="stars-pairing" class="stars-layer" aria-hidden="true"></div>
+    <header class="pairing-toolbar">
+      <button id="btn-back" type="button" class="icon-hit" aria-label="Back">
+        <img src="/apk/icons/back.svg" width="24" height="24" alt="">
+      </button>
+      <button id="btn-refresh" type="button" class="icon-hit" aria-label="Refresh">
+        <img src="/apk/icons/refresh.svg" width="24" height="24" alt="">
+      </button>
+    </header>
+    <h1>WHICH JIBO DO YOU WANT TO CONNECT TO?</h1>
+    <div class="robots">
+      <div id="robot-list" class="robot-list"></div>
+    </div>
+    <button id="connect" type="button" disabled>CONNECT</button>
+    <p id="status" class="status" role="status"></p>
+    <footer class="footer">
+      <img class="alert-icon" src="/apk/mipmap/ic_alert_update.png" width="24" height="24" alt="">
+      Remember that you need to have your Jibo revived and updated to enjoy it!
+    </footer>
+  </div>
+
+  <div id="connecting" class="connect-overlay" aria-hidden="true">
+    <div id="phase-connecting" class="connect-phase is-active">
+      <div class="connect-bg connecting-bg" aria-hidden="true"></div>
+      <div id="stars-connecting" class="stars-layer" aria-hidden="true"></div>
+      <h2>CONNECTING TO JIBO…</h2>
+      <div id="pairing-lottie" class="pairing-lottie"></div>
+    </div>
+    <div id="phase-connected" class="connect-phase">
+      <div class="connect-bg connected-bg" aria-hidden="true"></div>
+      <div class="puntitos puntitos-tl" aria-hidden="true"></div>
+      <div class="puntitos puntitos-br" aria-hidden="true"></div>
+      <h2 class="connected-title">CONNECTED.</h2>
+      <img class="connected-art" src="/apk/mipmap/connected_ilustracion.png" alt="">
+    </div>
+  </div>
+
+  <div id="splash" class="splash">
+    <img src="/splash.png" alt="Be a Maker">
+  </div>
+
+  <script src="/vendor/lottie.min.js"></script>
+  <script src="/stars.js"></script>
+  <script src="/bam-lottie.js"></script>
+  <script src="/pairing.js"></script>
+</body>
+</html>
