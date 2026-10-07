@@ -11,7 +11,7 @@ Web App is complete.
 Android app is complete, not based off of the direct decompilation as planned, but on the "web/" Node server.
 [Known issues](#known-issues) 
 
-iOS app is being developed by [immvic](https://github.com/immvic).
+iOS app is also complete, thanks to imvic.
 
 ## What was changed
 
