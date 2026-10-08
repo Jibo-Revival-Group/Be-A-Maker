@@ -58,6 +58,11 @@
     return window.location.origin || 'http://localhost:' + DEFAULT_PORT;
   }
 
+  function isApiPath(path) {
+    const str = String(path || '');
+    return /^\/api\/|^\/ws(\/|$)/.test(str);
+  }
+
   window.BamApi = {
     DEFAULT_PORT: DEFAULT_PORT,
     apiBase: function () {
@@ -79,10 +84,10 @@
 
   const nativeFetch = window.fetch.bind(window);
   window.fetch = function (input, init) {
-    if (typeof input === 'string' && input.startsWith('/')) {
+    if (typeof input === 'string' && isApiPath(input)) {
       return nativeFetch(window.BamApi.apiUrl(input), init);
     }
-    if (input && typeof input === 'object' && typeof input.url === 'string' && input.url.startsWith('/')) {
+    if (input && typeof input === 'object' && typeof input.url === 'string' && isApiPath(input.url)) {
       const clone = new Request(window.BamApi.apiUrl(input.url), input);
       return nativeFetch(clone, init);
     }
@@ -91,7 +96,7 @@
 
   const NativeWebSocket = window.WebSocket;
   window.WebSocket = function (url, protocols) {
-    if (typeof url === 'string' && url.startsWith('/')) {
+    if (typeof url === 'string' && isApiPath(url)) {
       return new NativeWebSocket(window.BamApi.wsUrl(url), protocols);
     }
     return new NativeWebSocket(url, protocols);
