@@ -36,6 +36,8 @@ This repo **is** an [apktool](https://apktool.org) project, kept at the root so 
 | `docs/` | Technical patch notes |
 | `web/` | Browser Be a Maker (pair by IP + Scratch) |
 | `license` | BSD 3-Clause |
+| `Vicios/` | New iOS app source |
+| `NewAndroidAppSource/` | Android Studio importable project which contains the new Android app source |
 
 Rebuild output (`build/`, `dist/`, `*.apk`) is gitignored.
 
