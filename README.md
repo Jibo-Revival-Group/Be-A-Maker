@@ -39,7 +39,7 @@ This repo **is** an [apktool](https://apktool.org) project, kept at the root so 
 | `Vicios/` | New iOS app source |
 | `NewAndroidAppSource/` | Android Studio importable project which contains the new Android app source |
 
-Rebuild output (`build/`, `dist/`, `*.apk`) is gitignored.
+Rebuild output (`build/`, `dist/`, `*.apk`) is sometimes gitignored.
 
 ## Known issues
 
