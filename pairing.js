@@ -312,7 +312,7 @@
         throw new Error(body.message || "Couldn't reach :" + (body.port || "7160"));
       }
       await showConnected();
-      window.location.href = "/scratch";
+      window.location.href = "./scratch.html";
     } catch (err) {
       hideConnecting();
       setStatus(err.message || "Couldn't reach :7160", "error");
