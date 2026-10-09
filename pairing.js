@@ -240,18 +240,25 @@
     });
   }
 
-  fetch("/api/status")
-    .then(function (res) {
-      return res.json();
-    })
-    .then(function (info) {
-      if (info && info.connected) {
-        window.location.href = "/scratch";
-        return;
-      }
-      boot();
-    })
-    .catch(boot);
+    // Try to check if already connected (with timeout)
+  // On GitHub Pages without a robot, this will fail fast
+  Promise.race([
+    fetch("/api/status")
+      .then(function (res) { return res.json(); })
+      .then(function (info) {
+        if (info && info.connected) {
+          window.location.href = "./scratch.html";
+        } else {
+          boot();
+        }
+      })
+      .catch(boot),
+    new Promise(function (resolve) {
+      setTimeout(function () {
+        resolve(null);
+      }, 2000); // 2 second timeout
+    }).then(boot)
+  ]);
 
   function boot() {
     BamStars.start(starsPairing);
