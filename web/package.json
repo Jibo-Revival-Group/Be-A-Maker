@@ -1,10 +1,11 @@
 {
-  "name": "beamaker-web",
+  "name": "revive-a-maker-web",
   "private": true,
   "version": "0.1.0",
-  "description": "Web Be a Maker — pair by robot IP and run Scratch over ROM",
+  "description": "Revive-A-Maker: pair with Jibo by IP and run Scratch over ROM",
   "scripts": {
-    "start": "node server.js"
+    "start": "node server.js",
+    "test": "node test/bam-rom.test.js"
   },
   "engines": {
     "node": ">=16"

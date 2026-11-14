@@ -249,5 +249,5 @@ wss.on('connection', (ws) => {
 });
 
 server.listen(PORT, '0.0.0.0', () => {
-  console.log(`Be a Maker web app: http://127.0.0.1:${PORT}`);
+  console.log(`Revive-A-Maker web app: http://127.0.0.1:${PORT}`);
 });

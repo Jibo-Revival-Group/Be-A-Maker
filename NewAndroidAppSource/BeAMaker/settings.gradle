@@ -12,5 +12,5 @@ dependencyResolutionManagement {
         mavenCentral()
     }
 }
-rootProject.name = "Be a Maker"
+rootProject.name = "Revive-A-Maker"
 include ':app'

@@ -10,8 +10,9 @@ android {
         applicationId "com.beamaker.app"
         minSdkVersion 24
         targetSdkVersion 35
-        versionCode project.hasProperty('versionCode') ? project.property('versionCode').toInteger() : 1
-        versionName project.hasProperty('versionName') ? project.property('versionName').toString() : "1.0"
+        // Keep in step with the release tag: the in-app updater compares this with the latest GitHub release.
+        versionCode project.hasProperty('versionCode') ? project.property('versionCode').toInteger() : 7
+        versionName project.hasProperty('versionName') ? project.property('versionName').toString() : "1.1.0"
 
         // The prebuilt libnode.so was built with the c++_shared STL.
         externalNativeBuild {
@@ -28,17 +29,18 @@ android {
     }
 
     signingConfigs {
-        debug {
-            // Configured by Android Studio default debug keystore
+        // CI writes the 5x1 key (the one BEep uses) from repository secrets; local builds use the debug key.
+        release {
+            storeFile System.getenv('RAM_KEYSTORE') ? file(System.getenv('RAM_KEYSTORE')) : null
+            storePassword System.getenv('RAM_KEYSTORE_PASSWORD')
+            keyAlias 'beep'
+            keyPassword System.getenv('RAM_KEYSTORE_PASSWORD')
         }
     }
 
     buildTypes {
-        debug {
-            signingConfig signingConfigs.debug
-        }
         release {
-            signingConfig signingConfigs.debug
+            signingConfig System.getenv('RAM_KEYSTORE') ? signingConfigs.release : signingConfigs.debug
             minifyEnabled false
         }
     }
@@ -80,3 +82,23 @@ android {
         implementation 'androidx.core:core-splashscreen:1.2.0'
     }
 }
+
+// The app runs the web app's own Node server (../../../web) with nodejs-mobile, plus the stock app's assets/ and res/
+// it serves, so they are copied in at build time instead of being kept twice in the repo.
+def repoRoot = rootProject.file('../..')
+def webAssets = layout.buildDirectory.dir('generated/webAssets')
+tasks.register('npmInstallWeb', Exec) {
+    workingDir new File(repoRoot, 'web')
+    commandLine 'npm', 'ci', '--omit=dev', '--no-audit', '--no-fund'
+    onlyIf { !new File(repoRoot, 'web/node_modules').exists() }
+}
+tasks.register('syncWebAssets', Sync) {
+    dependsOn 'npmInstallWeb'
+    into webAssets
+    from(repoRoot) { include 'splash.png' }
+    from(new File(repoRoot, 'assets')) { into 'assets' }
+    from(new File(repoRoot, 'res')) { into 'res' }
+    from(new File(repoRoot, 'web')) { into 'nodejs-project'; exclude 'data/**' }
+}
+android.sourceSets.main.assets.srcDir webAssets
+tasks.named('preBuild') { dependsOn 'syncWebAssets' }

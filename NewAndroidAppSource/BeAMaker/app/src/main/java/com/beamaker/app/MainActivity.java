@@ -284,7 +284,7 @@ public class MainActivity extends Activity {
 
     private void showAboutDialog() {
         new AlertDialog.Builder(this)
-                .setTitle("About Be a Maker")
+                .setTitle("About Revive-A-Maker")
                 .setMessage("Version: " + getVersionName() + "\nRunning Node.js Environment")
                 .setPositiveButton("OK", null)
                 .show();
@@ -324,7 +324,7 @@ public class MainActivity extends Activity {
 
     private void checkForUpdates() {
         try {
-            URL url = new URL("https://api.github.com/repos/Jibo-Revival-Group/Be-A-Maker/releases/latest");
+            URL url = new URL("https://api.github.com/repos/Jibo-Revival-Group/Revive-A-Maker/releases/latest");
             HttpURLConnection conn = (HttpURLConnection) url.openConnection();
             conn.setRequestProperty("User-Agent", "BeAMaker-Android-Updater");
             conn.setConnectTimeout(5000);
@@ -383,7 +383,7 @@ public class MainActivity extends Activity {
     private void showUpdateDialog(String downloadUrl, String newVersion) {
         new AlertDialog.Builder(this)
                 .setTitle("Update Available")
-                .setMessage("A new version (" + newVersion + ") of Be a Maker is available. Would you like to download and install it?")
+                .setMessage("A new version (" + newVersion + ") of Revive-A-Maker is available. Would you like to download and install it?")
                 .setPositiveButton("Update", (dialog, which) -> startApkDownload(downloadUrl))
                 .setNegativeButton("Later", null)
                 .show();
@@ -447,7 +447,7 @@ public class MainActivity extends Activity {
                 isPendingInstall = true;
                 new AlertDialog.Builder(this)
                         .setTitle("Permission Required")
-                        .setMessage("To install updates, please allow Be a Maker to install unknown apps in system settings.")
+                        .setMessage("To install updates, please allow Revive-A-Maker to install unknown apps in system settings.")
                         .setPositiveButton("Settings", (dialog, which) -> {
                             try {
                                 Intent intent = new Intent(Settings.ACTION_MANAGE_UNKNOWN_APP_SOURCES)

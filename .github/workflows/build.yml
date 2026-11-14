@@ -1,0 +1,91 @@
+name: Build
+
+# Every push builds the Android APK (signed with the 5x1 key) and the iPhone/iPad IPA (unsigned; AltStore and
+# SideStore sign it on install). A v* tag also publishes both as a GitHub release, which the Android app's
+# updater reads. apps.5x1.com (the 5x1 AltStore source and F-Droid repo) is updated from these files.
+on:
+  push:
+    branches: [main]
+    tags: ['v*']
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  web:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - run: cd web && npm ci --no-audit --no-fund && npm test && node --check server.js
+
+  android:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: 17
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - name: Build the APK
+        env:
+          RAM_KEYSTORE_B64: ${{ secrets.RAM_KEYSTORE_B64 }}
+          RAM_KEYSTORE_PASSWORD: ${{ secrets.RAM_KEYSTORE_PASSWORD }}
+        run: |
+          if [ -n "$RAM_KEYSTORE_B64" ]; then
+            echo "$RAM_KEYSTORE_B64" | base64 -d > "$RUNNER_TEMP/ram.jks"
+            export RAM_KEYSTORE="$RUNNER_TEMP/ram.jks"
+          fi
+          VERSION=$(grep -o "toString() : \"[^\"]*\"" NewAndroidAppSource/BeAMaker/app/build.gradle | cut -d'"' -f2)
+          cd NewAndroidAppSource/BeAMaker
+          chmod +x gradlew
+          ./gradlew --no-daemon -q assembleRelease
+          cp app/build/outputs/apk/release/app-release.apk "$GITHUB_WORKSPACE/Revive-A-Maker-$VERSION.apk"
+          TOOLS=$(ls -d "$ANDROID_HOME"/build-tools/* | sort -V | tail -1)
+          "$TOOLS/aapt2" dump badging "$GITHUB_WORKSPACE/Revive-A-Maker-$VERSION.apk" | grep -E "^(package|application-label):"
+          "$TOOLS/apksigner" verify --print-certs "$GITHUB_WORKSPACE/Revive-A-Maker-$VERSION.apk" | grep -i "SHA-256"
+          # The Node server, its modules and the Scratch playground are all inside.
+          unzip -l "$GITHUB_WORKSPACE/Revive-A-Maker-$VERSION.apk" | grep -E "assets/nodejs-project/(server.js|node_modules/rom-control/package.json)|assets/assets/web/playground/index.html"
+      - uses: actions/upload-artifact@v4
+        with:
+          name: Revive-A-Maker-Android
+          path: Revive-A-Maker-*.apk
+
+  ios:
+    runs-on: macos-26
+    steps:
+      - uses: actions/checkout@v4
+      - name: Build the IPA
+        run: |
+          cd "Vicios/Be a Maker IOS/Be a Maker"
+          xcodebuild -project "Be a Maker.xcodeproj" -scheme "Be a Maker" -configuration Release -sdk iphoneos \
+            -derivedDataPath dd CODE_SIGNING_ALLOWED=NO -quiet build
+          APP=$(ls -d dd/Build/Products/Release-iphoneos/*.app)
+          plutil -p "$APP/Info.plist" | grep -E 'CFBundleIdentifier|CFBundleDisplayName|CFBundleShortVersionString|NSLocalNetwork'
+          VERSION=$(plutil -extract CFBundleShortVersionString raw "$APP/Info.plist")
+          rm -rf Payload && mkdir Payload && cp -R "$APP" Payload/
+          zip -qry "$GITHUB_WORKSPACE/Revive-A-Maker-$VERSION.ipa" Payload
+      - uses: actions/upload-artifact@v4
+        with:
+          name: Revive-A-Maker-iOS
+          path: Revive-A-Maker-*.ipa
+
+  release:
+    if: startsWith(github.ref, 'refs/tags/v')
+    needs: [web, android, ios]
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/download-artifact@v4
+        with:
+          merge-multiple: true
+      - name: Publish the release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh release create "$GITHUB_REF_NAME" -R "$GITHUB_REPOSITORY" --title "Revive-A-Maker ${GITHUB_REF_NAME#v}" --generate-notes Revive-A-Maker-*

@@ -309,13 +309,9 @@ class BamRom {
           autoHeartbeat: true,
           autoSubscribe: true
         });
-        client.on('error', (err) => {
-          this.emit({
-            type: 'status',
-            state: 'error',
-            message: err && err.message ? err.message : String(err)
-          });
-        });
+        // Until connected, errors only reject the attempt below; _bindEvents reports them after that.
+        const quiet = () => {};
+        client.on('error', quiet);
         await Promise.race([
           client.connect(),
           new Promise((_, reject) => {
@@ -324,6 +320,7 @@ class BamRom {
             }, CONNECT_MS);
           })
         ]);
+        client.removeListener('error', quiet);
         this.client = client;
         this.host = trimmed;
         this.port = port;

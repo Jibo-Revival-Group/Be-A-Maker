@@ -141,9 +141,7 @@
       const art = document.createElement("img");
       art.className = "robot-art";
       art.alt = "";
-      art.src = selected
-        ? "/apk/mipmap/ic_jibo_pairing_selected.png"
-        : "/apk/mipmap/ic_jibo_pair.png";
+      art.src = "/apk/mipmap/ic_jibo_pair.png"; // the card's background shows the selection, as in the stock app
       card.appendChild(art);
 
       const name = document.createElement("input");
