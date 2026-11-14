@@ -86,7 +86,7 @@ android {
 // The app runs the web app's own Node server (../../../web) with nodejs-mobile, plus the stock app's assets/ and res/
 // it serves, so they are copied in at build time instead of being kept twice in the repo.
 def repoRoot = rootProject.file('../..')
-def webAssets = layout.buildDirectory.dir('generated/webAssets')
+def webAssets = layout.buildDirectory.dir('generated/webAssets').get().asFile  // a File: AGP 9 refuses Providers here
 tasks.register('npmInstallWeb', Exec) {
     workingDir new File(repoRoot, 'web')
     commandLine 'npm', 'ci', '--omit=dev', '--no-audit', '--no-fund'
