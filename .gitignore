@@ -1,17 +1,29 @@
-# apktool rebuild output
-build/reports/problems/
+# apktool rebuild output (the legacy patched APK)
+/build/
 dist/
 *.apk
 *.idsig
+*.ipa
 
 # signing keys
 *.jks
 *.keystore
 *.p12
- 
+
 # web app
 web/node_modules/
 web/data/
+
+# Android build output (Gradle copies web/, assets/ and res/ into the app at build time)
+NewAndroidAppSource/BeAMaker/.gradle/
+NewAndroidAppSource/BeAMaker/build/
+NewAndroidAppSource/BeAMaker/app/build/
+NewAndroidAppSource/BeAMaker/app/.cxx/
+NewAndroidAppSource/BeAMaker/local.properties
+
+# iOS build output
+xcuserdata/
+DerivedData/
 
 # OS / editor junk
 .DS_Store
@@ -20,10 +32,3 @@ __MACOSX/
 .idea/
 *.iml
 .vscode/
-NewAndroidAppSource/BeAMaker/local.properties
-NewAndroidAppSource/BeAMaker/local.properties
-NewAndroidAppSource/BeAMaker/local.properties
-NewAndroidAppSource/BeAMaker/local.properties
-NewAndroidAppSource/BeAMaker/local.properties
-NewAndroidAppSource/BeAMaker/local.properties
-NewAndroidAppSource/BeAMaker/local.properties

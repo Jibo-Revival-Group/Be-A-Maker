@@ -218,6 +218,35 @@ h1 {
   color: #ffe0c2;
 }
 
+.link-buttons {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  margin: 16px auto 0;
+}
+
+.visit-btn {
+  display: inline-block;
+  padding: 8px 16px;
+  border: 1px solid rgba(255, 255, 255, 0.7);
+  border-radius: var(--radius-5);
+  background: rgba(255, 255, 255, 0.15);
+  color: #fff;
+  text-decoration: none;
+  font-family: var(--font-book);
+  font-size: 14px;
+  letter-spacing: 0.05em;
+  transition: background-color var(--anim) ease;
+}
+
+.visit-btn:hover,
+.visit-btn:active {
+  background: rgba(255, 255, 255, 0.3);
+}
+
 .footer {
   position: fixed;
   left: 0;
