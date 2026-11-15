@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout n0:gravity="center" n0:layout_gravity="center" n0:id="@id/flRoot" n0:layout_width="@dimen/wPairingItemBg" n0:layout_height="match_parent"
+  xmlns:n0="http://schemas.android.com/apk/res/android">
+    <RelativeLayout n0:orientation="vertical" n0:id="@id/llBackground" n0:background="@drawable/dw_item_jibo_selector" n0:visibility="visible" n0:layout_width="@dimen/wPairingItemBg" n0:layout_height="@dimen/hPairingItemBg">
+        <RelativeLayout n0:orientation="vertical" n0:id="@id/rlImage" n0:paddingTop="@dimen/marginSmall" n0:layout_width="match_parent" n0:layout_height="match_parent" n0:layout_above="@id/llText">
+            <ImageView n0:id="@id/ivJibo" n0:layout_width="match_parent" n0:layout_height="match_parent" n0:contentDescription="@null" n1:srcCompat="@mipmap/ic_jibo_pair"
+              xmlns:n1="http://schemas.android.com/apk/res-auto" />
+        </RelativeLayout>
+        <LinearLayout n0:orientation="vertical" n0:id="@id/llText" n0:padding="@dimen/marginSmall" n0:layout_width="match_parent" n0:layout_height="wrap_content" n0:layout_alignParentBottom="true">
+            <TextView n0:textSize="@dimen/font12" n0:textStyle="bold" n0:textColor="@color/colorWhite" n0:gravity="center" n0:id="@id/tvJiboName" n0:layout_width="match_parent" n0:layout_height="wrap_content" fontPath="fonts/Hanken-Book.ttf" />
+            <TextView n0:textSize="@dimen/font12" n0:textColor="@color/colorWhite" n0:gravity="center" n0:id="@id/tvJiboSurname" n0:layout_width="match_parent" n0:layout_height="wrap_content" fontPath="fonts/Hanken-Light.ttf" />
+        </LinearLayout>
+    </RelativeLayout>
+</RelativeLayout>

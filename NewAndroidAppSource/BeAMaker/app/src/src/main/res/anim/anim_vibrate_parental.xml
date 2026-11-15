@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<set n0:interpolator="@android:anim/linear_interpolator" n0:fillAfter="true"
+  xmlns:n0="http://schemas.android.com/apk/res/android">
+    <translate n0:duration="20" n0:fromXDelta="-20.0" n0:toXDelta="19.0" />
+    <translate n0:duration="20" n0:startOffset="20" n0:fromXDelta="19.0" n0:toXDelta="-18.0" />
+    <translate n0:duration="20" n0:startOffset="40" n0:fromXDelta="-18.0" n0:toXDelta="17.0" />
+    <translate n0:duration="20" n0:startOffset="60" n0:fromXDelta="17.0" n0:toXDelta="-16.0" />
+    <translate n0:duration="20" n0:startOffset="80" n0:fromXDelta="-16.0" n0:toXDelta="14.0" />
+    <translate n0:duration="20" n0:startOffset="100" n0:fromXDelta="14.0" n0:toXDelta="-12.0" />
+    <translate n0:duration="20" n0:startOffset="120" n0:fromXDelta="-12.0" n0:toXDelta="10.0" />
+    <translate n0:duration="20" n0:startOffset="140" n0:fromXDelta="10.0" n0:toXDelta="-7.0" />
+    <translate n0:duration="20" n0:startOffset="160" n0:fromXDelta="-7.0" n0:toXDelta="4.0" />
+    <translate n0:duration="20" n0:startOffset="200" n0:fromXDelta="4.0" n0:toXDelta="0.0" />
+    <translate n0:duration="20" n0:startOffset="220" n0:fromXDelta="0.0" n0:toXDelta="0.0" />
+</set>

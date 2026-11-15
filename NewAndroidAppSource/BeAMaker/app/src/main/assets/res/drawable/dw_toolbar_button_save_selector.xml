@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector>
+    <item n0:state_enabled="true" n0:drawable="@drawable/dw_toolbar_button_save_enabled"
+      xmlns:n0="http://schemas.android.com/apk/res/android" />
+    <item n1:state_enabled="false" n1:drawable="@drawable/dw_toolbar_button_save_disabled"
+      xmlns:n1="http://schemas.android.com/apk/res/android" />
+</selector>

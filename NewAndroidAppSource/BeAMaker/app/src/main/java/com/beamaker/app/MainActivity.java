@@ -35,10 +35,17 @@ import androidx.core.splashscreen.SplashScreen;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.content.BroadcastReceiver;
+import android.net.ConnectivityManager;
+import android.net.Network;
 import android.net.Uri;
 import android.os.BatteryManager;
 import android.provider.Settings;
+import android.view.WindowManager;
+import android.content.pm.ShortcutInfo;
+import android.content.pm.ShortcutManager;
+import android.graphics.drawable.Icon;
 import android.widget.Toast;
+import java.util.Arrays;
 import android.app.AlertDialog;
 import android.webkit.WebSettings;
 import android.graphics.Color;
@@ -83,12 +90,16 @@ public class MainActivity extends Activity {
 
     private boolean doubleBackToExitPressedOnce = false;
     private BroadcastReceiver batteryReceiver;
+    private ConnectivityManager.NetworkCallback networkCallback;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         // Feature 1: Splash Screen API
         SplashScreen splashScreen = SplashScreen.installSplashScreen(this);
         super.onCreate(savedInstanceState);
+
+        // Feature 24: Keep Screen On
+        getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
 
         FrameLayout root = new FrameLayout(this);
         root.setBackgroundColor(Color.parseColor("#121212"));
@@ -109,6 +120,11 @@ public class MainActivity extends Activity {
         settings.setAllowFileAccess(true);
         settings.setBuiltInZoomControls(true);
         settings.setDisplayZoomControls(false);
+
+        // Feature 20: Force Dark Mode support on Android 10+
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
+            settings.setForceDark(WebSettings.FORCE_DARK_AUTO);
+        }
 
         // Feature 18: Clear Cache on Startup if debug
         try {
@@ -186,9 +202,9 @@ public class MainActivity extends Activity {
         statusText.setTextSize(18);
         statusText.setTextColor(Color.WHITE);
         
-        // Feature 15: About Dialog via Long Press
+        // Feature 15 & 22: Quick Actions & About Dialog via Long Press
         statusText.setOnLongClickListener(v -> {
-            showAboutDialog();
+            showQuickMenuDialog();
             return true;
         });
 
@@ -234,6 +250,8 @@ public class MainActivity extends Activity {
         checkOrientation(getResources().getConfiguration().orientation);
         enableImmersiveMode();
         setupReceivers();
+        setupNetworkObserver();
+        setupDynamicShortcuts();
 
         setContentView(root);
 
@@ -282,9 +300,52 @@ public class MainActivity extends Activity {
         }
     }
 
+    private void showQuickMenuDialog() {
+        String[] options = {
+                "Reload Page",
+                "Clear Cache & Reload",
+                "Check for Updates",
+                "Visit Jibo Revival Website",
+                "Visit GitHub Repository",
+                "About Be a Maker"
+        };
+
+        new AlertDialog.Builder(this)
+                .setTitle("Quick Options")
+                .setItems(options, (dialog, which) -> {
+                    switch (which) {
+                        case 0:
+                            if (webView != null) webView.reload();
+                            break;
+                        case 1:
+                            if (webView != null) {
+                                webView.clearCache(true);
+                                webView.reload();
+                                Toast.makeText(this, "Cache cleared", Toast.LENGTH_SHORT).show();
+                            }
+                            break;
+                        case 2:
+                            Toast.makeText(this, "Checking for updates...", Toast.LENGTH_SHORT).show();
+                            new Thread(this::checkForUpdates).start();
+                            break;
+                        case 3:
+                            startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("https://jiborevival.com")));
+                            break;
+                        case 4:
+                            startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("https://github.com/Jibo-Revival-Group")));
+                            break;
+                        case 5:
+                            showAboutDialog();
+                            break;
+                    }
+                })
+                .setNegativeButton("Close", null)
+                .show();
+    }
+
     private void showAboutDialog() {
         new AlertDialog.Builder(this)
-                .setTitle("About Revive-A-Maker")
+                .setTitle("About Be a Maker")
                 .setMessage("Version: " + getVersionName() + "\nRunning Node.js Environment")
                 .setPositiveButton("OK", null)
                 .show();
@@ -314,17 +375,72 @@ public class MainActivity extends Activity {
         registerReceiver(batteryReceiver, new IntentFilter(Intent.ACTION_BATTERY_CHANGED));
     }
 
+    private void setupNetworkObserver() {
+        ConnectivityManager cm = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
+        if (cm != null && Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
+            networkCallback = new ConnectivityManager.NetworkCallback() {
+                @Override
+                public void onLost(@NonNull Network network) {
+                    runOnUiThread(() -> Toast.makeText(MainActivity.this,
+                            "Network connection lost. Wi-Fi may be required for Jibo.", Toast.LENGTH_LONG).show());
+                }
+            };
+            try {
+                cm.registerDefaultNetworkCallback(networkCallback);
+            } catch (Exception e) {
+                Log.e(TAG, "Failed to register network callback", e);
+            }
+        }
+    }
+
+    private void setupDynamicShortcuts() {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N_MR1) {
+            try {
+                ShortcutManager shortcutManager = getSystemService(ShortcutManager.class);
+                if (shortcutManager != null) {
+                    Intent websiteIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://jiborevival.com"));
+                    ShortcutInfo websiteShortcut = new ShortcutInfo.Builder(this, "shortcut_website")
+                            .setShortLabel("Visit Us")
+                            .setLongLabel("Visit Jibo Revival Website")
+                            .setIcon(Icon.createWithResource(this, android.R.drawable.ic_menu_compass))
+                            .setIntent(websiteIntent)
+                            .build();
+
+                    Intent githubIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://github.com/Jibo-Revival-Group"));
+                    ShortcutInfo githubShortcut = new ShortcutInfo.Builder(this, "shortcut_github")
+                            .setShortLabel("GitHub")
+                            .setLongLabel("Visit Jibo Revival GitHub")
+                            .setIcon(Icon.createWithResource(this, android.R.drawable.ic_menu_info_details))
+                            .setIntent(githubIntent)
+                            .build();
+
+                    shortcutManager.setDynamicShortcuts(Arrays.asList(websiteShortcut, githubShortcut));
+                }
+            } catch (Exception e) {
+                Log.e(TAG, "Failed to setup shortcuts", e);
+            }
+        }
+    }
+
     @Override
     protected void onDestroy() {
         super.onDestroy();
         if (batteryReceiver != null) unregisterReceiver(batteryReceiver);
+        if (networkCallback != null && Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
+            ConnectivityManager cm = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
+            if (cm != null) {
+                try {
+                    cm.unregisterNetworkCallback(networkCallback);
+                } catch (Exception ignored) {}
+            }
+        }
     }
 
     // ---- Auto-Update Logic -----------------------------------------------------
 
     private void checkForUpdates() {
         try {
-            URL url = new URL("https://api.github.com/repos/Jibo-Revival-Group/Revive-A-Maker/releases/latest");
+            URL url = new URL("https://api.github.com/repos/Jibo-Revival-Group/Be-A-Maker/releases/latest");
             HttpURLConnection conn = (HttpURLConnection) url.openConnection();
             conn.setRequestProperty("User-Agent", "BeAMaker-Android-Updater");
             conn.setConnectTimeout(5000);
@@ -383,7 +499,7 @@ public class MainActivity extends Activity {
     private void showUpdateDialog(String downloadUrl, String newVersion) {
         new AlertDialog.Builder(this)
                 .setTitle("Update Available")
-                .setMessage("A new version (" + newVersion + ") of Revive-A-Maker is available. Would you like to download and install it?")
+                .setMessage("A new version (" + newVersion + ") of Be a Maker is available. Would you like to download and install it?")
                 .setPositiveButton("Update", (dialog, which) -> startApkDownload(downloadUrl))
                 .setNegativeButton("Later", null)
                 .show();
@@ -447,7 +563,7 @@ public class MainActivity extends Activity {
                 isPendingInstall = true;
                 new AlertDialog.Builder(this)
                         .setTitle("Permission Required")
-                        .setMessage("To install updates, please allow Revive-A-Maker to install unknown apps in system settings.")
+                        .setMessage("To install updates, please allow Be a Maker to install unknown apps in system settings.")
                         .setPositiveButton("Settings", (dialog, which) -> {
                             try {
                                 Intent intent = new Intent(Settings.ACTION_MANAGE_UNKNOWN_APP_SOURCES)

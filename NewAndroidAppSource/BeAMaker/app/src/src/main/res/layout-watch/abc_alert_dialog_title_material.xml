@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout n0:gravity="center|top" n0:orientation="vertical" n0:id="@id/topPanel" n0:layout_width="match_parent" n0:layout_height="wrap_content"
+  xmlns:n0="http://schemas.android.com/apk/res/android">
+    <LinearLayout n0:gravity="center_horizontal" n0:orientation="vertical" n0:id="@id/title_template" n0:layout_width="match_parent" n0:layout_height="wrap_content" n0:layout_marginTop="24.0dp">
+        <ImageView n0:layout_gravity="center_horizontal" n0:id="@android:id/icon" n0:layout_width="wrap_content" n0:layout_height="wrap_content" n0:adjustViewBounds="true" n0:maxWidth="24.0dp" n0:maxHeight="24.0dp" />
+        <android.support.v7.widget.DialogTitle n0:gravity="center" n0:id="@id/alertTitle" n0:layout_width="match_parent" n0:layout_height="wrap_content" style="?android:windowTitleStyle" />
+    </LinearLayout>
+    <android.widget.Space n0:id="@id/titleDividerNoCustom" n0:visibility="gone" n0:layout_width="match_parent" n0:layout_height="@dimen/abc_dialog_title_divider_material" />
+</LinearLayout>

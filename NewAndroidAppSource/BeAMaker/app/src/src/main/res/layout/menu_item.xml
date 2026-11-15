@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout n0:id="@id/menu_item" n0:background="@drawable/dw_menu_button_selector" n0:focusable="true" n0:clickable="true" n0:layout_width="match_parent" n0:layout_height="80.0dp"
+  xmlns:n0="http://schemas.android.com/apk/res/android">
+    <View n0:id="@id/whiteLine" n0:background="@color/colorWhite" n0:layout_width="38.299988dp" n0:layout_height="2.5dp" n0:layout_marginBottom="@dimen/marginSmall" n0:layout_above="@id/tvMenuTile" n0:layout_marginStart="20.0dp" />
+    <TextView n0:textSize="@dimen/font18" n0:textColor="@color/colorWhite" n0:id="@id/tvMenuTile" n0:layout_width="wrap_content" n0:layout_height="wrap_content" n0:text="@string/menu_item_projects" n0:layout_centerVertical="true" n0:layout_marginStart="20.0dp" fontPath="fonts/Hanken-Book.ttf" />
+</RelativeLayout>

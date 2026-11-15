@@ -1,0 +1,307 @@
+@font-face {
+  font-family: "Hanken Book";
+  src: url("/apk/assets/fonts/Hanken-Book.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Hanken Light";
+  src: url("/apk/assets/fonts/Hanken-Light.ttf") format("truetype");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+:root {
+  --rose: #c36871;
+  --rose-dark: #8f3d4a;
+  --white: #ffffff;
+  --scratch-blue: #2a3b5b;
+  --scratch-blue-dark: #222f48;
+  --menu-start: #3023ae;
+  --menu-end: #c86dd7;
+  --teal: #50bcca;
+  --orange: #f76e1e;
+  --blue: #336bff;
+  --pink: #ff36a6;
+  --overlay-css: rgba(0, 0, 0, 0.56);
+  --jibo-bg: rgba(255, 255, 255, 0.35);
+  --preview-text: #5b87da;
+  --radius-5: 5px;
+  --radius-10: 10px;
+  --anim: 300ms;
+  --anim-tray: 250ms;
+  --font-book: "Hanken Book", "Hanken Grotesk", "Trebuchet MS", "Segoe UI", sans-serif;
+  --font-light: "Hanken Light", "Hanken Grotesk", "Trebuchet MS", "Segoe UI", sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  min-height: 100%;
+}
+
+button,
+input {
+  font-family: inherit;
+}
+
+.stars-layer {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.stars-layer .star {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  background: url("/apk/mipmap/ic_star.png") center / contain no-repeat;
+  will-change: transform, opacity;
+  pointer-events: none;
+}
+
+.overlay-scrim {
+  position: fixed;
+  inset: 0;
+  z-index: 40;
+  background: var(--overlay-css);
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity var(--anim) ease, visibility var(--anim) ease;
+}
+
+.overlay-scrim.is-open {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+.dialog-root {
+  position: fixed;
+  inset: 0;
+  z-index: 60;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  background: var(--overlay-css);
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity var(--anim) ease, visibility var(--anim) ease;
+}
+
+.dialog-root.is-open {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+.dialog-card {
+  position: relative;
+  width: min(400px, 92vw);
+  min-height: 280px;
+  padding: 16px;
+  background: #fff;
+  border-radius: var(--radius-10);
+  text-align: center;
+  color: var(--orange);
+}
+
+.dialog-card .dialog-close {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  width: 28px;
+  height: 28px;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+}
+
+.dialog-card .dialog-close img {
+  width: 18px;
+  height: 18px;
+}
+
+.dialog-card .dialog-art-wrap {
+  display: block;
+  width: 140px;
+  margin: 12px auto 8px;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  cursor: default;
+}
+
+.dialog-card .dialog-art-wrap.can-pick {
+  cursor: pointer;
+}
+
+.dialog-card .dialog-art {
+  display: block;
+  width: 140px;
+  height: 140px;
+  margin: 0;
+  object-fit: contain;
+}
+
+.dialog-card .dialog-art-hint {
+  display: none;
+  margin-top: 6px;
+  font-family: var(--font-light);
+  font-size: 13px;
+  color: var(--blue);
+}
+
+.dialog-card .dialog-art-wrap.can-pick .dialog-art-hint {
+  display: block;
+}
+
+.dialog-card h2 {
+  margin: 0 8px 8px;
+  font-family: var(--font-book);
+  font-size: 18px;
+  font-weight: 400;
+  color: var(--orange);
+}
+
+.dialog-card p {
+  margin: 0 16px 16px;
+  font-family: var(--font-light);
+  font-size: 16px;
+  color: rgba(0, 0, 0, 0.56);
+  line-height: 1.35;
+}
+
+.dialog-card input[type="text"] {
+  width: calc(100% - 80px);
+  margin: 8px 40px 20px;
+  padding: 6px 4px;
+  border: 0;
+  border-bottom: 2px solid var(--blue);
+  color: var(--blue);
+  font-family: var(--font-book);
+  font-size: 18px;
+  text-align: center;
+  outline: none;
+}
+
+.dialog-actions {
+  display: flex;
+  gap: 16px;
+  margin-top: 12px;
+}
+
+.dialog-actions button {
+  flex: 1;
+  height: 40px;
+  border-radius: var(--radius-5);
+  font-family: var(--font-book);
+  font-size: 14px;
+  letter-spacing: 0.04em;
+  cursor: pointer;
+}
+
+.btn-outline-blue {
+  border: 1px solid var(--blue);
+  background: transparent;
+  color: var(--blue);
+}
+
+.btn-solid-orange {
+  border: 0;
+  background: var(--orange);
+  color: #fff;
+}
+
+.anim-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 70;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: var(--overlay-css);
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity var(--anim) ease, visibility var(--anim) ease;
+}
+
+.anim-overlay.is-open {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+.anim-overlay .lottie-host {
+  width: min(340px, 70vw);
+  height: min(340px, 70vw);
+}
+
+.anim-overlay .anim-caption {
+  position: absolute;
+  left: 16px;
+  right: 16px;
+  bottom: 32px;
+  margin: 0;
+  font-family: var(--font-book);
+  font-size: 22px;
+  letter-spacing: 0.08em;
+  text-align: center;
+  color: #fff;
+}
+
+.lottie-fallback {
+  background: url("/apk/mipmap/jibo.png") center / contain no-repeat;
+  animation: jibo-pop 1.2s ease;
+}
+
+@keyframes jibo-pop {
+  0% {
+    transform: scale(0.6);
+    opacity: 0;
+  }
+  55% {
+    transform: scale(1.08);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.toast {
+  position: fixed;
+  top: 64px;
+  left: 50%;
+  z-index: 25;
+  max-width: min(420px, 90vw);
+  padding: 8px 14px;
+  border-radius: var(--radius-5);
+  background: var(--scratch-blue);
+  color: #fff;
+  font-family: var(--font-book);
+  font-size: 13px;
+  text-align: center;
+  transform: translateX(-50%);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity var(--anim) ease;
+}
+
+.toast.is-open {
+  opacity: 1;
+}

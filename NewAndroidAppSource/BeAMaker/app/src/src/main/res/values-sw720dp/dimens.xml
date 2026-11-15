@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="bubble_oval">14.0dp</dimen>
+    <dimen name="hDialogs">500.0dp</dimen>
+    <dimen name="hPairingBottom">50.0dp</dimen>
+    <dimen name="hPairingItemBg">280.0dp</dimen>
+    <dimen name="hProjectItem">150.0dp</dimen>
+    <dimen name="hTrash">55.0dp</dimen>
+    <dimen name="item_offset">60.0dp</dimen>
+    <dimen name="tamAnim">500.0dp</dimen>
+    <dimen name="wDialogs">600.0dp</dimen>
+    <dimen name="wPairingItemBg">250.0dp</dimen>
+    <dimen name="wProjectItem">150.0dp</dimen>
+    <dimen name="wPuntitos">400.0dp</dimen>
+    <dimen name="wTrash">55.0dp</dimen>
+</resources>

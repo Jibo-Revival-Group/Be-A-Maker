@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout n0:paddingTop="@dimen/marginMedium" n0:paddingBottom="@dimen/marginMedium" n0:layout_width="match_parent" n0:layout_height="wrap_content" n0:paddingEnd="@dimen/marginMedium"
+  xmlns:n0="http://schemas.android.com/apk/res/android">
+    <RelativeLayout n0:id="@id/rlImageItem" n0:layout_width="@dimen/hProjectItem" n0:layout_height="@dimen/hProjectItem">
+        <ImageView n0:id="@id/ivItemProject" n0:layout_width="match_parent" n0:layout_height="match_parent" n0:src="@mipmap/create_icon" />
+    </RelativeLayout>
+    <LinearLayout n0:orientation="vertical" n0:layout_width="wrap_content" n0:layout_height="wrap_content" n0:layout_toRightOf="@id/rlImageItem" n0:layout_alignBottom="@id/rlImageItem" n0:layout_marginStart="@dimen/marginSmall">
+        <TextView n0:textColor="@color/colorWhite" n0:id="@id/tvProjectName" n0:layout_width="match_parent" n0:layout_height="wrap_content" n0:text="Create new" fontPath="fonts/Hanken-Book.ttf" />
+    </LinearLayout>
+</RelativeLayout>

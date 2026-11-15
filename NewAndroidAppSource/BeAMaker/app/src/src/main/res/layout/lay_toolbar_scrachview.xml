@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.Toolbar n0:id="@id/toolbar" n0:background="@color/scratchBlue" n0:layout_width="match_parent" n0:layout_height="?actionBarSize" n0:elevation="@dimen/marginSmall" n1:elevation="@dimen/marginSmall" n1:navigationIcon="@mipmap/menu_icon"
+  xmlns:n0="http://schemas.android.com/apk/res/android" xmlns:n1="http://schemas.android.com/apk/res-auto">
+    <RelativeLayout n0:layout_width="match_parent" n0:layout_height="?actionBarSize">
+        <TextView n0:textSize="@dimen/font16" n0:textColor="@color/colorWhite" n0:gravity="center" n0:id="@id/tvTitle" n0:layout_width="wrap_content" n0:layout_height="wrap_content" n0:layout_centerVertical="true" n0:layout_toStartOf="@id/bNew" n0:layout_alignParentStart="true" />
+        <Button n0:textColor="@color/colorWhite" n0:layout_gravity="end" n0:id="@id/bNew" n0:background="@drawable/dw_toolbar_button_edit_enabled" n0:layout_width="90.0dp" n0:layout_height="30.0dp" n0:text="@string/toolbar_button_new" n0:layout_centerVertical="true" n0:layout_marginEnd="@dimen/marginMedium" n0:layout_toStartOf="@id/bEdit" fontPath="fonts/Hanken-Book.ttf" />
+        <Button n0:enabled="false" n0:textColor="@drawable/dw_button_scratch_tooblar_text" n0:layout_gravity="end" n0:id="@id/bEdit" n0:background="@drawable/dw_toolbar_button_edit_selector" n0:layout_width="90.0dp" n0:layout_height="30.0dp" n0:text="@string/toolbar_button_edit" n0:layout_centerVertical="true" n0:layout_marginEnd="@dimen/marginMedium" n0:layout_toStartOf="@id/bSave" fontPath="fonts/Hanken-Book.ttf" />
+        <Button n0:enabled="false" n0:textColor="@color/scratchBlue" n0:layout_gravity="end" n0:id="@id/bSave" n0:background="@drawable/dw_toolbar_button_save_selector" n0:layout_width="90.0dp" n0:layout_height="30.0dp" n0:text="@string/toolbar_button_save" n0:layout_centerVertical="true" n0:layout_marginEnd="@dimen/marginMedium" n0:layout_alignParentEnd="true" fontPath="fonts/Hanken-Book.ttf" />
+    </RelativeLayout>
+</android.support.v7.widget.Toolbar>

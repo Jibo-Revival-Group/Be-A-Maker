@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list>
+    <item>
+        <shape n0:shape="oval"
+          xmlns:n0="http://schemas.android.com/apk/res/android">
+            <corners n0:radius="15.0dp" />
+            <solid n0:color="@color/colorWhite" />
+            <size n0:height="30.0dp" n0:width="30.0dp" />
+        </shape>
+    </item>
+    <item n1:drawable="@mipmap/ic_arrow_down"
+      xmlns:n1="http://schemas.android.com/apk/res/android" />
+</layer-list>

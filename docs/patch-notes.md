@@ -82,17 +82,3 @@ Rebuild with `apktool b .`. A signed APK is not stored in git.
 ## Credit
 
 Patch identification and smali authored in collaboration with Claude (Anthropic); all decompiling, on-device testing, and patch application done locally by the repo maintainer.
-
-## Building the patched APK (legacy)
-
-Revive-A-Maker's apps are built from `web/` instead (see the README). The patched stock APK is kept as an apktool
-project at the repo root:
-
-```bash
-apktool b . -o dist/beamaker_patched.apk
-apksigner sign --ks your.jks dist/beamaker_patched.apk
-```
-
-Known issues: `getJibos()` returns an empty robot list, so `PairingActivity` shows "We couldn't find a Jibo to
-connect to" until it is given a real `Robot(id, name, robotName)`; and whether the closed `JiboRemoteControl.connect()`
-can reach a robot locally is unconfirmed.

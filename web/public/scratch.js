@@ -496,7 +496,7 @@
     closeDrawer();
     openInfoDialog(
       "ABOUT",
-      "Revive-A-Maker is Jibo’s Scratch companion (Be a Maker), revived. It is a Jibo Revival Group preservation project and is not affiliated with Jibo Inc. or NTT Disruption."
+      "Be a Maker is Jibo’s Scratch companion. This web build is a Jibo Revival Group preservation project and is not affiliated with Jibo Inc. or NTT Disruption."
     );
   });
   document.getElementById("btn-disconnect").addEventListener("click", function () {

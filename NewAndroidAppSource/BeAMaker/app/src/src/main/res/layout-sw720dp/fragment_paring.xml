@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout n0:layout_width="match_parent" n0:layout_height="match_parent"
+  xmlns:n0="http://schemas.android.com/apk/res/android">
+    <ImageView n0:id="@id/ivBackground" n0:layout_width="match_parent" n0:layout_height="match_parent" n0:scaleType="fitXY" n0:contentDescription="@null" n1:srcCompat="@mipmap/pair_bg"
+      xmlns:n1="http://schemas.android.com/apk/res-auto" />
+    <com.jlsh.bubleview.view.BubbleView n0:id="@id/bView" n0:layout_width="match_parent" n0:layout_height="match_parent" n2:bubble_icon="@mipmap/ic_star"
+      xmlns:n2="http://schemas.android.com/apk/res-auto" />
+    <RelativeLayout n0:fitsSystemWindows="true" n0:layout_width="match_parent" n0:layout_height="match_parent">
+        <android.support.v7.widget.Toolbar n0:id="@id/tBar" n0:background="@color/colorTransparent" n0:fitsSystemWindows="true" n0:layout_width="match_parent" n0:layout_height="?actionBarSize" n3:navigationIcon="@drawable/ic_back_icon" n3:title=" "
+          xmlns:n3="http://schemas.android.com/apk/res-auto">
+            <RelativeLayout n0:layout_width="match_parent" n0:layout_height="match_parent">
+                <ImageButton n0:id="@id/bRefresh" n0:background="@color/colorTransparent" n0:layout_width="wrap_content" n0:layout_height="match_parent" n0:src="@drawable/ic_refresh_icon" n0:contentDescription="@null" n0:layout_marginEnd="@dimen/marginMedium" n0:layout_alignParentEnd="true" />
+            </RelativeLayout>
+        </android.support.v7.widget.Toolbar>
+        <TextView n0:textSize="@dimen/font30" n0:textColor="@color/colorWhite" n0:gravity="center_horizontal" n0:id="@id/tvTitle" n0:layout_width="match_parent" n0:layout_height="wrap_content" n0:text="@string/tv_pairing_title" n0:layout_below="@id/tBar" fontPath="fonts/Hanken-Book.ttf" />
+        <android.support.v7.widget.RecyclerView n0:orientation="horizontal" n0:id="@id/rvRobots" n0:layout_width="match_parent" n0:layout_height="match_parent" n0:layout_margin="@dimen/marginSmall" n0:layout_above="@id/llContentButtons" n0:layout_below="@id/tvTitle" n0:layout_centerInParent="true" n0:layout_centerVertical="true" n4:layoutManager="android.support.v7.widget.LinearLayoutManager"
+          xmlns:n4="http://schemas.android.com/apk/res-auto" />
+        <LinearLayout n0:gravity="center" n0:orientation="vertical" n0:id="@id/llContentButtons" n0:layout_width="match_parent" n0:layout_height="@dimen/hButtonConnect" n0:layout_marginBottom="@dimen/marginBig" n0:layout_above="@id/llBottom">
+            <Button n0:enabled="false" n0:textColor="@drawable/dw_button_text_connect_selector" n0:layout_gravity="center" n0:id="@id/bConnect" n0:background="@drawable/dw_button_connect_selector" n0:layout_width="wrap_content" n0:layout_height="wrap_content" n0:text="@string/tv_pairing_button_connect" n0:paddingStart="@dimen/marginVeryVeryBig" n0:paddingEnd="@dimen/marginVeryVeryBig" fontPath="fonts/Hanken-Book.ttf" style="?android:borderlessButtonStyle" />
+        </LinearLayout>
+        <LinearLayout n0:gravity="center" n0:orientation="horizontal" n0:id="@id/llBottom" n0:background="@color/colorDustyRose" n0:layout_width="match_parent" n0:layout_height="@dimen/hPairingBottom" n0:layout_alignParentBottom="true">
+            <ImageView n0:id="@id/ivAlert" n0:layout_width="30.0dp" n0:layout_height="30.0dp" n0:layout_marginRight="@dimen/marginSmall" n0:src="@mipmap/ic_alert_update" />
+            <TextView n0:textColor="@color/colorWhite" n0:gravity="center" n0:layout_gravity="center" n0:id="@id/tvAlert" n0:layout_width="wrap_content" n0:layout_height="wrap_content" n0:layout_marginLeft="@dimen/marginSmall" n0:text="@string/tv_pairing_sub_title" fontPath="fonts/Hanken-Light.ttf" />
+        </LinearLayout>
+    </RelativeLayout>
+</RelativeLayout>

@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <title>Be a Maker</title>
+  <link rel="stylesheet" href="/playground/playground.css">
+  <link rel="stylesheet" href="/playground/zenburn.css">
+  <link rel="stylesheet" href="/bam.css">
+  <link rel="stylesheet" href="/scratch.css">
+</head>
+<body>
+  <header class="scratch-toolbar">
+    <button id="btn-menu" type="button" class="icon-hit" aria-label="Menu">
+      <img src="/apk/mipmap/menu_icon.png" width="24" height="24" alt="">
+    </button>
+    <span id="project-name" class="toolbar-title">Jibo Project</span>
+    <button id="btn-new" type="button" class="tb-btn tb-outline">New</button>
+    <button id="btn-edit" type="button" class="tb-btn tb-outline" disabled>Edit</button>
+    <button id="btn-save" type="button" class="tb-btn tb-save" disabled>Save</button>
+  </header>
+
+  <div id="drawer-backdrop" class="drawer-backdrop"></div>
+  <nav id="drawer" class="nav-drawer" aria-hidden="true">
+    <button id="btn-close-drawer" type="button" class="icon-hit drawer-close" aria-label="Close menu">
+      <img src="/apk/mipmap/close_icon_white.png" width="22" height="22" alt="">
+    </button>
+    <ul class="nav-list">
+      <li>
+        <button type="button" id="menu-projects" class="nav-item">
+          <span class="nav-accent"></span>PROJECTS
+        </button>
+      </li>
+      <li>
+        <button type="button" id="menu-screen" class="nav-item">
+          <span class="nav-accent"></span>JIBO SCREEN
+        </button>
+      </li>
+      <li>
+        <button type="button" id="menu-cam" class="nav-item">
+          <span class="nav-accent"></span>JIBO CAM
+        </button>
+      </li>
+      <li>
+        <button type="button" id="menu-help" class="nav-item">
+          <span class="nav-accent"></span>HELP
+        </button>
+      </li>
+      <li>
+        <button type="button" id="menu-about" class="nav-item">
+          <span class="nav-accent"></span>ABOUT
+        </button>
+      </li>
+    </ul>
+    <button id="btn-disconnect" type="button" class="disconnect-btn">DISCONNECT JIBO</button>
+  </nav>
+
+  <section id="projects-screen" class="projects-screen" aria-hidden="true">
+    <header class="projects-toolbar">
+      <button id="btn-projects-back" type="button" class="icon-hit" aria-label="Back">
+        <img src="/apk/mipmap/ic_back.png" width="24" height="24" alt="">
+      </button>
+    </header>
+    <div class="projects-heading">
+      <span class="nav-accent"></span>
+      <h2>PROJECTS</h2>
+    </div>
+    <ul id="project-list" class="project-list"></ul>
+  </section>
+
+  <section id="screen-stage" class="screen-stage" aria-hidden="true">
+    <header class="projects-toolbar">
+      <button id="btn-screen-back" type="button" class="icon-hit" aria-label="Back">
+        <img src="/apk/mipmap/ic_back.png" width="24" height="24" alt="">
+      </button>
+    </header>
+    <div class="projects-heading">
+      <span class="nav-accent"></span>
+      <h2>JIBO SCREEN</h2>
+    </div>
+    <div class="screen-stage-body">
+      <div class="screen-frame">
+        <canvas id="screen-canvas" width="1280" height="720"></canvas>
+        <p id="screen-empty" class="screen-empty">Upload a PNG or JPG</p>
+      </div>
+      <div class="screen-controls">
+        <label class="screen-upload">
+          Upload
+          <input id="screen-file" type="file" accept="image/png,image/jpeg">
+        </label>
+        <label class="screen-slider">
+          Rotate
+          <input id="screen-rotate" type="range" min="-180" max="180" value="0">
+        </label>
+        <label class="screen-slider">
+          Scale
+          <input id="screen-scale" type="range" min="5" max="400" value="100">
+        </label>
+        <label class="screen-live">
+          <input id="screen-live" type="checkbox">
+          Live
+        </label>
+        <button id="screen-show" type="button" class="screen-btn" disabled>Show on Jibo</button>
+        <button id="screen-clear" type="button" class="screen-btn" disabled>Clear screen</button>
+      </div>
+      <p id="screen-status" class="screen-status" role="status"></p>
+    </div>
+  </section>
+
+  <section id="cam-stage" class="screen-stage" aria-hidden="true">
+    <header class="projects-toolbar">
+      <button id="btn-cam-back" type="button" class="icon-hit" aria-label="Back">
+        <img src="/apk/mipmap/ic_back.png" width="24" height="24" alt="">
+      </button>
+    </header>
+    <div class="projects-heading">
+      <span class="nav-accent"></span>
+      <h2>JIBO CAM</h2>
+    </div>
+    <div class="screen-stage-body">
+      <div class="screen-frame">
+        <img id="cam-feed" class="cam-feed" alt="Jibo camera">
+        <p id="cam-empty" class="screen-empty">Waiting for camera…</p>
+      </div>
+      <p id="cam-status" class="screen-status" role="status"></p>
+    </div>
+  </section>
+
+  <div id="projectButtons">
+    <img id="greenflag" src="/playground/media/green-flag.svg" width="30" alt="Go">
+    <img id="stopall" src="/playground/media/icons/control_stop.svg" width="30" alt="Stop">
+    <span id="debug"></span>
+  </div>
+  <div id="blocks"></div>
+
+  <div id="cool-overlay" class="cool-overlay"></div>
+  <button id="btn-cool-ideas" type="button" class="cool-fab" aria-label="Cool ideas" aria-expanded="false">
+    <span id="cool-lottie-close" class="cool-lottie is-active"></span>
+    <span id="cool-lottie-open" class="cool-lottie"></span>
+  </button>
+  <div id="cool-tray" class="cool-tray" aria-hidden="true">
+    <div id="cool-list" class="cool-list"></div>
+  </div>
+
+  <div id="toast" class="toast" role="status"></div>
+
+  <div id="dialog-root" class="dialog-root" aria-hidden="true">
+    <div class="dialog-card">
+      <button type="button" class="dialog-close" id="dialog-close" aria-label="Close">
+        <img src="/apk/mipmap/close_icon_orange.png" alt="">
+      </button>
+      <div id="dialog-art-wrap" class="dialog-art-wrap">
+        <img id="dialog-art" class="dialog-art" src="/apk/mipmap/project_name_img.png" alt="">
+        <span id="dialog-art-hint" class="dialog-art-hint">Change thumbnail</span>
+      </div>
+      <h2 id="dialog-title">NEW PROJECT</h2>
+      <p id="dialog-body" hidden></p>
+      <input id="dialog-input" type="text" value="Jibo Project">
+      <input id="thumb-file" type="file" accept="image/png,image/jpeg" hidden>
+      <div id="dialog-actions" class="dialog-actions"></div>
+    </div>
+  </div>
+
+  <div id="anim-save" class="anim-overlay">
+    <div id="save-lottie" class="lottie-host"></div>
+    <p class="anim-caption">PROJECT SAVED!</p>
+  </div>
+  <div id="anim-delete" class="anim-overlay">
+    <div id="delete-lottie" class="lottie-host"></div>
+    <p class="anim-caption">PROJECT DELETED!</p>
+  </div>
+
+  <script src="/vendor/jquery-3.2.1.min.js"></script>
+  <script src="/vendor/lottie.min.js"></script>
+  <script src="/bam-lottie.js"></script>
+  <script src="/app-interface.js"></script>
+  <script src="/playground/media-lists.js"></script>
+  <script src="/playground/scratch-storage.js"></script>
+  <script src="/playground/vendor.js"></script>
+  <script src="/playground/scratch-vm.js"></script>
+  <script src="/boot-playground.js"></script>
+  <script src="/playground/playground.js"></script>
+  <script src="/scratch.js"></script>
+  <script src="/screen-stage.js"></script>
+  <script src="/jibo-cam.js"></script>
+</body>
+</html>
